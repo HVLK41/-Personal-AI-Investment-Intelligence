@@ -47,15 +47,6 @@ jobs:
       - name: Update instrument universe
         run: python universe.py
         
-        - name: Debug scanner source
-        run: |
-          echo "=== COMMIT ==="
-          git rev-parse HEAD
-          echo "=== SCANNER LINES 90-110 ==="
-          nl -ba scanner.py | sed -n '90,110p'
-          echo "=== PYTHON SYNTAX CHECK ==="
-          python -m py_compile scanner.py
-
       - name: Run market scanner
         run: python scanner.py
 
