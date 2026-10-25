@@ -1,8 +1,10 @@
 {
   "project": "HVLK AI",
-  "generated_at": "2026-10-25T12:32:40.975786+00:00",
+  "generated_at": "2026-10-25T12:52:47.852687+00:00",
   "data_provider": "Financial Modeling Prep",
   "scan_type": "initial_watchlist",
+  "successful_quotes": 4,
+  "total_symbols": 10,
   "results": [
     {
       "symbol": "KO",
@@ -10,13 +12,13 @@
       "change_percent": -2.75855,
       "dividend_per_share_year_estimate": 2.1,
       "dividend_yield_percent_estimate": 2.265,
+      "dividend_observations": 4,
       "status": "ok",
       "notes": [],
       "company_name": "The Coca-Cola Company",
       "currency": null,
       "exchange": "NYSE",
-      "quote_timestamp": 1792785602,
-      "dividend_observations": 4
+      "quote_timestamp": 1792785602
     },
     {
       "symbol": "JNJ",
@@ -24,13 +26,13 @@
       "change_percent": -1.41998,
       "dividend_per_share_year_estimate": 5.28,
       "dividend_yield_percent_estimate": 2.001,
+      "dividend_observations": 4,
       "status": "ok",
       "notes": [],
       "company_name": "Johnson & Johnson",
       "currency": null,
       "exchange": "NYSE",
-      "quote_timestamp": 1792785602,
-      "dividend_observations": 4
+      "quote_timestamp": 1792785602
     },
     {
       "symbol": "MSFT",
@@ -38,13 +40,13 @@
       "change_percent": 0.65825,
       "dividend_per_share_year_estimate": 3.64,
       "dividend_yield_percent_estimate": 0.694,
+      "dividend_observations": 4,
       "status": "ok",
       "notes": [],
       "company_name": "Microsoft Corporation",
       "currency": null,
       "exchange": "NASDAQ",
-      "quote_timestamp": 1792785601,
-      "dividend_observations": 4
+      "quote_timestamp": 1792785601
     },
     {
       "symbol": "AAPL",
@@ -52,13 +54,13 @@
       "change_percent": -0.14215,
       "dividend_per_share_year_estimate": 1.06,
       "dividend_yield_percent_estimate": 0.305,
+      "dividend_observations": 4,
       "status": "ok",
       "notes": [],
       "company_name": "Apple Inc.",
       "currency": null,
       "exchange": "NASDAQ",
-      "quote_timestamp": 1792785601,
-      "dividend_observations": 4
+      "quote_timestamp": 1792785601
     },
     {
       "symbol": "O",
@@ -66,9 +68,10 @@
       "change_percent": null,
       "dividend_per_share_year_estimate": null,
       "dividend_yield_percent_estimate": null,
+      "dividend_observations": 0,
       "status": "error",
       "notes": [
-        "HTTP Error 402: Payment Required"
+        "Cena: FMP HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to upgrade your plan at https://financialmodelingprep.com/"
       ]
     },
     {
@@ -77,9 +80,10 @@
       "change_percent": null,
       "dividend_per_share_year_estimate": null,
       "dividend_yield_percent_estimate": null,
+      "dividend_observations": 0,
       "status": "error",
       "notes": [
-        "HTTP Error 402: Payment Required"
+        "Cena: FMP HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to upgrade your plan at https://financialmodelingprep.com/"
       ]
     },
     {
@@ -88,9 +92,10 @@
       "change_percent": null,
       "dividend_per_share_year_estimate": null,
       "dividend_yield_percent_estimate": null,
+      "dividend_observations": 0,
       "status": "error",
       "notes": [
-        "HTTP Error 402: Payment Required"
+        "Cena: FMP HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to upgrade your plan at https://financialmodelingprep.com/"
       ]
     },
     {
@@ -99,9 +104,10 @@
       "change_percent": null,
       "dividend_per_share_year_estimate": null,
       "dividend_yield_percent_estimate": null,
+      "dividend_observations": 0,
       "status": "error",
       "notes": [
-        "HTTP Error 402: Payment Required"
+        "Cena: FMP HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to upgrade your plan at https://financialmodelingprep.com/"
       ]
     },
     {
@@ -110,9 +116,10 @@
       "change_percent": null,
       "dividend_per_share_year_estimate": null,
       "dividend_yield_percent_estimate": null,
+      "dividend_observations": 0,
       "status": "error",
       "notes": [
-        "HTTP Error 402: Payment Required"
+        "Cena: FMP HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to upgrade your plan at https://financialmodelingprep.com/"
       ]
     },
     {
@@ -121,11 +128,12 @@
       "change_percent": null,
       "dividend_per_share_year_estimate": null,
       "dividend_yield_percent_estimate": null,
+      "dividend_observations": 0,
       "status": "error",
       "notes": [
-        "HTTP Error 402: Payment Required"
+        "Cena: FMP HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to upgrade your plan at https://financialmodelingprep.com/"
       ]
     }
   ],
-  "disclaimer": "Orientační automatický sken, nikoli investiční doporučení. Výnos je odhad z dividend zaznamenaných za posledních 365 dní a aktuální ceny. Nezaručuje budoucí výplatu. Chybějící data neznamenají nulovou dividendu."
+  "disclaimer": "Orientační automatický sken, nikoli investiční doporučení. Dividendový výnos je odhad součtu dividend zaznamenaných za posledních 365 dní děleného poslední dostupnou cenou. Nezaručuje budoucí výplatu. Chybějící data neznamenají nulovou dividendu. Data mohou být zpožděná nebo omezená tarifem poskytovatele."
 }
