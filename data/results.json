@@ -1,0 +1,131 @@
+{
+  "project": "HVLK AI",
+  "generated_at": "2026-10-25T12:30:10.201652+00:00",
+  "data_provider": "Financial Modeling Prep",
+  "scan_type": "initial_watchlist",
+  "results": [
+    {
+      "symbol": "KO",
+      "price": 92.71,
+      "change_percent": -2.75855,
+      "dividend_per_share_year_estimate": 2.1,
+      "dividend_yield_percent_estimate": 2.265,
+      "status": "ok",
+      "notes": [],
+      "company_name": "The Coca-Cola Company",
+      "currency": null,
+      "exchange": "NYSE",
+      "quote_timestamp": 1792785602,
+      "dividend_observations": 4
+    },
+    {
+      "symbol": "JNJ",
+      "price": 263.81,
+      "change_percent": -1.41998,
+      "dividend_per_share_year_estimate": 5.28,
+      "dividend_yield_percent_estimate": 2.001,
+      "status": "ok",
+      "notes": [],
+      "company_name": "Johnson & Johnson",
+      "currency": null,
+      "exchange": "NYSE",
+      "quote_timestamp": 1792785602,
+      "dividend_observations": 4
+    },
+    {
+      "symbol": "MSFT",
+      "price": 524.51,
+      "change_percent": 0.65825,
+      "dividend_per_share_year_estimate": 3.64,
+      "dividend_yield_percent_estimate": 0.694,
+      "status": "ok",
+      "notes": [],
+      "company_name": "Microsoft Corporation",
+      "currency": null,
+      "exchange": "NASDAQ",
+      "quote_timestamp": 1792785601,
+      "dividend_observations": 4
+    },
+    {
+      "symbol": "AAPL",
+      "price": 347.725,
+      "change_percent": -0.14215,
+      "dividend_per_share_year_estimate": 1.06,
+      "dividend_yield_percent_estimate": 0.305,
+      "status": "ok",
+      "notes": [],
+      "company_name": "Apple Inc.",
+      "currency": null,
+      "exchange": "NASDAQ",
+      "quote_timestamp": 1792785601,
+      "dividend_observations": 4
+    },
+    {
+      "symbol": "O",
+      "price": null,
+      "change_percent": null,
+      "dividend_per_share_year_estimate": null,
+      "dividend_yield_percent_estimate": null,
+      "status": "error",
+      "notes": [
+        "HTTP Error 402: Payment Required"
+      ]
+    },
+    {
+      "symbol": "MAIN",
+      "price": null,
+      "change_percent": null,
+      "dividend_per_share_year_estimate": null,
+      "dividend_yield_percent_estimate": null,
+      "status": "error",
+      "notes": [
+        "HTTP Error 402: Payment Required"
+      ]
+    },
+    {
+      "symbol": "AGNC",
+      "price": null,
+      "change_percent": null,
+      "dividend_per_share_year_estimate": null,
+      "dividend_yield_percent_estimate": null,
+      "status": "error",
+      "notes": [
+        "HTTP Error 402: Payment Required"
+      ]
+    },
+    {
+      "symbol": "VICI",
+      "price": null,
+      "change_percent": null,
+      "dividend_per_share_year_estimate": null,
+      "dividend_yield_percent_estimate": null,
+      "status": "error",
+      "notes": [
+        "HTTP Error 402: Payment Required"
+      ]
+    },
+    {
+      "symbol": "SCHD",
+      "price": null,
+      "change_percent": null,
+      "dividend_per_share_year_estimate": null,
+      "dividend_yield_percent_estimate": null,
+      "status": "error",
+      "notes": [
+        "HTTP Error 402: Payment Required"
+      ]
+    },
+    {
+      "symbol": "JEPI",
+      "price": null,
+      "change_percent": null,
+      "dividend_per_share_year_estimate": null,
+      "dividend_yield_percent_estimate": null,
+      "status": "error",
+      "notes": [
+        "HTTP Error 402: Payment Required"
+      ]
+    }
+  ],
+  "disclaimer": "Orientační automatický sken, nikoli investiční doporučení. Výnos je odhad z dividend zaznamenaných za posledních 365 dní a aktuální ceny. Nezaručuje budoucí výplatu. Chybějící data neznamenají nulovou dividendu."
+}
