@@ -1,14 +1,11 @@
 import json
-import os
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
-
-API_KEY = os.environ.get("FMP_API_KEY", "").strip()
-BASE_URL = "https://financialmodelingprep.com/stable/"
-
+PROJECT = "HVLK AI"
 SYMBOLS = [
     "AAPL",
     "MSFT",
@@ -21,89 +18,62 @@ SYMBOLS = [
     "SCHD",
     "JEPI",
 ]
-
-
-def fetch(endpoint, params):
-    """Načte JSON z FMP bez vypisování API klíče do logu."""
-    query = dict(params)
-    query["apikey"] = API_KEY
-
-    url = BASE_URL + endpoint + "?" + urllib.parse.urlencode(query)
-
+BASE_URL = "https://query1.finance.yahoo.com"
+def fetch_json(url):
+    """Načte JSON přes HTTPS a vrátí srozumitelnou chybu."""
     request = urllib.request.Request(
         url,
-        headers={"User-Agent": "HVLK-AI/1.0"},
+        headers={
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 Chrome/131.0 Safari/537.36"
+            ),
+            "Accept": "application/json",
+        },
     )
-
     try:
         with urllib.request.urlopen(request, timeout=25) as response:
-            body = response.read().decode("utf-8")
-
+            return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as error:
-        try:
-            details = error.read().decode(
-                "utf-8",
-                errors="replace",
-            )
-        except Exception:
-            details = ""
-
-        details = " ".join(details.split())[:400]
-
-        message = f"FMP HTTP {error.code}"
-
-        if details:
-            message += f": {details}"
-
-        raise RuntimeError(message) from None
-
+        raise RuntimeError(
+            f"Yahoo Finance HTTP {error.code}"
+        ) from None
     except urllib.error.URLError as error:
         raise RuntimeError(
-            f"Chyba připojení k FMP: {error.reason}"
+            f"Chyba připojení: {error.reason}"
         ) from None
-
-    try:
-        return json.loads(body)
-
     except json.JSONDecodeError:
         raise RuntimeError(
-            "FMP vrátil neplatnou JSON odpověď."
+            "Zdroj vrátil neplatnou JSON odpověď."
         ) from None
-
-
-def first_record(data):
-    """Získá první použitelný záznam odpovědi."""
-    if isinstance(data, list):
-        if data and isinstance(data[0], dict):
-            return data[0]
-
-        return None
-
-    if isinstance(data, dict):
-        if "Error Message" in data or "error" in data:
-            return None
-
-        return data
-
-    return None
-
-
-def parse_number(value):
-    """Bezpečně převede hodnotu na číslo."""
-    try:
-        if value is None or value == "":
-            return None
-
-        return float(value)
-
-    except (TypeError, ValueError):
-        return None
-
-
+def get_chart(symbol, period1, period2):
+    """Načte historické ceny a případné dividendové události."""
+    params = {
+        "period1": str(period1),
+        "period2": str(period2),
+        "interval": "1d",
+        "events": "div,splits",
+    }
+    url = (
+        f"{BASE_URL}/v8/finance/chart/"
+        f"{urllib.parse.quote(symbol)}?"
+        f"{urllib.parse.urlencode(params)}"
+    )
+    data = fetch_json(url)
+    chart = data.get("chart", {})
+    error = chart.get("error")
+    if error:
+        raise RuntimeError(str(error)[:300])
+    results = chart.get("result")
+    if not results:
+        raise RuntimeError("Zdroj nevrátil žádná tržní data.")
+    return results[0]
 def scan_symbol(symbol):
     result = {
         "symbol": symbol,
         "price": None,
+        "currency": None,
+        "company_name": None,
         "change_percent": None,
         "dividend_per_share_year_estimate": None,
         "dividend_yield_percent_estimate": None,
@@ -111,152 +81,88 @@ def scan_symbol(symbol):
         "status": "error",
         "notes": [],
     }
-
-    # 1. Získání ceny akcie nebo ETF.
+    now = int(time.time())
+    year_ago = now - 366 * 24 * 60 * 60
     try:
-        quote_data = fetch(
-            "quote",
-            {"symbol": symbol},
-        )
-
-        quote = first_record(quote_data)
-
-        if not quote:
-            result["status"] = "no_quote"
-            result["notes"].append(
-                "FMP nevrátil použitelný záznam ceny. "
-                "Ověř dostupnost endpointu a tickeru ve svém tarifu."
-            )
-
-            if isinstance(quote_data, dict):
-                detail = (
-                    quote_data.get("Error Message")
-                    or quote_data.get("error")
+        data = get_chart(symbol, year_ago, now + 60)
+        timestamps = data.get("timestamp") or []
+        indicators = data.get("indicators") or {}
+        quotes = indicators.get("quote") or []
+        if not timestamps or not quotes:
+            raise RuntimeError("Chybí cenová historie.")
+        closes = quotes[0].get("close") or []
+        valid_prices = [
+            (timestamp, float(price))
+            for timestamp, price in zip(timestamps, closes)
+            if price is not None
+        ]
+        if not valid_prices:
+            raise RuntimeError("Nebyly nalezeny platné ceny.")
+        latest_timestamp, latest_price = valid_prices[-1]
+        result["price"] = round(latest_price, 6)
+        if len(valid_prices) >= 2:
+            previous_price = valid_prices[-2][1]
+            if previous_price:
+                result["change_percent"] = round(
+                    (latest_price / previous_price - 1) * 100,
+                    4,
                 )
-
-                if detail:
-                    result["notes"].append(str(detail)[:300])
-
-            return result
-
-        price = parse_number(quote.get("price"))
-
-        if price is None or price <= 0:
-            result["status"] = "no_quote"
-            result["notes"].append(
-                "Odpověď FMP neobsahuje platnou cenu."
-            )
-
-            return result
-
-        result["price"] = price
-
-        result["change_percent"] = parse_number(
-            quote.get("changePercentage")
+        meta = data.get("meta") or {}
+        result["currency"] = meta.get("currency")
+        result["company_name"] = (
+            meta.get("longName")
+            or meta.get("shortName")
+            or symbol
         )
-
-        result["company_name"] = quote.get("name")
-        result["currency"] = quote.get("currency")
-        result["exchange"] = quote.get("exchange")
-        result["quote_timestamp"] = quote.get("timestamp")
-
+        result["exchange"] = meta.get("exchangeName")
+        result["quote_timestamp"] = latest_timestamp
+        # Zatím máme cenu; dividendy zpracujeme samostatně.
         result["status"] = "ok"
-
-    except Exception as error:
-        result["notes"].append(
-            f"Cena: {str(error)[:400]}"
-        )
-
-        return result
-
-    # 2. Získání dividendových údajů.
-    try:
-        dividends_data = fetch(
-            "dividends",
-            {"symbol": symbol},
-        )
-
-        if not isinstance(dividends_data, list):
-            dividends_data = []
-
-        today = datetime.now(timezone.utc).date()
-        recent_dividends = []
-
-        for item in dividends_data:
-            if not isinstance(item, dict):
-                continue
-
-            date_text = item.get("date")
-            amount = parse_number(item.get("dividend"))
-
-            if not date_text or amount is None:
-                continue
-
+        events = data.get("events") or {}
+        dividend_events = events.get("dividends") or {}
+        cutoff = now - 365 * 24 * 60 * 60
+        dividend_values = []
+        for timestamp, event in dividend_events.items():
             try:
-                dividend_date = datetime.strptime(
-                    str(date_text)[:10],
-                    "%Y-%m-%d",
-                ).date()
-
-            except ValueError:
+                event_timestamp = int(timestamp)
+                amount = float(event.get("amount", 0))
+                if cutoff <= event_timestamp <= now and amount > 0:
+                    dividend_values.append(amount)
+            except (TypeError, ValueError, AttributeError):
                 continue
-
-            days_old = (today - dividend_date).days
-
-            if 0 <= days_old <= 365:
-                recent_dividends.append(amount)
-
-        annual_dividend = sum(recent_dividends)
-
+        annual_dividend = sum(dividend_values)
         result["dividend_per_share_year_estimate"] = round(
             annual_dividend,
-            4,
+            6,
         )
-
-        result["dividend_observations"] = len(
-            recent_dividends
-        )
-
-        if result["price"] and result["price"] > 0:
+        result["dividend_observations"] = len(dividend_values)
+        if latest_price > 0:
             result["dividend_yield_percent_estimate"] = round(
-                annual_dividend / result["price"] * 100,
-                3,
+                annual_dividend / latest_price * 100,
+                4,
             )
-
+        # Yahoo chart nemusí vrátit oficiální název společnosti.
+        # Chybějící název nemá vliv na cenu ani dividendy.
     except Exception as error:
-        result["notes"].append(
-            "Dividendová data nejsou dostupná: "
-            + str(error)[:400]
-        )
-
+        result["status"] = "error"
+        result["notes"].append(str(error)[:300])
     return result
-
-
 def main():
-    if not API_KEY:
-        raise RuntimeError(
-            "Chybí FMP_API_KEY. V GitHubu otevři "
-            "Settings → Secrets and variables → Actions "
-            "a ověř repository secret FMP_API_KEY."
-        )
-
     results = []
-
-    for symbol in SYMBOLS:
+    for index, symbol in enumerate(SYMBOLS):
         print(f"Analyzuji: {symbol}")
-
         item = scan_symbol(symbol)
         results.append(item)
-
         print(
             f"  Stav: {item['status']}; "
-            f"cena: {item['price']}"
+            f"cena: {item['price']}; "
+            f"dividendový výnos: "
+            f"{item['dividend_yield_percent_estimate']}"
         )
-
         for note in item["notes"]:
-            print(f"  Informace: {note}")
-
-    # Seřazení podle odhadovaného dividendového výnosu.
+            print(f"  Chyba: {note}")
+        if index < len(SYMBOLS) - 1:
+            time.sleep(1)
     results.sort(
         key=lambda item: (
             item["dividend_yield_percent_estimate"] is not None,
@@ -264,66 +170,41 @@ def main():
         ),
         reverse=True,
     )
-
     successful = sum(
-        1
-        for item in results
-        if item["price"] is not None
+        1 for item in results if item["price"] is not None
     )
-
     output = {
-        "project": "HVLK AI",
-        "generated_at": datetime.now(
-            timezone.utc
-        ).isoformat(),
-        "data_provider": "Financial Modeling Prep",
+        "project": PROJECT,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "data_provider": "Yahoo Finance chart endpoint",
         "scan_type": "initial_watchlist",
         "successful_quotes": successful,
         "total_symbols": len(results),
         "results": results,
         "disclaimer": (
             "Orientační automatický sken, nikoli investiční "
-            "doporučení. Dividendový výnos je odhad součtu "
-            "dividend zaznamenaných za posledních 365 dní "
-            "děleného poslední dostupnou cenou. Nezaručuje "
-            "budoucí výplatu. Chybějící data neznamenají "
-            "nulovou dividendu. Data mohou být zpožděná "
-            "nebo omezená tarifem poskytovatele."
+            "doporučení. Ceny mohou být zpožděné. Dividendový "
+            "výnos je odhad z dividendových událostí za posledních "
+            "365 dní a poslední dostupné ceny. Není zárukou "
+            "budoucích výplat. Neúplná dividendová historie může "
+            "vést k podhodnocení výnosu. Dostupnost zdroje není "
+            "garantována a může podléhat omezením."
         ),
     }
-
     output_path = Path("data/results.json")
-    output_path.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
-        json.dumps(
-            output,
-            ensure_ascii=False,
-            indent=2,
-        ),
+        json.dumps(output, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-
     print(
         f"Dokončeno: {successful}/{len(results)} "
-        "symbolů s cenou."
+        "tickerů s cenou."
     )
-
     if successful == 0:
-        print(
-            "VAROVÁNÍ: Nebyla načtena žádná cena. "
-            "Podrobnosti jsou v data/results.json."
-        )
-
         raise RuntimeError(
-            "Scanner nezískal žádné ceny. "
-            "Otevři data/results.json a zkontroluj "
-            "pole notes u jednotlivých tickerů."
+            "Nepodařilo se načíst žádné ceny. "
+            "Zkontroluj chyby ve výpisu a v data/results.json."
         )
-
-
 if __name__ == "__main__":
     main()
