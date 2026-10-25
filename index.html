@@ -1,317 +1,1508 @@
-<!doctype html>
-<html lang="cs">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080b10">
-<title>HVLK AI — Market Intelligence</title>
+<title>HVLK AI | Investment Intelligence</title>
 <style>
 :root {
-  color-scheme: dark;
-  --bg:#080b10;
-  --panel:#10151d;
-  --panel2:#141b25;
-  --border:#25303e;
-  --text:#edf3fa;
-  --muted:#8998ab;
-  --green:#43e3a2;
-  --red:#ff687d;
-  --blue:#79aaff;
-  --amber:#f4c86a;
+  --bg: #080b10;
+  --panel: #0e131b;
+  --panel2: #111923;
+  --border: #202b39;
+  --text: #e8edf5;
+  --muted: #8190a4;
+  --green: #35e6a0;
+  --red: #ff6175;
+  --blue: #65a9ff;
+  --yellow: #f5c96a;
 }
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-button,input,select{font:inherit}
-button{cursor:pointer}
-a{color:inherit;text-decoration:none}
-.shell{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:100vh}
-aside{background:#0b0f15;border-right:1px solid var(--border);padding:25px 16px;position:sticky;top:0;height:100vh}
-.logo{font-size:20px;font-weight:900;letter-spacing:2px}
-.logo span{color:var(--green)}
-.tag{color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:4px}
-.nav-title{color:#68788b;font-size:10px;font-weight:800;letter-spacing:1.6px;margin:32px 10px 10px}
-.nav{display:flex;flex-direction:column;gap:5px}
-.nav button{background:transparent;color:#9aa8ba;border:1px solid transparent;text-align:left;padding:11px 12px;border-radius:9px}
-.nav button.active,.nav button:hover{background:#17232b;border-color:#264338;color:var(--green)}
-.side-note{position:absolute;bottom:22px;left:16px;right:16px;color:var(--muted);font-size:11px}
-main{min-width:0}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:21px 28px;border-bottom:1px solid var(--border);background:#0b0f15;flex-wrap:wrap}
-.eyebrow{color:var(--green);font-size:10px;letter-spacing:2px;font-weight:800}
-h1{font-size:24px;margin:4px 0}
-.subtitle{font-size:12px;color:var(--muted)}
-.status{border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--amber);font-size:11px}
-.content{max-width:1600px;margin:auto;padding:24px 28px 50px}
-.notice{border:1px solid #5a4929;background:#211c12;color:#f2d99a;padding:12px 15px;border-radius:10px;font-size:12px;margin-bottom:18px}
-.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 13px}
-h2{font-size:15px;margin:0;letter-spacing:.2px}
-.muted{color:var(--muted)}
-.small{font-size:11px;color:var(--muted)}
-.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.card{background:linear-gradient(145deg,#121923,#0e131a);border:1px solid var(--border);border-radius:12px;padding:17px;min-width:0}
-.metric-label{font-size:11px;color:var(--muted)}
-.metric-value{font-size:26px;font-weight:800;letter-spacing:-.6px;margin:7px 0 3px;overflow-wrap:anywhere}
-.metric-foot{font-size:11px;color:var(--muted)}
-.green{color:var(--green)}.red{color:var(--red)}.blue{color:var(--blue)}.amber{color:var(--amber)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}
-input,select,.action{background:#0a1017;color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
-input{flex:1;min-width:180px}
-.action{font-weight:700}
-.action:hover{border-color:var(--green);color:var(--green)}
-.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:9px}
-table{width:100%;border-collapse:collapse;min-width:680px;font-size:12px}
-th,td{padding:12px 13px;text-align:right;border-bottom:1px solid #202a36;white-space:nowrap}
-th{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:#111821}
-td:first-child,th:first-child{text-align:left}
-tbody tr:hover{background:#17202b}
-tbody tr:last-child td{border-bottom:0}
-.ticker{font-weight:900;color:var(--blue)}
-.company{display:block;color:var(--muted);font-size:10px;max-width:230px;overflow:hidden;text-overflow:ellipsis}
-.change{font-weight:800}
-.empty{padding:24px;text-align:center;color:var(--muted)}
-.lists{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #202a36}
-.row:last-child{border-bottom:0}
-.row-main{min-width:0}
-.row-title{font-weight:800}
-.row-sub{font-size:11px;color:var(--muted);overflow-wrap:anywhere}
-.row-value{text-align:right;font-weight:800;white-space:nowrap}
-.pill{display:inline-block;border-radius:5px;background:#15372d;color:var(--green);padding:4px 7px;font-size:10px}
-.pill.warn{background:#3a301a;color:var(--amber)}
-.pill.bad{background:#3b2029;color:var(--red)}
-footer{text-align:center;color:var(--muted);font-size:11px;padding:28px 12px}
-[hidden]{display:none!important}
-@media(max-width:1000px){.shell{grid-template-columns:1fr}aside{position:static;height:auto;padding:15px}.nav-title,.side-note{display:none}.nav{flex-direction:row;flex-wrap:wrap;margin-top:12px}.nav button{padding:8px 10px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.content{padding:18px}}
-@media(max-width:650px){.topbar{padding:18px}.content{padding:14px}.metrics,.grid2,.lists{grid-template-columns:1fr}.metric-value{font-size:23px}.section-head{align-items:flex-start;flex-direction:column}}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+}
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.app { min-height: 100vh; }
+.topbar {
+  height: 72px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+  background: #0a0e14;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: max-content;
+}
+.brand-icon {
+  width: 39px;
+  height: 39px;
+  border: 1px solid #267c60;
+  background: #10291f;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  font-weight: 900;
+  font-size: 18px;
+}
+.brand-name {
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  font-size: 17px;
+}
+.brand-sub {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 3px;
+}
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.market-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #35e6a066;
+}
+.refresh-btn, .primary-btn {
+  border: 1px solid #285a4a;
+  background: #10261e;
+  color: var(--green);
+  padding: 9px 13px;
+  border-radius: 7px;
+}
+.refresh-btn:hover, .primary-btn:hover {
+  background: #17382a;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  min-height: calc(100vh - 72px);
+}
+.sidebar {
+  border-right: 1px solid var(--border);
+  padding: 23px 13px;
+  background: #0a0e14;
+}
+.nav-label {
+  padding: 0 12px;
+  margin: 0 0 11px;
+  color: #59697e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+.nav-label:not(:first-child) { margin-top: 29px; }
+.nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #98a7ba;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  transition: .15s;
+}
+.nav-btn:hover {
+  background: #121a24;
+  color: var(--text);
+}
+.nav-btn.active {
+  color: var(--green);
+  background: #10251e;
+  border-color: #204837;
+}
+.nav-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+.sidebar-bottom {
+  margin: 35px 5px 0;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #0d131b;
+}
+.small-muted {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.sidebar-bottom strong {
+  display: block;
+  color: var(--green);
+  margin-bottom: 5px;
+}
+main {
+  min-width: 0;
+  padding: 29px;
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+}
+.page { display: none; }
+.page.active { display: block; }
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+h1 {
+  font-size: 27px;
+  letter-spacing: -.7px;
+  margin: 0 0 8px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.eyebrow {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 24px;
+}
+.metric {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 17px;
+  min-width: 0;
+}
+.metric-label {
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+.metric-value {
+  font-size: 25px;
+  font-weight: 750;
+  letter-spacing: -.5px;
+  overflow-wrap: anywhere;
+}
+.metric-foot {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 0;
+  margin-bottom: 19px;
+}
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.panel-title {
+  font-weight: 750;
+  font-size: 13px;
+}
+.panel-subtitle {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 5px;
+}
+.tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .8px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.tag-green { background: #123526; color: var(--green); }
+.tag-red { background: #361a22; color: var(--red); }
+.tag-blue { background: #172a40; color: var(--blue); }
+.table-wrap {
+  overflow-x: auto;
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 12px;
+}
+thead { background: #101721; }
+th {
+  text-align: right;
+  padding: 12px 14px;
+  color: #7e8ea3;
+  font-size: 10px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+td {
+  padding: 13px 14px;
+  text-align: right;
+  border-top: 1px solid #1a2430;
+  font-variant-numeric: tabular-nums;
+}
+th:first-child, td:first-child,
+th:nth-child(2), td:nth-child(2) { text-align: left; }
+tbody tr:hover { background: #141d28; }
+.ticker {
+  color: var(--text);
+  font-weight: 800;
+  cursor: pointer;
+}
+.ticker:hover { color: var(--green); }
+.company {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 4px;
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.positive { color: var(--green); }
+.negative { color: var(--red); }
+.neutral { color: var(--muted); }
+.table-empty {
+  padding: 35px 20px;
+  text-align: center;
+  color: var(--muted);
+  white-space: normal;
+  line-height: 1.7;
+}
+.table-footer {
+  padding: 13px 17px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.text-btn {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #111923;
+  color: var(--text);
+  padding: 8px 12px;
+}
+.text-btn:hover:not(:disabled) { border-color: var(--green); }
+.text-btn:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 17px;
+}
+.search-box {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+.search-box input {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  outline: none;
+  border-radius: 8px;
+  padding: 12px 14px 12px 38px;
+}
+.search-box input:focus, select:focus {
+  border-color: #34765d;
+}
+.search-symbol {
+  position: absolute;
+  left: 13px;
+  top: 11px;
+  color: var(--muted);
+}
+select {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 11px;
+  outline: none;
+  max-width: 100%;
+}
+.result-count {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 10px 0;
+}
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.status-box {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--panel);
+  padding: 18px;
+}
+.status-box h3 {
+  font-size: 12px;
+  margin: 0 0 14px;
+}
+.status-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+}
+.status-line span:first-child { color: var(--muted); }
+.status-line span:last-child { text-align: right; overflow-wrap: anywhere; }
+.notice {
+  padding: 14px 16px;
+  background: #121b26;
+  border: 1px solid #26364a;
+  color: #aab9cc;
+  border-radius: 8px;
+  line-height: 1.6;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+.notice strong { color: var(--text); }
+.footer {
+  color: #566579;
+  font-size: 11px;
+  padding: 18px 0 8px;
+  text-align: center;
+}
+.mobile-menu { display: none; }
+@media (max-width: 1100px) {
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  main { padding: 22px; }
+  .layout { grid-template-columns: 190px minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .topbar { height: 62px; padding: 0 14px; }
+  .brand-icon { width: 34px; height: 34px; }
+  .brand-name { font-size: 14px; }
+  .brand-sub { font-size: 9px; }
+  .market-status { display: none; }
+  .layout { display: block; }
+  .sidebar {
+    position: sticky;
+    top: 62px;
+    z-index: 9;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 8px;
+    overflow-x: auto;
+    display: flex;
+    gap: 5px;
+    background: #0a0e14;
+  }
+  .nav-label, .sidebar-bottom { display: none; }
+  .nav-btn {
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 11px;
+    gap: 7px;
+  }
+  .nav-icon { font-size: 14px; width: auto; }
+  main { padding: 20px 12px; }
+  h1 { font-size: 23px; }
+  .two-col { grid-template-columns: 1fr; gap: 0; }
+  .metrics { gap: 9px; }
+  .metric { padding: 13px; }
+  .metric-value { font-size: 21px; }
+  .metric-label { font-size: 10px; }
+  .page-heading { margin-bottom: 19px; }
+  .status-grid { grid-template-columns: 1fr; }
+  .panel-header { padding: 14px; }
+  .toolbar { align-items: stretch; }
+  .toolbar select { flex: 1; }
+  .search-box { min-width: 100%; }
+  .page-heading .tag { display: none; }
+}
 </style>
 </head>
 <body>
-<div class="shell">
-<aside>
-  <div class="logo">HVLK<span> AI</span></div>
-  <div class="tag">MARKET INTELLIGENCE</div>
-  <div class="nav-title">PLATFORM</div>
-  <nav class="nav">
-    <button class="active" data-view="overview">◈ Přehled trhu</button>
-    <button data-view="gainers">↗ Největší růsty</button>
-    <button data-view="losers">↘ Největší propady</button>
-    <button data-view="volume">▥ Objem obchodů</button>
-    <button data-view="turnover">◎ Finanční obrat</button>
-    <button data-view="unusual">⚡ Neobvyklá aktivita</button>
-    <button data-view="all">⌕ Všechny načtené akcie</button>
-  </nav>
-  <div class="side-note">HVLK AI / US EQUITIES<br>Osobní analytický projekt<br><br>Data: Yahoo Finance<br>Bez živého obchodování</div>
+<div class="app">
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-icon">H</div>
+    <div>
+      <div class="brand-name">HVLK <span style="color:var(--green)">AI</span></div>
+      <div class="brand-sub">INVESTMENT INTELLIGENCE</div>
+    </div>
+  </div>
+  <div class="top-right">
+    <div class="market-status">
+      <span class="dot" id="statusDot"></span>
+      <span id="connectionText">CONNECTING TO MARKET DATA</span>
+    </div>
+    <button class="refresh-btn" id="refreshBtn">↻ Refresh</button>
+  </div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="nav-label">OVERVIEW</div>
+  <button class="nav-btn active" data-page="dashboard">
+    <span class="nav-icon">⌂</span> Dashboard
+  </button>
+  <button class="nav-btn" data-page="explorer">
+    <span class="nav-icon">⌕</span> Stock Explorer
+  </button>
+  <div class="nav-label">MARKET SCANNER</div>
+  <button class="nav-btn" data-page="volume">
+    <span class="nav-icon">▥</span> Volume
+  </button>
+  <button class="nav-btn" data-page="turnover">
+    <span class="nav-icon">＄</span> Turnover
+  </button>
+  <button class="nav-btn" data-page="unusual">
+    <span class="nav-icon">ϟ</span> Unusual Activity
+  </button>
+  <button class="nav-btn" data-page="dividends">
+    <span class="nav-icon">◈</span> Dividends
+  </button>
+  <div class="nav-label">SYSTEM</div>
+  <button class="nav-btn" data-page="status">
+    <span class="nav-icon">⚙</span> Data Status
+  </button>
+  <div class="sidebar-bottom">
+    <strong>HVLK SCANNER</strong>
+    <div class="small-muted">
+      US common stocks<br>
+      Automated market scan<br>
+      GitHub Actions
+    </div>
+  </div>
 </aside>
 <main>
-  <header class="topbar">
+<!-- DASHBOARD -->
+<section class="page active" id="page-dashboard">
+  <div class="page-heading">
     <div>
-      <div class="eyebrow">US EQUITY INTELLIGENCE</div>
-      <h1 id="pageTitle">Přehled amerického trhu</h1>
-      <div class="subtitle">Denní tržní data · Skenování akcií · Analytický přehled</div>
+      <div class="eyebrow">MARKET OVERVIEW / US EQUITIES</div>
+      <h1>Market Dashboard</h1>
+      <div class="subtitle">A clear overview of the strongest and weakest stocks in your scanned universe.</div>
     </div>
-    <div id="status" class="status">● NAČÍTÁM DATA</div>
-  </header>
-  <div class="content">
-    <div class="notice">
-      UPOZORNĚNÍ: Data mohou být zpožděná nebo neúplná. Žebříčky vycházejí
-      z posledních dostupných denních dat, nikoli z živých intradenních kotací.
-      Odhady nejsou investičním doporučením.
+    <span class="tag tag-green">US MARKETS</span>
+  </div>
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-label">SCANNED STOCKS</div>
+      <div class="metric-value" id="metricScanned">—</div>
+      <div class="metric-foot">Available market records</div>
     </div>
-    <section class="metrics">
-      <div class="card"><div class="metric-label">Úspěšně načtené akcie</div><div id="mSuccess" class="metric-value">—</div><div class="metric-foot">Použitelné cenové záznamy</div></div>
-      <div class="card"><div class="metric-label">Pokrytí seznamu</div><div id="mCoverage" class="metric-value">—</div><div id="mTotal" class="metric-foot">Čekám na data</div></div>
-      <div class="card"><div class="metric-label">Rostoucí akcie v žebříčku</div><div id="mGainers" class="metric-value green">—</div><div class="metric-foot">Z posledních dostupných denních cen</div></div>
-      <div class="card"><div class="metric-label">Neobvyklá aktivita</div><div id="mUnusual" class="metric-value amber">—</div><div class="metric-foot">Objem ≥ 2× průměru podle modelu</div></div>
-    </section>
-    <div class="section-head"><h2 id="tableTitle">Největší pohyby na trhu</h2><span class="small" id="updated">Poslední aktualizace: —</span></div>
-    <div class="card">
-      <div class="toolbar">
-        <input id="search" type="search" placeholder="Hledat ticker nebo společnost…">
-        <select id="sort">
-          <option value="change">Změna %</option>
-          <option value="volume">Objem</option>
-          <option value="turnover">Odhad obratu</option>
-          <option value="price">Cena</option>
-          <option value="symbol">Ticker A–Z</option>
-        </select>
-        <button class="action" id="refresh">↻ Obnovit</button>
+    <div class="metric">
+      <div class="metric-label">GAINERS</div>
+      <div class="metric-value positive" id="metricGainers">—</div>
+      <div class="metric-foot">Positive daily change</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">LOSERS</div>
+      <div class="metric-value negative" id="metricLosers">—</div>
+      <div class="metric-foot">Negative daily change</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">LAST SCAN</div>
+      <div class="metric-value" style="font-size:18px" id="metricUpdated">—</div>
+      <div class="metric-foot" id="metricUpdatedFoot">Waiting for data</div>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">TOP GAINERS</div>
+          <div class="panel-subtitle">Biggest positive price movements</div>
+        </div>
+        <span class="tag tag-green">▲ GAINERS</span>
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Akcie</th><th>Poslední cena</th><th>Změna %</th><th>Objem</th><th>Odhad obratu</th><th>Div. výnos*</th></tr></thead>
-          <tbody id="rows"><tr><td colspan="6" class="empty">Načítám výsledky…</td></tr></tbody>
+          <thead>
+            <tr>
+              <th>#</th><th>Stock</th><th>Price</th><th>Change</th>
+            </tr>
+          </thead>
+          <tbody id="gainersTable">
+            <tr><td colspan="4" class="table-empty">Loading market data…</td></tr>
+          </tbody>
         </table>
       </div>
-      <div class="small" style="margin-top:12px">* Historický odhad z dividendových událostí za přibližně 365 dní. Není to garantovaný budoucí výnos.</div>
+      <div class="table-footer">
+        <span>Top 20 by daily change</span>
+        <button class="text-btn" data-go="explorer">Explore stocks →</button>
+      </div>
     </div>
-    <div class="section-head"><h2>Tržní radar</h2><span class="small">Nejvýraznější dostupné signály</span></div>
-    <section class="lists">
-      <div class="card"><h2 class="green">↗ Největší růsty</h2><div id="miniGainers"></div></div>
-      <div class="card"><h2 class="red">↘ Největší propady</h2><div id="miniLosers"></div></div>
-      <div class="card"><h2 class="blue">▥ Nejvyšší objem</h2><div id="miniVolume"></div></div>
-      <div class="card"><h2 class="amber">⚡ Neobvyklá aktivita</h2><div id="miniUnusual"></div></div>
-    </section>
-    <div class="section-head"><h2>Stav datového skenu</h2></div>
-    <section class="grid2">
-      <div class="card">
-        <div class="metric-label">Datový zdroj</div>
-        <div id="provider" class="metric-value" style="font-size:18px">—</div>
-        <div id="scanStarted" class="metric-foot"></div>
+    <div class="panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">TOP LOSERS</div>
+          <div class="panel-subtitle">Biggest negative price movements</div>
+        </div>
+        <span class="tag tag-red">▼ LOSERS</span>
       </div>
-      <div class="card">
-        <div class="metric-label">Chybové požadavky</div>
-        <div id="mErrors" class="metric-value red">—</div>
-        <div id="errorTypes" class="metric-foot">Typy chyb budou zobrazeny po načtení.</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>Stock</th><th>Price</th><th>Change</th>
+            </tr>
+          </thead>
+          <tbody id="losersTable">
+            <tr><td colspan="4" class="table-empty">Loading market data…</td></tr>
+          </tbody>
+        </table>
       </div>
-    </section>
-    <div id="message" class="card" style="margin-top:14px">Připojuji se k datovým souborům…</div>
+      <div class="table-footer">
+        <span>Top 20 by daily change</span>
+        <button class="text-btn" data-go="explorer">Explore stocks →</button>
+      </div>
+    </div>
   </div>
-  <footer>HVLK AI · Market Intelligence · Data mohou být neúplná nebo opožděná · Nejde o investiční doporučení.</footer>
+  <div class="notice">
+    <strong>Market data note:</strong>
+    These rankings reflect the latest data successfully returned by the scanner.
+    They are not guaranteed to be real-time. Always verify prices and company information before making an investment decision.
+  </div>
+</section>
+<!-- STOCK EXPLORER -->
+<section class="page" id="page-explorer">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">MARKET SCANNER / SEARCH</div>
+      <h1>Stock Explorer</h1>
+      <div class="subtitle">Search and sort the stocks available in your scanned dataset.</div>
+    </div>
+    <span class="tag tag-blue">EXPLORER</span>
+  </div>
+  <div class="toolbar">
+    <div class="search-box">
+      <span class="search-symbol">⌕</span>
+      <input id="stockSearch" type="search" placeholder="Search ticker or company name…">
+    </div>
+    <select id="explorerSort" aria-label="Sort stocks">
+      <option value="change_desc">Change: highest first</option>
+      <option value="change_asc">Change: lowest first</option>
+      <option value="volume_desc">Volume: highest first</option>
+      <option value="price_desc">Price: highest first</option>
+      <option value="price_asc">Price: lowest first</option>
+      <option value="ticker_asc">Ticker: A–Z</option>
+      <option value="turnover_desc">Turnover: highest first</option>
+    </select>
+    <select id="pageSize" aria-label="Rows per page">
+      <option value="25">25 rows</option>
+      <option value="50" selected>50 rows</option>
+      <option value="100">100 rows</option>
+    </select>
+  </div>
+  <div class="result-count" id="explorerCount">Preparing stock list…</div>
+  <div class="panel">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Change</th>
+            <th>Volume</th>
+            <th>Avg. Volume</th>
+            <th>Turnover</th>
+          </tr>
+        </thead>
+        <tbody id="explorerTable">
+          <tr><td colspan="7" class="table-empty">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-footer">
+      <span id="pageInfo">Page 1</span>
+      <div style="display:flex;gap:7px">
+        <button class="text-btn" id="prevPage">← Previous</button>
+        <button class="text-btn" id="nextPage">Next →</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- VOLUME -->
+<section class="page" id="page-volume">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">MARKET SCANNER / LIQUIDITY</div>
+      <h1>Trading Volume</h1>
+      <div class="subtitle">Stocks ranked by reported trading volume.</div>
+    </div>
+    <span class="tag tag-blue">VOLUME</span>
+  </div>
+  <div class="toolbar">
+    <div class="search-box">
+      <span class="search-symbol">⌕</span>
+      <input id="volumeSearch" type="search" placeholder="Filter by ticker or company…">
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-header">
+      <div>
+        <div class="panel-title">HIGHEST VOLUME</div>
+        <div class="panel-subtitle">Ranked by latest reported volume</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Stock</th><th>Price</th><th>Change</th><th>Volume</th><th>Avg. Volume</th></tr></thead>
+        <tbody id="volumeTable"><tr><td colspan="6" class="table-empty">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- TURNOVER -->
+<section class="page" id="page-turnover">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">MARKET SCANNER / CAPITAL FLOW</div>
+      <h1>Market Turnover</h1>
+      <div class="subtitle">Estimated traded dollar value, calculated from price × volume when available.</div>
+    </div>
+    <span class="tag tag-blue">TURNOVER</span>
+  </div>
+  <div class="notice">
+    Turnover is an estimate when calculated from the latest price multiplied by reported volume. It may not equal the official total traded value for the session.
+  </div>
+  <div class="toolbar">
+    <div class="search-box">
+      <span class="search-symbol">⌕</span>
+      <input id="turnoverSearch" type="search" placeholder="Filter by ticker or company…">
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-header">
+      <div>
+        <div class="panel-title">HIGHEST TURNOVER</div>
+        <div class="panel-subtitle">Estimated dollar trading value</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Stock</th><th>Price</th><th>Change</th><th>Volume</th><th>Estimated turnover</th></tr></thead>
+        <tbody id="turnoverTable"><tr><td colspan="6" class="table-empty">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- UNUSUAL ACTIVITY -->
+<section class="page" id="page-unusual">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">MARKET SCANNER / ANOMALIES</div>
+      <h1>Unusual Activity</h1>
+      <div class="subtitle">Stocks with trading volume elevated relative to their available average.</div>
+    </div>
+    <span class="tag tag-blue">ACTIVITY</span>
+  </div>
+  <div class="notice">
+    Volume ratios are only as reliable as the scanner's average-volume calculation. Elevated volume is a screening signal, not a prediction of future price movements.
+  </div>
+  <div class="toolbar">
+    <div class="search-box">
+      <span class="search-symbol">⌕</span>
+      <input id="unusualSearch" type="search" placeholder="Filter by ticker or company…">
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-header">
+      <div>
+        <div class="panel-title">UNUSUAL VOLUME</div>
+        <div class="panel-subtitle">Highest current volume relative to average</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Stock</th><th>Price</th><th>Change</th><th>Volume</th><th>Avg. Volume</th><th>Volume ratio</th></tr></thead>
+        <tbody id="unusualTable"><tr><td colspan="7" class="table-empty">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- DIVIDENDS -->
+<section class="page" id="page-dividends">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">MARKET SCANNER / INCOME</div>
+      <h1>Dividend Explorer</h1>
+      <div class="subtitle">Find stocks for which dividend data is available in the current dataset.</div>
+    </div>
+    <span class="tag tag-blue">DIVIDENDS</span>
+  </div>
+  <div class="notice">
+    <strong>Data limitation:</strong>
+    This section only displays dividend fields supplied by the scanner. If those fields are not included in your current JSON data, the page cannot reliably identify dividend-paying stocks or calculate dividend yield. No dividend information is invented.
+  </div>
+  <div class="toolbar">
+    <div class="search-box">
+      <span class="search-symbol">⌕</span>
+      <input id="dividendSearch" type="search" placeholder="Search ticker or company…">
+    </div>
+    <select id="dividendSort" aria-label="Sort dividend stocks">
+      <option value="yield_desc">Yield: highest first</option>
+      <option value="ticker_asc">Ticker: A–Z</option>
+      <option value="price_desc">Price: highest first</option>
+    </select>
+  </div>
+  <div class="panel">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Stock</th><th>Price</th><th>Dividend / Share</th><th>Dividend Yield</th></tr></thead>
+        <tbody id="dividendTable"><tr><td colspan="5" class="table-empty">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- DATA STATUS -->
+<section class="page" id="page-status">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">SYSTEM / DIAGNOSTICS</div>
+      <h1>Data Status</h1>
+      <div class="subtitle">Scanner results, data freshness and basic diagnostics.</div>
+    </div>
+    <span class="tag tag-blue">SYSTEM</span>
+  </div>
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-label">SUCCESSFUL QUOTES</div>
+      <div class="metric-value positive" id="statusSuccess">—</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">SCANNER ERRORS</div>
+      <div class="metric-value negative" id="statusErrors">—</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">UNIVERSE SIZE</div>
+      <div class="metric-value" id="statusUniverse">—</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">DATA AGE</div>
+      <div class="metric-value" style="font-size:20px" id="statusAge">—</div>
+    </div>
+  </div>
+  <div class="status-grid">
+    <div class="status-box">
+      <h3>DATA FILES</h3>
+      <div class="status-line"><span>market.json</span><span id="marketFileStatus">Checking…</span></div>
+      <div class="status-line"><span>results.json</span><span id="resultsFileStatus">Checking…</span></div>
+      <div class="status-line"><span>Last updated</span><span id="statusTimestamp">—</span></div>
+      <div class="status-line"><span>Data source</span><span>Yahoo Finance chart endpoint</span></div>
+    </div>
+    <div class="status-box">
+      <h3>SCANNER DIAGNOSTICS</h3>
+      <div class="status-line"><span>Reported errors</span><span id="statusErrorCount">—</span></div>
+      <div class="status-line"><span>Most common error</span><span id="statusCommonError">—</span></div>
+      <div class="status-line"><span>Sample errors</span><span id="statusSampleErrors">—</span></div>
+      <div class="status-line"><span>Page status</span><span id="statusPageState">Initializing</span></div>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:20px">
+    <div class="panel-header">
+      <div>
+        <div class="panel-title">RECENT SCANNER ERRORS</div>
+        <div class="panel-subtitle">Examples recorded in results.json</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Ticker</th><th>Error</th></tr></thead>
+        <tbody id="errorsTable"><tr><td colspan="2" class="table-empty">No error data loaded.</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<div class="footer">
+  HVLK AI · Investment Intelligence · Data may be delayed, incomplete or inaccurate.
+  Not financial advice.
+</div>
 </main>
 </div>
+</div>
 <script>
-const DATA_URL = "./data/market.json";
-const RESULTS_URL = "./data/results.json";
-let market = null;
-let allRows = [];
-let currentView = "overview";
-const titles = {
-  overview: ["Přehled amerického trhu", "Největší pohyby na trhu"],
-  gainers: ["Největší růsty", "Akcie s nejvyšší kladnou změnou"],
-  losers: ["Největší propady", "Akcie s nejvyšší zápornou změnou"],
-  volume: ["Objem obchodů", "Akcie s nejvyšším denním objemem"],
-  turnover: ["Finanční obrat", "Nejvyšší odhadovaný finanční obrat"],
-  unusual: ["Neobvyklá aktivita", "Objem výrazně nad průměrem"],
-  all: ["Všechny načtené akcie", "Vyhledávání v načtených datech"]
+"use strict";
+const BASE = new URL(".", window.location.href);
+const MARKET_URL = new URL("data/market.json", BASE).href;
+const RESULTS_URL = new URL("data/results.json", BASE).href;
+const state = {
+  market: null,
+  results: null,
+  stocks: [],
+  currentPage: 1,
+  pageSize: 50,
+  loadedAt: null,
+  fileStatus: { market: false, results: false }
 };
-const fmtNum = n => Number.isFinite(Number(n)) ? Number(n).toLocaleString("cs-CZ",{maximumFractionDigits:2}) : "—";
-const fmtPrice = n => n == null ? "—" : "$" + Number(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:4});
-const fmtPct = n => n == null ? "—" : (Number(n)>0?"+":"") + Number(n).toFixed(2) + "%";
-const fmtMoney = n => {
-  if (n == null || !Number.isFinite(Number(n))) return "—";
-  const v=Number(n);
-  if(v>=1e12)return "$"+(v/1e12).toFixed(2)+"T";
-  if(v>=1e9)return "$"+(v/1e9).toFixed(2)+"B";
-  if(v>=1e6)return "$"+(v/1e6).toFixed(2)+"M";
-  if(v>=1e3)return "$"+(v/1e3).toFixed(1)+"K";
-  return "$"+fmtNum(v);
-};
-const safe = s => String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-function renderRows(rows) {
-  const body=document.getElementById("rows");
-  if(!rows.length) {
-    body.innerHTML='<tr><td colspan="6" class="empty">Pro tento výběr nejsou dostupná žádná data.</td></tr>';
-    return;
+const $ = id => document.getElementById(id);
+function firstValue(obj, keys, fallback = null) {
+  for (const key of keys) {
+    if (obj && obj[key] !== undefined && obj[key] !== null && obj[key] !== "") {
+      return obj[key];
+    }
   }
-  body.innerHTML=rows.slice(0,250).map(r=>{
-    const change=Number(r.change_percent);
-    const cls=r.change_percent==null?"":change>=0?"green":"red";
-    return `<tr>
-      <td><span class="ticker">${safe(r.symbol)}</span><span class="company">${safe(r.name)}</span></td>
-      <td>${fmtPrice(r.price)}</td>
-      <td class="change ${cls}">${fmtPct(r.change_percent)}</td>
-      <td>${fmtNum(r.volume)}</td>
-      <td>${fmtMoney(r.turnover_estimate)}</td>
-      <td>${r.dividend_yield_percent_estimate==null?"—":fmtPct(r.dividend_yield_percent_estimate)}</td>
-    </tr>`;
-  }).join("");
+  return fallback;
 }
-function renderMini(id, rows, type) {
-  const el=document.getElementById(id);
-  if(!rows || !rows.length) {
-    el.innerHTML='<div class="empty">Data zatím nejsou dostupná.</div>';
-    return;
+function numberValue(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
+}
+function getTicker(s) {
+  return String(firstValue(s, ["ticker", "symbol", "symbol_code"], "—"));
+}
+function getName(s) {
+  return String(firstValue(s, ["company", "company_name", "name", "longName", "shortName"], ""));
+}
+function getPrice(s) {
+  return numberValue(firstValue(s, ["price", "regularMarketPrice", "last_price", "close", "current_price"]));
+}
+function getChange(s) {
+  let v = numberValue(firstValue(s, [
+    "change_percent", "change_pct", "percent_change", "changePercent",
+    "regularMarketChangePercent", "daily_change_percent", "pct_change"
+  ]));
+  if (v !== null) return v;
+  const price = getPrice(s);
+  const previous = numberValue(firstValue(s, [
+    "previous_close", "previousClose", "regularMarketPreviousClose", "prev_close"
+  ]));
+  if (price !== null && previous !== null && previous !== 0) {
+    return ((price - previous) / previous) * 100;
   }
-  el.innerHTML=rows.slice(0,6).map(r=>{
-    let value="";
-    if(type==="change") value=fmtPct(r.change_percent);
-    if(type==="volume") value=fmtNum(r.volume);
-    if(type==="ratio") value=(r.volume_ratio ?? "—")+"× průměru";
-    const cls=type==="change"?(Number(r.change_percent)>=0?"green":"red"):type==="ratio"?"amber":"";
-    return `<div class="row"><div class="row-main"><div class="row-title">${safe(r.symbol)}</div><div class="row-sub">${safe(r.name)}</div></div><div class="row-value ${cls}">${value}</div></div>`;
-  }).join("");
+  return null;
 }
-function viewRows() {
-  const search=document.getElementById("search").value.trim().toLowerCase();
-  const sort=document.getElementById("sort").value;
-  let rows=allRows.slice();
-  if(currentView==="gainers") rows=(market?.top_gainers||[]).slice();
-  if(currentView==="losers") rows=(market?.top_losers||[]).slice();
-  if(currentView==="volume") rows=(market?.highest_volume||[]).slice();
-  if(currentView==="turnover") rows=(market?.highest_turnover||[]).slice();
-  if(currentView==="unusual") rows=(market?.unusual_volume||[]).slice();
-  if(search) rows=rows.filter(r=>(r.symbol+" "+r.name).toLowerCase().includes(search));
-  if(sort==="symbol") rows.sort((a,b)=>a.symbol.localeCompare(b.symbol));
-  if(sort==="change") rows.sort((a,b)=>(b.change_percent??-Infinity)-(a.change_percent??-Infinity));
-  if(sort==="volume") rows.sort((a,b)=>(b.volume??-Infinity)-(a.volume??-Infinity));
-  if(sort==="turnover") rows.sort((a,b)=>(b.turnover_estimate??-Infinity)-(a.turnover_estimate??-Infinity));
-  if(sort==="price") rows.sort((a,b)=>(b.price??-Infinity)-(a.price??-Infinity));
-  renderRows(rows);
+function getVolume(s) {
+  return numberValue(firstValue(s, ["volume", "regularMarketVolume", "current_volume", "latest_volume"]));
 }
-function selectView(view) {
-  currentView=view;
-  document.querySelectorAll("[data-view]").forEach(button=>{
-    button.classList.toggle("active",button.dataset.view===view);
+function getAverageVolume(s) {
+  return numberValue(firstValue(s, [
+    "average_volume", "averageVolume", "avg_volume", "average_daily_volume",
+    "averageDailyVolume3Month"
+  ]));
+}
+function getTurnover(s) {
+  const direct = numberValue(firstValue(s, [
+    "turnover", "dollar_volume", "traded_value", "market_turnover"
+  ]));
+  if (direct !== null) return direct;
+  const price = getPrice(s);
+  const volume = getVolume(s);
+  return price !== null && volume !== null ? price * volume : null;
+}
+function getDividend(s) {
+  return numberValue(firstValue(s, [
+    "annual_dividend", "annual_dividend_per_share", "dividend_rate",
+    "dividendRate", "dividend_per_share", "annualDividend"
+  ]));
+}
+function getDividendYield(s) {
+  let value = numberValue(firstValue(s, [
+    "dividend_yield", "dividendYield", "yield", "dividend_yield_percent"
+  ]));
+  if (value === null) {
+    const dividend = getDividend(s);
+    const price = getPrice(s);
+    if (dividend !== null && price !== null && price > 0) {
+      value = dividend / price * 100;
+    }
+  }
+  // Yahoo Finance dividendYield may be supplied as a decimal fraction.
+  if (value !== null && value > 0 && value < 1 &&
+      !Object.prototype.hasOwnProperty.call(s, "dividend_yield_percent")) {
+    value *= 100;
+  }
+  return value;
+}
+function fmtNumber(n, digits = 2) {
+  if (n === null || n === undefined || !Number.isFinite(Number(n))) return "—";
+  return Number(n).toLocaleString("en-US", {
+    maximumFractionDigits: digits
   });
-  document.getElementById("pageTitle").textContent=titles[view][0];
-  document.getElementById("tableTitle").textContent=titles[view][1];
-  document.getElementById("sort").value =
-    view==="volume"?"volume":view==="turnover"?"turnover":"change";
-  viewRows();
+}
+function fmtPrice(n) {
+  if (n === null) return "—";
+  return "$" + Number(n).toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+function fmtCompact(n) {
+  if (n === null || !Number.isFinite(Number(n))) return "—";
+  const x = Number(n);
+  if (Math.abs(x) >= 1e12) return "$" + (x / 1e12).toFixed(2) + "T";
+  if (Math.abs(x) >= 1e9) return "$" + (x / 1e9).toFixed(2) + "B";
+  if (Math.abs(x) >= 1e6) return "$" + (x / 1e6).toFixed(2) + "M";
+  if (Math.abs(x) >= 1e3) return "$" + (x / 1e3).toFixed(2) + "K";
+  return "$" + x.toFixed(2);
+}
+function fmtVolume(n) {
+  if (n === null) return "—";
+  const x = Number(n);
+  if (x >= 1e9) return (x / 1e9).toFixed(2) + "B";
+  if (x >= 1e6) return (x / 1e6).toFixed(2) + "M";
+  if (x >= 1e3) return (x / 1e3).toFixed(1) + "K";
+  return fmtNumber(x, 0);
+}
+function changeHtml(n) {
+  if (n === null) return '<span class="neutral">—</span>';
+  const cls = n > 0 ? "positive" : n < 0 ? "negative" : "neutral";
+  const sign = n > 0 ? "+" : "";
+  return `<span class="${cls}">${sign}${fmtNumber(n, 2)}%</span>`;
+}
+function safeText(value) {
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;",
+    '"': "&quot;", "'": "&#39;"
+  })[ch]);
+}
+function getAllResults(data) {
+  if (Array.isArray(data)) return data;
+  if (data && Array.isArray(data.results)) return data.results;
+  if (data && Array.isArray(data.stocks)) return data.stocks;
+  if (data && Array.isArray(data.quotes)) return data.quotes;
+  if (data && Array.isArray(data.data)) return data.data;
+  return [];
+}
+function normalizeStocks() {
+  const byTicker = new Map();
+  // Results are the main source, as they generally contain all scanner records.
+  const resultRows = getAllResults(state.results);
+  for (const stock of resultRows) {
+    const ticker = getTicker(stock);
+    if (ticker === "—") continue;
+    byTicker.set(ticker, stock);
+  }
+  // Merge market summaries into existing stock records where possible.
+  if (state.market && typeof state.market === "object") {
+    for (const [key, value] of Object.entries(state.market)) {
+      if (!Array.isArray(value)) continue;
+      for (const stock of value) {
+        if (!stock || typeof stock !== "object") continue;
+        const ticker = getTicker(stock);
+        if (ticker === "—") continue;
+        const existing = byTicker.get(ticker);
+        byTicker.set(ticker, existing ? { ...stock, ...existing } : stock);
+      }
+    }
+  }
+  state.stocks = [...byTicker.values()].filter(s => getPrice(s) !== null);
+}
+function getMarketList(names, fallbackSort) {
+  if (state.market) {
+    for (const name of names) {
+      if (Array.isArray(state.market[name])) {
+        return state.market[name].filter(s => s && typeof s === "object");
+      }
+    }
+  }
+  const rows = [...state.stocks];
+  rows.sort(fallbackSort);
+  return rows.slice(0, 100);
+}
+function showEmpty(id, columns, message) {
+  $(id).innerHTML = `<tr><td colspan="${columns}" class="table-empty">${safeText(message)}</td></tr>`;
+}
+function stockCell(s) {
+  const ticker = getTicker(s);
+  const name = getName(s);
+  return `<div class="ticker" data-ticker="${safeText(ticker)}">${safeText(ticker)}</div>` +
+    (name ? `<div class="company">${safeText(name)}</div>` : "");
+}
+function renderShortTable(id, rows) {
+  if (!rows.length) {
+    showEmpty(id, 4, "No data available. Check that the latest scanner JSON files exist.");
+    return;
+  }
+  $(id).innerHTML = rows.slice(0, 20).map((s, i) => `
+    <tr>
+      <td class="neutral">${String(i + 1).padStart(2, "0")}</td>
+      <td>${stockCell(s)}</td>
+      <td>${fmtPrice(getPrice(s))}</td>
+      <td>${changeHtml(getChange(s))}</td>
+    </tr>
+  `).join("");
+}
+function renderDashboard() {
+  const gainers = getMarketList(
+    ["top_gainers", "gainers", "topGainers", "biggest_gainers"],
+    (a, b) => (getChange(b) ?? -Infinity) - (getChange(a) ?? -Infinity)
+  ).filter(s => getChange(s) !== null)
+   .sort((a, b) => getChange(b) - getChange(a));
+  const losers = getMarketList(
+    ["top_losers", "losers", "topLosers", "biggest_losers"],
+    (a, b) => (getChange(a) ?? Infinity) - (getChange(b) ?? Infinity)
+  ).filter(s => getChange(s) !== null)
+   .sort((a, b) => getChange(a) - getChange(b));
+  renderShortTable("gainersTable", gainers);
+  renderShortTable("losersTable", losers);
+  $("metricScanned").textContent = fmtNumber(state.stocks.length, 0);
+  $("metricGainers").textContent = fmtNumber(
+    state.stocks.filter(s => (getChange(s) ?? 0) > 0).length, 0
+  );
+  $("metricLosers").textContent = fmtNumber(
+    state.stocks.filter(s => (getChange(s) ?? 0) < 0).length, 0
+  );
+  const timestamp = firstValue(state.results, [
+    "updated_at", "timestamp", "last_updated", "scan_time", "generated_at"
+  ]) ?? firstValue(state.market, [
+    "updated_at", "timestamp", "last_updated", "scan_time", "generated_at"
+  ]);
+  if (timestamp) {
+    const date = new Date(timestamp);
+    $("metricUpdated").textContent = Number.isNaN(date.getTime())
+      ? String(timestamp)
+      : date.toLocaleString();
+    $("metricUpdatedFoot").textContent = "Reported by scanner";
+  } else {
+    $("metricUpdated").textContent = "See status";
+    $("metricUpdatedFoot").textContent = "Timestamp not supplied";
+  }
+}
+function sortStocks(rows, mode) {
+  const copy = [...rows];
+  const compare = (a, b, getter, direction = -1) => {
+    const av = getter(a);
+    const bv = getter(b);
+    if (av === null && bv === null) return 0;
+    if (av === null) return 1;
+    if (bv === null) return -1;
+    return (av - bv) * direction;
+  };
+  switch (mode) {
+    case "change_desc": copy.sort((a,b) => compare(a,b,getChange,-1)); break;
+    case "change_asc": copy.sort((a,b) => compare(a,b,getChange,1)); break;
+    case "volume_desc": copy.sort((a,b) => compare(a,b,getVolume,-1)); break;
+    case "price_desc": copy.sort((a,b) => compare(a,b,getPrice,-1)); break;
+    case "price_asc": copy.sort((a,b) => compare(a,b,getPrice,1)); break;
+    case "turnover_desc": copy.sort((a,b) => compare(a,b,getTurnover,-1)); break;
+    case "ticker_asc": copy.sort((a,b) => getTicker(a).localeCompare(getTicker(b))); break;
+  }
+  return copy;
+}
+function renderExplorer() {
+  const query = $("stockSearch").value.trim().toLowerCase();
+  const mode = $("explorerSort").value;
+  const size = Number($("pageSize").value) || 50;
+  state.pageSize = size;
+  let rows = state.stocks.filter(s => {
+    return !query ||
+      getTicker(s).toLowerCase().includes(query) ||
+      getName(s).toLowerCase().includes(query);
+  });
+  rows = sortStocks(rows, mode);
+  const total = rows.length;
+  const pages = Math.max(1, Math.ceil(total / size));
+  if (state.currentPage > pages) state.currentPage = pages;
+  if (state.currentPage < 1) state.currentPage = 1;
+  const start = (state.currentPage - 1) * size;
+  const pageRows = rows.slice(start, start + size);
+  $("explorerCount").textContent =
+    `${fmtNumber(total, 0)} matching stocks · ${fmtNumber(state.stocks.length, 0)} total available`;
+  $("pageInfo").textContent =
+    `Page ${state.currentPage} of ${pages}`;
+  $("prevPage").disabled = state.currentPage <= 1;
+  $("nextPage").disabled = state.currentPage >= pages;
+  if (!pageRows.length) {
+    showEmpty("explorerTable", 7, "No matching stocks. Try a different ticker or company name.");
+    return;
+  }
+  $("explorerTable").innerHTML = pageRows.map((s, i) => `
+    <tr>
+      <td class="neutral">${fmtNumber(start + i + 1, 0)}</td>
+      <td>${stockCell(s)}</td>
+      <td>${fmtPrice(getPrice(s))}</td>
+      <td>${changeHtml(getChange(s))}</td>
+      <td>${fmtVolume(getVolume(s))}</td>
+      <td>${fmtVolume(getAverageVolume(s))}</td>
+      <td>${fmtCompact(getTurnover(s))}</td>
+    </tr>
+  `).join("");
+}
+function filterRows(rows, query) {
+  query = query.trim().toLowerCase();
+  return rows.filter(s =>
+    !query ||
+    getTicker(s).toLowerCase().includes(query) ||
+    getName(s).toLowerCase().includes(query)
+  );
+}
+function renderVolume() {
+  let rows = getMarketList(
+    ["top_volume", "highest_volume", "volume_leaders", "topVolume", "most_active"],
+    (a,b) => (getVolume(b) ?? -Infinity) - (getVolume(a) ?? -Infinity)
+  );
+  rows = filterRows(rows, $("volumeSearch").value);
+  rows.sort((a,b) => (getVolume(b) ?? -Infinity) - (getVolume(a) ?? -Infinity));
+  if (!rows.length) {
+    showEmpty("volumeTable", 6, "No volume data available.");
+    return;
+  }
+  $("volumeTable").innerHTML = rows.slice(0,100).map((s,i) => `
+    <tr>
+      <td class="neutral">${i+1}</td>
+      <td>${stockCell(s)}</td>
+      <td>${fmtPrice(getPrice(s))}</td>
+      <td>${changeHtml(getChange(s))}</td>
+      <td>${fmtVolume(getVolume(s))}</td>
+      <td>${fmtVolume(getAverageVolume(s))}</td>
+    </tr>
+  `).join("");
+}
+function renderTurnover() {
+  let rows = filterRows([...state.stocks], $("turnoverSearch").value);
+  rows.sort((a,b) => (getTurnover(b) ?? -Infinity) - (getTurnover(a) ?? -Infinity));
+  if (!rows.length) {
+    showEmpty("turnoverTable", 6, "No turnover data available.");
+    return;
+  }
+  $("turnoverTable").innerHTML = rows.slice(0,100).map((s,i) => `
+    <tr>
+      <td class="neutral">${i+1}</td>
+      <td>${stockCell(s)}</td>
+      <td>${fmtPrice(getPrice(s))}</td>
+      <td>${changeHtml(getChange(s))}</td>
+      <td>${fmtVolume(getVolume(s))}</td>
+      <td>${fmtCompact(getTurnover(s))}</td>
+    </tr>
+  `).join("");
+}
+function renderUnusual() {
+  let rows = filterRows([...state.stocks], $("unusualSearch").value);
+  rows = rows.filter(s => getAverageVolume(s) > 0 && getVolume(s) !== null);
+  rows.sort((a,b) =>
+    (getVolume(b) / getAverageVolume(b)) -
+    (getVolume(a) / getAverageVolume(a))
+  );
+  if (!rows.length) {
+    showEmpty("unusualTable", 7,
+      "No usable average-volume data found. The scanner must provide average_volume and volume fields.");
+    return;
+  }
+  $("unusualTable").innerHTML = rows.slice(0,100).map((s,i) => {
+    const ratio = getVolume(s) / getAverageVolume(s);
+    return `
+      <tr>
+        <td class="neutral">${i+1}</td>
+        <td>${stockCell(s)}</td>
+        <td>${fmtPrice(getPrice(s))}</td>
+        <td>${changeHtml(getChange(s))}</td>
+        <td>${fmtVolume(getVolume(s))}</td>
+        <td>${fmtVolume(getAverageVolume(s))}</td>
+        <td class="${ratio >= 2 ? "positive" : "neutral"}">${ratio.toFixed(2)}×</td>
+      </tr>
+    `;
+  }).join("");
+}
+function renderDividends() {
+  const query = $("dividendSearch").value;
+  const sort = $("dividendSort").value;
+  let rows = filterRows([...state.stocks], query).filter(s =>
+    getDividend(s) !== null || getDividendYield(s) !== null
+  );
+  if (sort === "ticker_asc") {
+    rows.sort((a,b) => getTicker(a).localeCompare(getTicker(b)));
+  } else if (sort === "price_desc") {
+    rows.sort((a,b) => (getPrice(b) ?? -Infinity) - (getPrice(a) ?? -Infinity));
+  } else {
+    rows.sort((a,b) => (getDividendYield(b) ?? -Infinity) - (getDividendYield(a) ?? -Infinity));
+  }
+  if (!rows.length) {
+    showEmpty("dividendTable", 5,
+      "No dividend fields found in the loaded dataset. This section needs dividend data from the scanner.");
+    return;
+  }
+  $("dividendTable").innerHTML = rows.slice(0,200).map((s,i) => {
+    const y = getDividendYield(s);
+    return `
+      <tr>
+        <td class="neutral">${i+1}</td>
+        <td>${stockCell(s)}</td>
+        <td>${fmtPrice(getPrice(s))}</td>
+        <td>${getDividend(s) === null ? "—" : fmtPrice(getDividend(s))}</td>
+        <td>${y === null ? "—" : fmtNumber(y, 2) + "%"}</td>
+      </tr>
+    `;
+  }).join("");
+}
+function findErrorRows() {
+  const data = state.results || {};
+  const errors = firstValue(data, ["sample_errors", "errors", "error_samples"], []);
+  if (Array.isArray(errors)) {
+    return errors.map(e => {
+      if (typeof e === "string") return { ticker: "—", error: e };
+      return {
+        ticker: firstValue(e, ["ticker", "symbol"], "—"),
+        error: firstValue(e, ["error", "message", "reason"], JSON.stringify(e))
+      };
+    });
+  }
+  return [];
+}
+function renderStatus() {
+  const data = state.results || {};
+  const market = state.market || {};
+  const errorCount = numberValue(firstValue(data, [
+    "error_count", "errors_count", "failed", "failed_count", "total_errors"
+  ]));
+  const universeSize = numberValue(firstValue(data, [
+    "universe_size", "total_symbols", "total_tickers", "scanned_universe"
+  ]));
+  const successCount = numberValue(firstValue(data, [
+    "success_count", "successful", "successful_quotes", "success"
+  ]));
+  $("statusSuccess").textContent =
+    fmtNumber(successCount ?? state.stocks.length, 0);
+  $("statusErrors").textContent =
+    errorCount === null ? "—" : fmtNumber(errorCount, 0);
+  $("statusUniverse").textContent =
+    universeSize === null ? "—" : fmtNumber(universeSize, 0);
+  $("marketFileStatus").innerHTML = state.fileStatus.market
+    ? '<span class="positive">Loaded</span>'
+    : '<span class="negative">Unavailable</span>';
+  $("resultsFileStatus").innerHTML = state.fileStatus.results
+    ? '<span class="positive">Loaded</span>'
+    : '<span class="negative">Unavailable</span>';
+  const timestamp = firstValue(data, [
+    "updated_at", "timestamp", "last_updated", "scan_time", "generated_at"
+  ]) ?? firstValue(market, [
+    "updated_at", "timestamp", "last_updated", "scan_time", "generated_at"
+  ]);
+  let age = "Unknown";
+  if (timestamp) {
+    const d = new Date(timestamp);
+    $("statusTimestamp").textContent = Number.isNaN(d.getTime())
+      ? String(timestamp)
+      : d.toLocaleString();
+    if (!Number.isNaN(d.getTime())) {
+      const hours = Math.max(0, (Date.now() - d.getTime()) / 3600000);
+      age = hours < 1 ? "Under 1h" : hours < 24
+        ? Math.floor(hours) + "h"
+        : Math.floor(hours / 24) + "d";
+    }
+  } else {
+    $("statusTimestamp").textContent = "Not supplied by scanner";
+  }
+  $("statusAge").textContent = age;
+  const errorTypes = firstValue(data, [
+    "errors_by_type", "error_types", "errors_summary"
+  ], {});
+  let commonError = "—";
+  if (errorTypes && typeof errorTypes === "object" && !Array.isArray(errorTypes)) {
+    const entries = Object.entries(errorTypes)
+      .sort((a,b) => Number(b[1]) - Number(a[1]));
+    if (entries.length) {
+      commonError = `${entries[0][0]} (${entries[0][1]})`;
+    }
+  }
+  $("statusCommonError").textContent = commonError;
+  const errorRows = findErrorRows();
+  $("statusSampleErrors").textContent = fmtNumber(errorRows.length, 0);
+  $("statusErrorCount").textContent =
+    errorCount === null ? "Not provided" : fmtNumber(errorCount, 0);
+  if (errorRows.length) {
+    $("errorsTable").innerHTML = errorRows.slice(0,50).map(e => `
+      <tr>
+        <td>${safeText(e.ticker)}</td>
+        <td style="text-align:left;white-space:normal;max-width:600px">${safeText(e.error)}</td>
+      </tr>
+    `).join("");
+  } else {
+    showEmpty("errorsTable", 2, "No sample errors included in results.json.");
+  }
+  $("statusPageState").textContent =
+    state.fileStatus.results || state.fileStatus.market
+      ? "Data loaded"
+      : "No data loaded";
+}
+function renderAll() {
+  normalizeStocks();
+  renderDashboard();
+  renderExplorer();
+  renderVolume();
+  renderTurnover();
+  renderUnusual();
+  renderDividends();
+  renderStatus();
+  const connected = state.fileStatus.results || state.fileStatus.market;
+  $("connectionText").textContent = connected
+    ? "MARKET DATA LOADED"
+    : "DATA FILES UNAVAILABLE";
+  $("statusDot").style.background = connected ? "var(--green)" : "var(--red)";
+  $("statusDot").style.boxShadow = connected
+    ? "0 0 10px #35e6a066"
+    : "0 0 10px #ff617566";
+}
+async function fetchJson(url) {
+  const response = await fetch(url + "?_=" + Date.now(), {
+    cache: "no-store"
+  });
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+  return await response.json();
 }
 async function loadData() {
-  const status=document.getElementById("status");
-  const message=document.getElementById("message");
-  document.getElementById("refresh").disabled=true;
-  try {
-    const [marketResponse,resultsResponse]=await Promise.all([
-      fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"}),
-      fetch(RESULTS_URL+"?t="+Date.now(),{cache:"no-store"})
-    ]);
-    if(!marketResponse.ok) throw new Error("Nelze načíst data/market.json");
-    market=await marketResponse.json();
-    if(resultsResponse.ok) {
-      const payload=await resultsResponse.json();
-      allRows=Array.isArray(payload.results)?payload.results:[];
-    } else {
-      allRows=market.top_gainers||[];
-    }
-    document.getElementById("mSuccess").textContent=fmtNum(market.successful_quotes);
-    document.getElementById("mCoverage").textContent=(market.coverage_percent??0)+"%";
-    document.getElementById("mTotal").textContent=fmtNum(market.universe_symbols)+" symbolů v seznamu";
-    document.getElementById("mGainers").textContent=fmtNum((market.top_gainers||[]).filter(r=>Number(r.change_percent)>0).length);
-    document.getElementById("mUnusual").textContent=fmtNum((market.unusual_volume||[]).length);
-    document.getElementById("mErrors").textContent=fmtNum(market.failed_quotes);
-    document.getElementById("provider").textContent=market.data_provider||"Neznámý zdroj";
-    document.getElementById("updated").textContent="Aktualizace: "+(market.generated_at?new Date(market.generated_at).toLocaleString("cs-CZ"):"—");
-    document.getElementById("scanStarted").textContent="Začátek skenu: "+(market.scan_started_at?new Date(market.scan_started_at).toLocaleString("cs-CZ"):"údaj není dostupný");
-    document.getElementById("errorTypes").textContent="Typy chyb: "+JSON.stringify(market.errors_by_type||{});
-    document.getElementById("mCoverage").className="metric-value "+(Number(market.coverage_percent)>=90?"green":"amber");
-    renderMini("miniGainers",market.top_gainers,"change");
-    renderMini("miniLosers",market.top_losers,"change");
-    renderMini("miniVolume",market.highest_volume,"volume");
-    renderMini("miniUnusual",market.unusual_volume,"ratio");
-    status.textContent="● DATA NAČTENA";
-    status.style.color="var(--green)";
-    const warnings=(market.data_notes||[]).map(safe).join("<br>");
-    message.innerHTML=`<strong>Kontrola dat</strong><br>Úspěšně načteno ${fmtNum(market.successful_quotes)} z ${fmtNum(market.universe_symbols)} symbolů. Pokrytí: ${market.coverage_percent??0}%.<br><br>${warnings}`;
-    selectView(currentView);
-  } catch(error) {
-    status.textContent="● CHYBA DAT";
-    status.style.color="var(--red)";
-    message.textContent="Data se nepodařilo načíst: "+error.message+". Zkontroluj, zda GitHub Actions vytvořil data/market.json a data/results.json.";
-  } finally {
-    document.getElementById("refresh").disabled=false;
+  $("refreshBtn").textContent = "↻ Loading…";
+  $("statusPageState").textContent = "Loading data";
+  const [marketResult, resultsResult] = await Promise.allSettled([
+    fetchJson(MARKET_URL),
+    fetchJson(RESULTS_URL)
+  ]);
+  state.fileStatus.market = marketResult.status === "fulfilled";
+  state.fileStatus.results = resultsResult.status === "fulfilled";
+  state.market = state.fileStatus.market ? marketResult.value : null;
+  state.results = state.fileStatus.results ? resultsResult.value : null;
+  state.loadedAt = new Date();
+  renderAll();
+  if (!state.stocks.length) {
+    const reasons = [];
+    if (!state.fileStatus.market) reasons.push("market.json could not be loaded");
+    if (!state.fileStatus.results) reasons.push("results.json could not be loaded");
+    const msg = reasons.length
+      ? reasons.join("; ") + ". Check GitHub Pages and the data/ folder."
+      : "The JSON files loaded, but no usable stock records were found. Check the JSON structure.";
+    showEmpty("gainersTable", 4, msg);
+    showEmpty("losersTable", 4, msg);
+    $("statusPageState").textContent = msg;
   }
+  $("refreshBtn").textContent = "↻ Refresh";
 }
-document.querySelectorAll("[data-view]").forEach(button=>{
-  button.addEventListener("click",()=>selectView(button.dataset.view));
+function setPage(page, updateHash = true) {
+  const validPages = [
+    "dashboard", "explorer", "volume", "turnover",
+    "unusual", "dividends", "status"
+  ];
+  if (!validPages.includes(page)) page = "dashboard";
+  document.querySelectorAll(".page").forEach(el => {
+    el.classList.toggle("active", el.id === "page-" + page);
+  });
+  document.querySelectorAll(".nav-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.page === page);
+  });
+  if (updateHash) {
+    const nextHash = page === "dashboard" ? "" : "#" + page;
+    if (window.location.hash !== nextHash) {
+      history.pushState({ page }, "", window.location.pathname + window.location.search + nextHash);
+    }
+  }
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+document.querySelectorAll(".nav-btn").forEach(btn => {
+  btn.addEventListener("click", () => setPage(btn.dataset.page));
 });
-document.getElementById("search").addEventListener("input",viewRows);
-document.getElementById("sort").addEventListener("change",viewRows);
-document.getElementById("refresh").addEventListener("click",loadData);
+document.querySelectorAll("[data-go]").forEach(btn => {
+  btn.addEventListener("click", () => setPage(btn.dataset.go));
+});
+window.addEventListener("popstate", () => {
+  setPage(window.location.hash.slice(1) || "dashboard", false);
+});
+window.addEventListener("hashchange", () => {
+  setPage(window.location.hash.slice(1) || "dashboard", false);
+});
+$("refreshBtn").addEventListener("click", loadData);
+$("stockSearch").addEventListener("input", () => {
+  state.currentPage = 1;
+  renderExplorer();
+});
+$("explorerSort").addEventListener("change", () => {
+  state.currentPage = 1;
+  renderExplorer();
+});
+$("pageSize").addEventListener("change", () => {
+  state.currentPage = 1;
+  renderExplorer();
+});
+$("prevPage").addEventListener("click", () => {
+  state.currentPage--;
+  renderExplorer();
+});
+$("nextPage").addEventListener("click", () => {
+  state.currentPage++;
+  renderExplorer();
+});
+$("volumeSearch").addEventListener("input", renderVolume);
+$("turnoverSearch").addEventListener("input", renderTurnover);
+$("unusualSearch").addEventListener("input", renderUnusual);
+$("dividendSearch").addEventListener("input", renderDividends);
+$("dividendSort").addEventListener("change", renderDividends);
+// Clicking a ticker opens Stock Explorer and searches for that symbol.
+document.addEventListener("click", event => {
+  const tickerElement = event.target.closest("[data-ticker]");
+  if (!tickerElement) return;
+  const ticker = tickerElement.dataset.ticker;
+  setPage("explorer");
+  $("stockSearch").value = ticker;
+  state.currentPage = 1;
+  renderExplorer();
+});
+const initialPage = window.location.hash.slice(1) || "dashboard";
+setPage(initialPage, false);
 loadData();
-setInterval(loadData,5*60*1000);
+// Refresh the displayed data periodically without changing the scanner schedule.
+setInterval(loadData, 5 * 60 * 1000);
 </script>
 </body>
 </html>
