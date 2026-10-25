@@ -36,9 +36,9 @@ def scan_symbol(symbol):
         "status": "unknown",
         "notes": []
     }
-    try:
+        try:
         quote_data = fetch("quote", {"symbol": symbol})
-         print(f"DEBUG {symbol}: {quote_data}")
+        print(f"DEBUG {symbol}: {quote_data}")
         quote = get_first_record(quote_data)
         if not quote or not quote.get("price"):
             result["status"] = "no_quote"
