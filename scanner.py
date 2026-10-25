@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """HVLK AI — US stock market scanner."""
 
@@ -94,3 +93,4 @@ def write_json(path: Path, payload: Any) -> None:
 
 
 def normalise_symbol(value: Any) -> str | None:
+    if not isinstance(value, str):
