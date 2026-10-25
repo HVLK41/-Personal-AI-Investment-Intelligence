@@ -1,16 +1,16 @@
 {
   "project": "HVLK AI",
-  "generated_at": "2026-10-25T16:06:09.719949+00:00",
+  "generated_at": "2026-10-25T18:43:17.384787+00:00",
   "market": "US",
-  "asset_scope": "US stocks only; actual instrument classification depends on universe filtering",
+  "asset_scope": "US stocks; symbol classification is not guaranteed perfect",
   "data_provider": "Yahoo Finance chart endpoint",
-  "universe_symbols": 7481,
-  "scanned_symbols": 7481,
-  "successful_quotes": 6483,
-  "failed_quotes": 998,
-  "coverage_percent": 86.66,
-  "scan_started_at": "2026-10-25T15:54:25.955775+00:00",
-  "scan_finished_at": "2026-10-25T16:06:09.719956+00:00",
+  "universe_symbols": 5939,
+  "scanned_symbols": 5939,
+  "successful_quotes": 5901,
+  "failed_quotes": 38,
+  "coverage_percent": 99.36,
+  "scan_started_at": "2026-10-25T18:35:23.888349+00:00",
+  "scan_finished_at": "2026-10-25T18:43:17.384808+00:00",
   "top_gainers": [
     {
       "symbol": "AIOK",
@@ -103,6 +103,26 @@
       "volume": 3671500,
       "average_volume": 5418665.0,
       "turnover_estimate": 3616427.55,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
+      "symbol": "JYD",
+      "name": "Jayud Global Logistics Limited - Class A Ordinary Shares",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 1.83,
+      "previous_close": 1.38,
+      "change_percent": 32.6087,
+      "volume": 3623900,
+      "average_volume": 2050935.0,
+      "turnover_estimate": 6631737.16,
       "currency": "USD",
       "market_cap": null,
       "dividend_per_share_year_estimate": 0.0,
@@ -373,6 +393,26 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
+      "symbol": "NIVF",
+      "name": "NewGenIvf Group Limited - Class A Ordinary Shares",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 1.46,
+      "previous_close": 1.192,
+      "change_percent": 22.4832,
+      "volume": 1083500,
+      "average_volume": 4101749.75,
+      "turnover_estimate": 1581910.04,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
       "symbol": "SAIH",
       "name": "SAIHEAT Limited - Class A Ordinary Shares",
       "exchange": "nasdaq",
@@ -408,6 +448,26 @@
       "dividend_per_share_year_estimate": 0.0,
       "dividend_yield_percent_estimate": 0.0,
       "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
+      "symbol": "RHI",
+      "name": "Robert Half Inc. Common Stock",
+      "exchange": "N",
+      "asset_type": "stock",
+      "price": 45.869999,
+      "previous_close": 37.68,
+      "change_percent": 21.7357,
+      "volume": 6894100,
+      "average_volume": 2013345.0,
+      "turnover_estimate": 316232359.64,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 2.36,
+      "dividend_yield_percent_estimate": 5.145,
+      "dividend_observations": 4,
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint"
@@ -573,26 +633,6 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
-      "symbol": "OCLTR",
-      "name": "OceanLight Acquisition Corporation - Rights",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 0.2,
-      "previous_close": 0.17,
-      "change_percent": 17.6471,
-      "volume": 62500,
-      "average_volume": 121822.22,
-      "turnover_estimate": 12500.0,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
       "symbol": "YDES",
       "name": "YD Bio Limited - Ordinary Shares",
       "exchange": "nasdaq",
@@ -643,6 +683,26 @@
       "volume": 7448300,
       "average_volume": 9843065.0,
       "turnover_estimate": 45583595.15,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
+      "symbol": "JUNS",
+      "name": "Jupiter Neurosciences, Inc. - Common Stock",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 2.98,
+      "previous_close": 2.58,
+      "change_percent": 15.5039,
+      "volume": 19800,
+      "average_volume": 68965.0,
+      "turnover_estimate": 59004.0,
       "currency": "USD",
       "market_cap": null,
       "dividend_per_share_year_estimate": 0.0,
@@ -873,6 +933,26 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
+      "symbol": "NPT",
+      "name": "Texxon Holding Limited - Ordinary shares",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 1.6,
+      "previous_close": 1.42,
+      "change_percent": 12.6761,
+      "volume": 14900,
+      "average_volume": 19700.0,
+      "turnover_estimate": 23840.0,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
       "symbol": "ETS",
       "name": "Elite Express Holding Inc. - Class A Common Stock",
       "exchange": "nasdaq",
@@ -923,86 +1003,6 @@
       "volume": 14100,
       "average_volume": 60555.0,
       "turnover_estimate": 27636.0,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "DGNX",
-      "name": "Diginex Limited - Ordinary Shares",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 1.4,
-      "previous_close": 1.25,
-      "change_percent": 12.0,
-      "volume": 361900,
-      "average_volume": 285555.0,
-      "turnover_estimate": 506659.99,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "ONEG",
-      "name": "OneConstruction Group Limited - Ordinary Shares",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 0.8,
-      "previous_close": 0.715,
-      "change_percent": 11.8881,
-      "volume": 90100,
-      "average_volume": 48640.0,
-      "turnover_estimate": 72080.0,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "EFOI",
-      "name": "Energy Focus, Inc. - Common Stock",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 2.93,
-      "previous_close": 2.62,
-      "change_percent": 11.8321,
-      "volume": 17800,
-      "average_volume": 14115.0,
-      "turnover_estimate": 52154.0,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "BATL",
-      "name": "Battalion Oil Corporation Common Stock",
-      "exchange": "A",
-      "asset_type": "stock",
-      "price": 0.851,
-      "previous_close": 0.762,
-      "change_percent": 11.6798,
-      "volume": 9132200,
-      "average_volume": 3837450.0,
-      "turnover_estimate": 7771502.3,
       "currency": "USD",
       "market_cap": null,
       "dividend_per_share_year_estimate": 0.0,
@@ -1135,26 +1135,6 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
-      "symbol": "DFDVW",
-      "name": "DeFi Development Corp. - Warrant",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 0.23,
-      "previous_close": 0.38,
-      "change_percent": -39.4737,
-      "volume": 16300,
-      "average_volume": 7825.0,
-      "turnover_estimate": 3749.0,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
       "symbol": "NANO",
       "name": "Forge Nano Holdings Inc. - Common stock",
       "exchange": "nasdaq",
@@ -1265,26 +1245,6 @@
       "volume": 1155500,
       "average_volume": 185655.0,
       "turnover_estimate": 369759.99,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "VFSWW",
-      "name": "VinFast Auto Ltd. - Warrant",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 0.18,
-      "previous_close": 0.27,
-      "change_percent": -33.3333,
-      "volume": 6300,
-      "average_volume": 6258.33,
-      "turnover_estimate": 1134.0,
       "currency": "USD",
       "market_cap": null,
       "dividend_per_share_year_estimate": 0.0,
@@ -1575,6 +1535,26 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
+      "symbol": "RGC",
+      "name": "Regencell Bioscience Holdings Limited - Ordinary Shares",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 7.67,
+      "previous_close": 9.81,
+      "change_percent": -21.8145,
+      "volume": 473900,
+      "average_volume": 395910.0,
+      "turnover_estimate": 3634813.04,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
       "symbol": "AAME",
       "name": "Atlantic American Corporation - Common Stock",
       "exchange": "nasdaq",
@@ -1585,6 +1565,26 @@
       "volume": 271400,
       "average_volume": 2576235.0,
       "turnover_estimate": 336536.0,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
+      "symbol": "NIPG",
+      "name": "NIP Group Inc. - American Depositary Shares",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 4.8,
+      "previous_close": 6.11,
+      "change_percent": -21.4403,
+      "volume": 7800,
+      "average_volume": 5672.22,
+      "turnover_estimate": 37440.0,
       "currency": "USD",
       "market_cap": null,
       "dividend_per_share_year_estimate": 0.0,
@@ -1895,26 +1895,6 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
-      "symbol": "NAMSW",
-      "name": "NewAmsterdam Pharma Company N.V. - Warrant",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 9.25,
-      "previous_close": 11.0,
-      "change_percent": -15.9091,
-      "volume": 1900,
-      "average_volume": 1050.0,
-      "turnover_estimate": 17575.0,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
       "symbol": "CRMT",
       "name": "America's Car-Mart, Inc. - Common Stock",
       "exchange": "nasdaq",
@@ -1995,16 +1975,36 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
-      "symbol": "RFAIU",
-      "name": "RF Acquisition Corp II - Unit",
+      "symbol": "MTEN",
+      "name": "Mingteng International Corporation Inc. - Class A Ordinary Shares",
       "exchange": "nasdaq",
       "asset_type": "stock",
-      "price": 27.6,
-      "previous_close": 32.389999,
-      "change_percent": -14.7885,
-      "volume": 1200,
-      "average_volume": 11141.18,
-      "turnover_estimate": 33120.0,
+      "price": 0.871,
+      "previous_close": 1.02,
+      "change_percent": -14.6078,
+      "volume": 157800,
+      "average_volume": 4211135.0,
+      "turnover_estimate": 137443.8,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
+      "symbol": "POAS",
+      "name": "Phaos Technology Holdings (Cayman) Limited Class A Ordinary Shares",
+      "exchange": "A",
+      "asset_type": "stock",
+      "price": 1.93,
+      "previous_close": 2.25,
+      "change_percent": -14.2222,
+      "volume": 47900,
+      "average_volume": 84754.95,
+      "turnover_estimate": 92447.0,
       "currency": "USD",
       "market_cap": null,
       "dividend_per_share_year_estimate": 0.0,
@@ -2157,6 +2157,26 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
+      "symbol": "NOK",
+      "name": "Nokia Corporation Sponsored American Depositary Shares",
+      "exchange": "N",
+      "asset_type": "stock",
+      "price": 8.14,
+      "previous_close": 7.88,
+      "change_percent": 3.2995,
+      "volume": 84564400,
+      "average_volume": 76606805.0,
+      "turnover_estimate": 688354245.03,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation - Common Stock",
       "exchange": "nasdaq",
@@ -2172,6 +2192,26 @@
       "dividend_per_share_year_estimate": 0.52,
       "dividend_yield_percent_estimate": 0.2465,
       "dividend_observations": 4,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
+      "symbol": "RIME",
+      "name": "Algorhythm Holdings, Inc. - Common Stock",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 0.11,
+      "previous_close": 0.12,
+      "change_percent": -8.3333,
+      "volume": 73585600,
+      "average_volume": 8271300.0,
+      "turnover_estimate": 8094415.96,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint"
@@ -2392,6 +2432,26 @@
       "dividend_per_share_year_estimate": 0.518,
       "dividend_yield_percent_estimate": 4.1943,
       "dividend_observations": 2,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
+      "symbol": "RIG",
+      "name": "Transocean Ltd (Switzerland) Common Stock",
+      "exchange": "N",
+      "asset_type": "stock",
+      "price": 6.41,
+      "previous_close": 6.08,
+      "change_percent": 5.4276,
+      "volume": 45944000,
+      "average_volume": 40673980.0,
+      "turnover_estimate": 294501032.99,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint"
@@ -2637,6 +2697,26 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
+      "symbol": "RKT",
+      "name": "Rocket Companies, Inc. Class A Common Stock",
+      "exchange": "N",
+      "asset_type": "stock",
+      "price": 11.73,
+      "previous_close": 11.74,
+      "change_percent": -0.0852,
+      "volume": 36271200,
+      "average_volume": 39270540.0,
+      "turnover_estimate": 425461159.4,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
       "symbol": "CLRO",
       "name": "ClearOne, Inc. - Common Stock",
       "exchange": "nasdaq",
@@ -2717,6 +2797,26 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
+      "symbol": "TSLA",
+      "name": "Tesla, Inc.  - Common Stock",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 372.220001,
+      "previous_close": 374.579987,
+      "change_percent": -0.63,
+      "volume": 34689700,
+      "average_volume": 36252695.0,
+      "turnover_estimate": 12912200176.35,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
       "symbol": "MARA",
       "name": "MARA Holdings, Inc. - Common Stock",
       "exchange": "nasdaq",
@@ -2752,26 +2852,6 @@
       "dividend_per_share_year_estimate": 0.0,
       "dividend_yield_percent_estimate": 0.0,
       "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "ITUB",
-      "name": "Itau Unibanco Banco Holding SA American Depositary Shares (Each repstg 500 Preferred shares)",
-      "exchange": "N",
-      "asset_type": "stock",
-      "price": 9.67,
-      "previous_close": 9.49,
-      "change_percent": 1.8967,
-      "volume": 31528500,
-      "average_volume": 41450090.0,
-      "turnover_estimate": 304880597.41,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.56903,
-      "dividend_yield_percent_estimate": 5.8845,
-      "dividend_observations": 15,
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint"
@@ -2917,101 +2997,21 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
-      "symbol": "ENVX",
-      "name": "Enovix Corporation - Common Stock",
+      "symbol": "JBLU",
+      "name": "JetBlue Airways Corporation - Common Stock",
       "exchange": "nasdaq",
       "asset_type": "stock",
-      "price": 2.79,
-      "previous_close": 2.55,
-      "change_percent": 9.4118,
-      "volume": 28784600,
-      "average_volume": 10057065.0,
-      "turnover_estimate": 80309032.9,
+      "price": 2.63,
+      "previous_close": 2.65,
+      "change_percent": -0.7547,
+      "volume": 29112500,
+      "average_volume": 27540490.0,
+      "turnover_estimate": 76565878.33,
       "currency": "USD",
       "market_cap": null,
       "dividend_per_share_year_estimate": 0.0,
       "dividend_yield_percent_estimate": 0.0,
       "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "CLF",
-      "name": "Cleveland-Cliffs Inc. Common Stock",
-      "exchange": "N",
-      "asset_type": "stock",
-      "price": 13.9,
-      "previous_close": 13.05,
-      "change_percent": 6.5134,
-      "volume": 27913400,
-      "average_volume": 25093730.0,
-      "turnover_estimate": 387996249.35,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "PATH",
-      "name": "UiPath, Inc. Class A Common Stock",
-      "exchange": "N",
-      "asset_type": "stock",
-      "price": 14.13,
-      "previous_close": 13.94,
-      "change_percent": 1.363,
-      "volume": 27407300,
-      "average_volume": 30004775.0,
-      "turnover_estimate": 387265152.14,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "CJMB",
-      "name": "Callan JMB Inc. - Common Stock",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 0.574,
-      "previous_close": 0.521,
-      "change_percent": 10.1727,
-      "volume": 27394200,
-      "average_volume": 7979000.0,
-      "turnover_estimate": 15724270.83,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "BAC",
-      "name": "Bank of America Corporation Common Stock",
-      "exchange": "N",
-      "asset_type": "stock",
-      "price": 50.560001,
-      "previous_close": 51.080002,
-      "change_percent": -1.018,
-      "volume": 27375300,
-      "average_volume": 42678695.0,
-      "turnover_estimate": 1384095205.59,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 1.16,
-      "dividend_yield_percent_estimate": 2.2943,
-      "dividend_observations": 4,
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint"
@@ -3094,6 +3094,26 @@
       "dividend_per_share_year_estimate": 1.06,
       "dividend_yield_percent_estimate": 0.3048,
       "dividend_observations": 4,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla, Inc.  - Common Stock",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 372.220001,
+      "previous_close": 374.579987,
+      "change_percent": -0.63,
+      "volume": 34689700,
+      "average_volume": 36252695.0,
+      "turnover_estimate": 12912200176.35,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint"
@@ -3314,6 +3334,26 @@
       "dividend_per_share_year_estimate": 0.0,
       "dividend_yield_percent_estimate": 0.0,
       "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+      "exchange": "N",
+      "asset_type": "stock",
+      "price": 418.51001,
+      "previous_close": 412.350006,
+      "change_percent": 1.4939,
+      "volume": 9478300,
+      "average_volume": 11373075.0,
+      "turnover_estimate": 3966763425.56,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 3.853,
+      "dividend_yield_percent_estimate": 0.9206,
+      "dividend_observations": 4,
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint"
@@ -3719,6 +3759,26 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
+      "symbol": "TXN",
+      "name": "Texas Instruments Incorporated - Common Stock",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 284.690002,
+      "previous_close": 279.5,
+      "change_percent": 1.8569,
+      "volume": 7512400,
+      "average_volume": 6227425.0,
+      "turnover_estimate": 2138705174.34,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 5.68,
+      "dividend_yield_percent_estimate": 1.9952,
+      "dividend_observations": 4,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
       "symbol": "NBIS",
       "name": "Nebius Group N.V. - Class A Ordinary Shares",
       "exchange": "nasdaq",
@@ -3899,6 +3959,26 @@
       "data_source": "Yahoo Finance chart endpoint"
     },
     {
+      "symbol": "NOW",
+      "name": "ServiceNow, Inc. Common Stock",
+      "exchange": "N",
+      "asset_type": "stock",
+      "price": 158.960007,
+      "previous_close": 157.0,
+      "change_percent": 1.2484,
+      "volume": 11083500,
+      "average_volume": 11244310.0,
+      "turnover_estimate": 1761833234.41,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint"
+    },
+    {
       "symbol": "KO",
       "name": "Coca-Cola Company (The) Common Stock",
       "exchange": "N",
@@ -3934,86 +4014,6 @@
       "dividend_per_share_year_estimate": 4.97,
       "dividend_yield_percent_estimate": 1.993,
       "dividend_observations": 3,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "MA",
-      "name": "Mastercard Incorporated Common Stock",
-      "exchange": "N",
-      "asset_type": "stock",
-      "price": 623.599976,
-      "previous_close": 633.210022,
-      "change_percent": -1.5177,
-      "volume": 2697600,
-      "average_volume": 3092125.0,
-      "turnover_estimate": 1682223294.14,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 3.48,
-      "dividend_yield_percent_estimate": 0.5581,
-      "dividend_observations": 4,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "AMT",
-      "name": "American Tower Corporation (REIT) Common Stock",
-      "exchange": "N",
-      "asset_type": "stock",
-      "price": 188.970001,
-      "previous_close": 181.570007,
-      "change_percent": 4.0756,
-      "volume": 8851800,
-      "average_volume": 3547935.0,
-      "turnover_estimate": 1672724656.81,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 7.07,
-      "dividend_yield_percent_estimate": 3.7413,
-      "dividend_observations": 4,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "PG",
-      "name": "Procter & Gamble Company (The) Common Stock",
-      "exchange": "N",
-      "asset_type": "stock",
-      "price": 161.020004,
-      "previous_close": 165.589996,
-      "change_percent": -2.7598,
-      "volume": 10330100,
-      "average_volume": 10056155.0,
-      "turnover_estimate": 1663352746.13,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 5.381,
-      "dividend_yield_percent_estimate": 3.3418,
-      "dividend_observations": 5,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint"
-    },
-    {
-      "symbol": "FIX",
-      "name": "Comfort Systems USA, Inc. Common Stock",
-      "exchange": "N",
-      "asset_type": "stock",
-      "price": 1160.859985,
-      "previous_close": 1279.369995,
-      "change_percent": -9.2632,
-      "volume": 1367300,
-      "average_volume": 455895.0,
-      "turnover_estimate": 1587243857.97,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 3.0,
-      "dividend_yield_percent_estimate": 0.2584,
-      "dividend_observations": 4,
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint"
@@ -4294,27 +4294,6 @@
       "volume_ratio": 10.62
     },
     {
-      "symbol": "METCZ",
-      "name": "Ramaco Resources, Inc. - 8.375% Senior Notes due 2029",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 24.700001,
-      "previous_close": 25.08,
-      "change_percent": -1.5151,
-      "volume": 92900,
-      "average_volume": 8800.0,
-      "turnover_estimate": 2294630.07,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.0,
-      "dividend_yield_percent_estimate": 0.0,
-      "dividend_observations": 0,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint",
-      "volume_ratio": 10.56
-    },
-    {
       "symbol": "MACI",
       "name": "Melar Acquisition Corp. I - Class A Ordinary Shares",
       "exchange": "nasdaq",
@@ -4378,27 +4357,6 @@
       "volume_ratio": 9.72
     },
     {
-      "symbol": "METCI",
-      "name": "Ramaco Resources, Inc. - 8.250% Senior Notes due 2030",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 24.66,
-      "previous_close": 24.885,
-      "change_percent": -0.9042,
-      "volume": 65900,
-      "average_volume": 7057.89,
-      "turnover_estimate": 1625093.99,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 2.064,
-      "dividend_yield_percent_estimate": 8.3698,
-      "dividend_observations": 4,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint",
-      "volume_ratio": 9.34
-    },
-    {
       "symbol": "GPUS",
       "name": "Hyperscale Data, Inc. Common Stock",
       "exchange": "A",
@@ -4409,6 +4367,27 @@
       "volume": 381278900,
       "average_volume": 40897810.0,
       "turnover_estimate": 64817413.68,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint",
+      "volume_ratio": 9.32
+    },
+    {
+      "symbol": "KEYY",
+      "name": "Keystone Acquisition Corp. - Class A Ordinary Shares",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 9.91,
+      "previous_close": 9.95,
+      "change_percent": -0.402,
+      "volume": 1371700,
+      "average_volume": 147183.33,
+      "turnover_estimate": 13593546.79,
       "currency": "USD",
       "market_cap": null,
       "dividend_per_share_year_estimate": 0.0,
@@ -4481,6 +4460,27 @@
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint",
       "volume_ratio": 8.93
+    },
+    {
+      "symbol": "RIME",
+      "name": "Algorhythm Holdings, Inc. - Common Stock",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 0.11,
+      "previous_close": 0.12,
+      "change_percent": -8.3333,
+      "volume": 73585600,
+      "average_volume": 8271300.0,
+      "turnover_estimate": 8094415.96,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint",
+      "volume_ratio": 8.9
     },
     {
       "symbol": "TACO",
@@ -4714,58 +4714,16 @@
       "volume_ratio": 6.22
     },
     {
-      "symbol": "VSECU",
-      "name": "VSE Corporation - Tangible Equity Units",
+      "symbol": "NMP",
+      "name": "NMP Acquisition Corp. - Class A Ordinary Shares",
       "exchange": "nasdaq",
       "asset_type": "stock",
-      "price": 39.130001,
-      "previous_close": 40.869999,
-      "change_percent": -4.2574,
-      "volume": 401300,
-      "average_volume": 67105.26,
-      "turnover_estimate": 15702869.43,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 1.406,
-      "dividend_yield_percent_estimate": 3.5932,
-      "dividend_observations": 2,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint",
-      "volume_ratio": 5.98
-    },
-    {
-      "symbol": "PFFL",
-      "name": "ETRACS 2xMonthly Pay Leveraged Preferred Stock Index ETN due September 25, 2048",
-      "exchange": "P",
-      "asset_type": "stock",
-      "price": 6.42,
-      "previous_close": 6.42,
+      "price": 10.41,
+      "previous_close": 10.41,
       "change_percent": 0.0,
-      "volume": 14700,
-      "average_volume": 2465.0,
-      "turnover_estimate": 94374.0,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 0.923,
-      "dividend_yield_percent_estimate": 14.3769,
-      "dividend_observations": 12,
-      "quote_timestamp": 1792762200,
-      "quote_date_utc": "2026-10-23",
-      "data_source": "Yahoo Finance chart endpoint",
-      "volume_ratio": 5.96
-    },
-    {
-      "symbol": "GRN",
-      "name": "iPath Series B Carbon Exchange-Traded Notes",
-      "exchange": "P",
-      "asset_type": "stock",
-      "price": 34.617001,
-      "previous_close": 34.610001,
-      "change_percent": 0.0202,
-      "volume": 9500,
-      "average_volume": 1660.0,
-      "turnover_estimate": 328861.51,
+      "volume": 61900,
+      "average_volume": 10410.0,
+      "turnover_estimate": 644378.99,
       "currency": "USD",
       "market_cap": null,
       "dividend_per_share_year_estimate": 0.0,
@@ -4774,7 +4732,7 @@
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint",
-      "volume_ratio": 5.72
+      "volume_ratio": 5.95
     },
     {
       "symbol": "EVG",
@@ -4819,25 +4777,25 @@
       "volume_ratio": 5.5
     },
     {
-      "symbol": "FGBIP",
-      "name": "First Guaranty Bancshares, Inc. - 6.75% Series A Fixed-Rate Non-Cumulative Perpetual Preferred Stock",
+      "symbol": "KFII",
+      "name": "K&F Growth Acquisition Corp. II - Class A Ordinary shares",
       "exchange": "nasdaq",
       "asset_type": "stock",
-      "price": 16.91,
-      "previous_close": 16.950001,
-      "change_percent": -0.236,
-      "volume": 54100,
-      "average_volume": 10640.0,
-      "turnover_estimate": 914830.99,
+      "price": 10.71,
+      "previous_close": 10.72,
+      "change_percent": -0.0933,
+      "volume": 1168000,
+      "average_volume": 213168.75,
+      "turnover_estimate": 12509280.04,
       "currency": "USD",
       "market_cap": null,
-      "dividend_per_share_year_estimate": 1.688,
-      "dividend_yield_percent_estimate": 9.9823,
-      "dividend_observations": 4,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
       "quote_timestamp": 1792762200,
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint",
-      "volume_ratio": 5.08
+      "volume_ratio": 5.48
     },
     {
       "symbol": "EMA",
@@ -4945,6 +4903,27 @@
       "volume_ratio": 4.93
     },
     {
+      "symbol": "TVGN",
+      "name": "Tevogen Inc. - Common Stock",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 6.53,
+      "previous_close": 6.81,
+      "change_percent": -4.1116,
+      "volume": 39400,
+      "average_volume": 8070.0,
+      "turnover_estimate": 257282.01,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint",
+      "volume_ratio": 4.88
+    },
+    {
       "symbol": "IEAG",
       "name": "Infinite Eagle Acquisition Corp. - Class A Ordinary Shares",
       "exchange": "nasdaq",
@@ -5029,27 +5008,6 @@
       "volume_ratio": 4.56
     },
     {
-      "symbol": "PRHIZ",
-      "name": "Presurance Holdings, Inc. - 9.75% Senior Unsecured Notes due 2028",
-      "exchange": "nasdaq",
-      "asset_type": "stock",
-      "price": 25.17,
-      "previous_close": 24.4,
-      "change_percent": 3.1557,
-      "volume": 7885,
-      "average_volume": 1793.15,
-      "turnover_estimate": 198465.45,
-      "currency": "USD",
-      "market_cap": null,
-      "dividend_per_share_year_estimate": 2.4375,
-      "dividend_yield_percent_estimate": 9.6841,
-      "dividend_observations": 4,
-      "quote_timestamp": 1792675800,
-      "quote_date_utc": "2026-10-22",
-      "data_source": "Yahoo Finance chart endpoint",
-      "volume_ratio": 4.4
-    },
-    {
       "symbol": "CLPS",
       "name": "CLPS Incorporation - Common Stock",
       "exchange": "nasdaq",
@@ -5069,86 +5027,57 @@
       "quote_date_utc": "2026-10-23",
       "data_source": "Yahoo Finance chart endpoint",
       "volume_ratio": 4.37
+    },
+    {
+      "symbol": "OWLS",
+      "name": "OBOOK Holdings Inc. - Class A Common Shares",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 1.98,
+      "previous_close": 2.8,
+      "change_percent": -29.2857,
+      "volume": 158200,
+      "average_volume": 36190.0,
+      "turnover_estimate": 313236.0,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint",
+      "volume_ratio": 4.37
+    },
+    {
+      "symbol": "BGM",
+      "name": "BGM Group Ltd. - Class A Ordinary Shares",
+      "exchange": "nasdaq",
+      "asset_type": "stock",
+      "price": 7.85,
+      "previous_close": 8.2,
+      "change_percent": -4.2683,
+      "volume": 54600,
+      "average_volume": 12589.26,
+      "turnover_estimate": 428609.99,
+      "currency": "USD",
+      "market_cap": null,
+      "dividend_per_share_year_estimate": 0.0,
+      "dividend_yield_percent_estimate": 0.0,
+      "dividend_observations": 0,
+      "quote_timestamp": 1792762200,
+      "quote_date_utc": "2026-10-23",
+      "data_source": "Yahoo Finance chart endpoint",
+      "volume_ratio": 4.34
     }
   ],
   "errors_by_type": {
-    "HTTP 404": 471,
-    "HTTP 429": 527
+    "HTTP 404": 38
   },
   "sample_errors": [
     {
-      "symbol": "AAC.W",
-      "name": "Ares Acquisition Corporation III Redeemable warrants, each whole warrant exercisable for one Class A ordinary share at an exercise price of $11.50",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AAC.U",
-      "name": "Ares Acquisition Corporation III Units, each consisting of one Class A ordinary share and one-tenth of one redeemable warrant",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ABR$D",
-      "name": "Arbor Realty Trust 6.375% Series D Cumulative Redeemable Preferred Stock, Liquidation Preference $25.00 per Share",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ABR$E",
-      "name": "Arbor Realty Trust 6.25% Series E Cumulative Redeemable Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ABR$F",
-      "name": "Arbor Realty Trust 6.25% Series F Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock, Liquidation Preference $25.00 per share",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ACP$A",
-      "name": "abrdn Income Credit Strategies Fund 5.250% Series A Perpetual Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ACR$C",
-      "name": "ACRES Commercial Realty Corp. 8.625% Fixed-to-Floating Series C Cumulative Redeemable Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ACR$D",
-      "name": "ACRES Commercial Realty Corp. 7.875% Series D Cumulative Redeemable Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ADC$A",
-      "name": "Agree Realty Corporation Depositary Shares, each representing 1/1,000th of a 4.250% Series A Cumulative Redeemable Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AGM$D",
-      "name": "Federal Agricultural Mortgage Corporation 5.700% Non-Cumulative Preferred Stock, Series D",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AGM$E",
-      "name": "Federal Agricultural Mortgage Corporation 5.750% Non-Cumulative Preferred Stock, Series E",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AGM$F",
-      "name": "Federal Agricultural Mortgage Corporation 5.250% Non-Cumulative Preferred Stock, Series F",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AGM$G",
-      "name": "Federal Agricultural Mortgage Corporation 4.875% Non-Cumulative Preferred Stock, Series G",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AGM$H",
-      "name": "Federal Agricultural Mortgage Corporation 6.500% Non-Cumulative Preferred Stock, Series H",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AGM$I",
-      "name": "Federal Agricultural Mortgage Corporation 6.875% Non-Cumulative Preferred Stock, Series I",
+      "symbol": "AHL$D",
+      "name": "Aspen Insurance Holdings Limited 5.625% Perpetual Non-Cumulative Preference Shares",
       "error": "HTTP 404"
     },
     {
@@ -5157,133 +5086,8 @@
       "error": "HTTP 404"
     },
     {
-      "symbol": "AHL$D",
-      "name": "Aspen Insurance Holdings Limited 5.625% Perpetual Non-Cumulative Preference Shares",
-      "error": "HTTP 404"
-    },
-    {
       "symbol": "AHL$F",
       "name": "Aspen Insurance Holdings Limited Depositary Shares, each representing a 1/1,000th Interest in a 7.00% Perpetual Non-Cumulative Preference Share",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AHT$D",
-      "name": "Ashford Hospitality Trust Inc 8.45% Series D Cumulative Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AHRT$A",
-      "name": "AH Realty Trust, Inc. 6.75% Series A Cumulative Redeemable Perpetual Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AHT$F",
-      "name": "Ashford Hospitality Trust Inc 7.375% Series F Cumulative Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AHT$G",
-      "name": "Ashford Hospitality Trust Inc 7.375% Series G Cumulative Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AHT$H",
-      "name": "Ashford Hospitality Trust Inc 7.50% Series H Cumulative Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AHT$I",
-      "name": "Ashford Hospitality Trust Inc 7.50% Series I Cumulative Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AIIA.R",
-      "name": "AI Infrastructure Acquisition Corp. Rights, each entitling the holder to receive one-fifth (1/5) of one Class A Ordinary Share",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AIIA.U",
-      "name": "AI Infrastructure Acquisition Corp. Units, each consisting of one Class A Ordinary Share and one Right",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ALB$A",
-      "name": "Albemarle Corporation Depositary Shares each representing a 1/20th of 7.25% Series A Mandatory Convertible Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ALL$B",
-      "name": "Allstate Corporation (The) 5.100% Fixed-to-Floating Rate Subordinated Debentures due 2053",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ALL$H",
-      "name": "Allstate Corporation (The) Depositary Shares each representing a 1/1,000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock, Series H",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ALL$I",
-      "name": "Allstate Corporation (The) Depositary Shares each representing a 1/1,000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock, Series I",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ALL$J",
-      "name": "Allstate Corporation (The) Depositary Shares each representing a 1/1,000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock, Series J",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ALTG$A",
-      "name": "Alta Equipment Group Inc. Depositary Shares (each representing 1/1000th in a share of 10% Series A Cumulative Perpetual Preferred Stock)",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ALUB.U",
-      "name": "Alussa Energy Acquisition Corp. II Units, each consisting of one Class A ordinary share and one-third of one redeemable warrant",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ALUB.W",
-      "name": "Alussa Energy Acquisition Corp. II Redeemable Warrants, each whole warrant exercisable for one Class A ordinary share at an exercise price of $11.50 per share",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AMH$G",
-      "name": "American Homes 4 Rent Series G cumulative redeemable perpetual preferred shares of beneficial interest",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AMH$H",
-      "name": "American Homes 4 Rent Series H cumulative redeemable perpetual Preferred Shares of Beneficial Interest",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "AMPX.W",
-      "name": "Amprius Technologies, Inc. Warrants to purchase one share of Common Stock at an exercise price of $11.50 per share",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ANG$D",
-      "name": "American National Group Inc. Depositary Shares, each representing a 1/1000th interest in a share of 7.375% Fixed-Rate Non-Cumulative Preferred Stock, Series D",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ARES$B",
-      "name": "Ares Management Corporation 6.75% Series B Mandatory Convertible Preferred Stock",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ARR$C",
-      "name": "ARMOUR Residential REIT, Inc. 7% Series C Cumulative Redeemable Preferred Stock (liquidation preference $25.00 per share)",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ASB$E",
-      "name": "Associated Banc-Corp Depositary Shares, each representing a 1/40th interest in a share of 5.875% Non-Cumulative Perpetual Preferred Stock, Series E",
-      "error": "HTTP 404"
-    },
-    {
-      "symbol": "ASB$F",
-      "name": "Associated Banc-Corp Depositary Shares, each representing a 1/40th interest in a share of Associated Banc-Corp 5.625% Non-Cumulative Perpetual Preferred Stock, Series F",
       "error": "HTTP 404"
     },
     {
@@ -5307,33 +5111,168 @@
       "error": "HTTP 404"
     },
     {
-      "symbol": "AUB$A",
-      "name": "Atlantic Union Bankshares Corporation Depositary Shares each representing a 1/400th ownership interest in a share of 6.875% Perpetual Non-Cumulative Preferred Stock, Series A",
+      "symbol": "BAC$E",
+      "name": "Bank of America Corporation Depositary Sh repstg 1/1000th Perp Pfd Ser E",
       "error": "HTTP 404"
     },
     {
-      "symbol": "AXS$E",
-      "name": "Axis Capital Holdings Limited Depositary Shares, each representing 1/100th interest in a share of a 5.50% Series E Preferred Shares",
+      "symbol": "BAC$L",
+      "name": "Bank of America Corporation Non Cumulative Perpetual Conv Pfd Ser L",
       "error": "HTTP 404"
     },
     {
-      "symbol": "BA$A",
-      "name": "Boeing Company (The) Depositary Shares, each representing a 1/20th interest in a share of 6.00% Series A Mandatory Convertible Preferred Stock, par value $1.00",
+      "symbol": "EPR$E",
+      "name": "EPR Properties Series E Cumulative Conv Pfd Shs Ser E",
       "error": "HTTP 404"
     },
     {
-      "symbol": "BAC$B",
-      "name": "Bank of America Corporation Depositary Shares, each representing a 1/1,000th interest in a share of 6.000% Non-Cumulative Preferred Stock, Series GG",
+      "symbol": "EQH$A",
+      "name": "Equitable Holdings, Inc. Depositary Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "FITB$I",
+      "name": "Fifth Third Bancorp Depositary Share repstg 1/1000th Ownership Interest Perp Pfd Series I",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "GAB$H",
+      "name": "Gabelli Equity Trust, Inc. (The) Pfd Ser H",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "GGN$B",
+      "name": "GAMCO Global Gold, Natural Reources & Income Trust 5.00% Series B Cumulative 25.00 Liquidation Preference",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "GS$D",
+      "name": "Goldman Sachs Group, Inc. (The) Dep Shs repstg 1/1000 Pfd Ser D Fltg",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "MET$E",
+      "name": "MetLife, Inc. Depositary Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "MS$A",
+      "name": "Morgan Stanley Dep Shs repstg 1/1000 Pfd Ser A",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "MS$F",
+      "name": "Morgan Stanley Dep Shs Rpstg 1/1000th Int Prd Ser F Fxd to Flag",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "MSGK.V",
+      "name": "Madison Square Garden Sports Corp. Class A Common Stock When-Issued",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "MSGR.V",
+      "name": "MSG Rangers Corp. Class A Common Stock When-Issued",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "NLY$F",
+      "name": "Annaly Capital Management Inc 6.95% Series F",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "RNR$F",
+      "name": "RenaissanceRe Holdings Ltd. Depositary Shares, each Representing a 1/1,000th Interest in a 5.750% Series F Preference Share",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "RNR$G",
+      "name": "RenaissanceRe Holdings Ltd. Depositary Shares, each representing a 1/1,000th interest in a share of 4.20% Series G Preference Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "SCE$L",
+      "name": "SCE TRUST VI",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "SCE$M",
+      "name": "SCE Trust VII 7.50% Trust Preference Securities",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "SCE$N",
+      "name": "SCE Trust VIII 6.95% Trust Preference Securities",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "STT$G",
+      "name": "State Street Corporation Depositary shares, each representing a 1/4,000th ownership interest in a share of Fixed-to-Floating Rate Non-Cumulative",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "TFC$I",
+      "name": "Truist Financial Corporation Depositary Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "TRTN$A",
+      "name": "Triton International Limited 8.50% Series A Cumulative Redeemable Perpetual  Preference Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "TRTN$C",
+      "name": "Triton International Limited 7.375% Series C Cumulative Redeemable Perpetual Preference Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "TRTN$B",
+      "name": "Triton International Limited 8.00% Series B Cumulative Redeemable Perpetual Preference Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "TRTN$D",
+      "name": "Triton International Limited 6.875% Series D Cumulative Redeemable Perpetual Preference Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "TRTN$E",
+      "name": "Triton International Limited 5.75% Series E Cumulative Redeemable Perpetual Preference Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "TRTN$F",
+      "name": "Triton International Limited 7.625% Series F Cumulative Redeemable Perpetual Preference Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "TRTN$G",
+      "name": "Triton International Limited 7.500% Series G Cumulative Redeemable Perpetual Preference Shares",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "USB$A",
+      "name": "U.S. Bancorp Depositary Shares, Each representing a 1/100th interest in a share of Series A Non-CumulativePerpetual Pfd Stock",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "USB$H",
+      "name": "U.S. Bancorp Depositary Shares repstg 1/1000th Pfd Ser B",
+      "error": "HTTP 404"
+    },
+    {
+      "symbol": "VNO$L",
+      "name": "Vornado Realty Trust Pfd Ser L %",
       "error": "HTTP 404"
     }
   ],
   "data_notes": [
-    "Změna ceny porovnává poslední dvě dostupné denní závěrečné ceny.",
-    "Mimo obchodní hodiny může jít o poslední dostupný obchodní den, nikoliv dnešní změnu.",
-    "Finanční obrat je odhad: poslední cena násobená posledním denním objemem.",
-    "Průměrný objem vychází z posledních až 20 dostupných denních pozorování včetně posledního dne.",
-    "Dividendové údaje jsou odhady odvozené z událostí vrácených poskytovatelem.",
-    "Neúspěšné symboly nejsou automaticky důkazem, že akcie neexistuje.",
-    "Změna ceny a objem vycházejí z denních dat, nejde o živé intradenní kotace."
+    "Denní závěrečné ceny, nikoli živé intradenní kotace.",
+    "Změna porovnává poslední dvě dostupné denní závěrečné ceny.",
+    "Obrat je odhad: poslední cena × poslední denní objem.",
+    "Průměr objemu vychází z posledních až 20 dostupných dnů.",
+    "Dividendové údaje jsou odhady z historických událostí poskytovatele.",
+    "HTTP 404 znamená, že zdroj pro daný požadavek data nenašel.",
+    "HTTP 429 znamená omezení požadavků poskytovatelem."
   ]
 }
