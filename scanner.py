@@ -1,5 +1,6 @@
 import json
 import random
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -8,64 +9,63 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
-DATA_DIR = ROOT / "data"
-UNIVERSE_FILE = DATA_DIR / "universe.json"
-RESULTS_FILE = DATA_DIR / "results.json"
-MARKET_FILE = DATA_DIR / "market.json"
-WORKERS = 5
-TIMEOUT_SECONDS = 20
-RETRIES = 2
+DATA = ROOT / "data"
+UNIVERSE_FILE = DATA / "universe.json"
+RESULTS_FILE = DATA / "results.json"
+MARKET_FILE = DATA / "market.json"
+WORKERS = 2
+TIMEOUT = 20
+RETRIES = 3
 SAVE_EVERY = 100
 TOP_COUNT = 50
-USER_AGENT = "HVLK-AI/1.0 (personal market research)"
-def utc_now():
+USER_AGENT = "HVLK-AI/1.0 personal research"
+_cooldown_lock = threading.Lock()
+_cooldown_until = 0.0
+def now_utc():
     return datetime.now(timezone.utc).isoformat()
-def write_json(path, data):
+def write_json(path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(
-        json.dumps(data, ensure_ascii=False, indent=2),
+    temp = path.with_suffix(path.suffix + ".tmp")
+    temp.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    temporary.replace(path)
+    temp.replace(path)
+def wait_for_cooldown():
+    while True:
+        with _cooldown_lock:
+            remaining = _cooldown_until - time.monotonic()
+        if remaining <= 0:
+            return
+        time.sleep(min(remaining, 5))
+def extend_cooldown(seconds):
+    global _cooldown_until
+    with _cooldown_lock:
+        _cooldown_until = max(
+            _cooldown_until,
+            time.monotonic() + seconds,
+        )
 def load_universe():
     if not UNIVERSE_FILE.exists():
-        raise FileNotFoundError(
-            "Chybí data/universe.json. Nejdřív spusť universe.py."
-        )
-    data = json.loads(
+        raise FileNotFoundError("Chybí data/universe.json.")
+    payload = json.loads(
         UNIVERSE_FILE.read_text(encoding="utf-8")
     )
-    if not isinstance(data, dict):
-        raise RuntimeError(
-            "data/universe.json nemá očekávanou strukturu."
-        )
-    symbols = data.get("results", [])
-    if not isinstance(symbols, list) or not symbols:
-        raise RuntimeError(
-            "Seznam akcií je prázdný nebo má neplatný formát."
-        )
+    items = payload.get("results", [])
+    if not isinstance(items, list) or not items:
+        raise RuntimeError("Seznam symbolů je prázdný.")
     unique = {}
-    for item in symbols:
+    for item in items:
         if not isinstance(item, dict):
             continue
         symbol = str(item.get("symbol", "")).strip().upper()
-        if not symbol:
-            continue
-        if symbol not in unique:
-            instrument = dict(item)
-            instrument["symbol"] = symbol
-            unique[symbol] = instrument
-    instruments = list(unique.values())
-    if not instruments:
-        raise RuntimeError(
-            "Po odstranění neplatných položek nezůstaly žádné symboly."
-        )
-    return data, instruments
-def yahoo_symbol(symbol):
-    # Například BRK.B se na Yahoo Finance obvykle zapisuje BRK-B.
-    return symbol.replace(".", "-")
-def request_json(url):
+        if symbol and symbol not in unique:
+            row = dict(item)
+            row["symbol"] = symbol
+            unique[symbol] = row
+    return list(unique.values())
+def fetch_json(url):
+    wait_for_cooldown()
     request = urllib.request.Request(
         url,
         headers={
@@ -73,186 +73,126 @@ def request_json(url):
             "Accept": "application/json",
         },
     )
-    with urllib.request.urlopen(
-        request,
-        timeout=TIMEOUT_SECONDS,
-    ) as response:
-        return json.loads(
-            response.read().decode("utf-8")
-        )
+    with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
+        return json.loads(response.read().decode("utf-8"))
 def fetch_quote(instrument):
     symbol = instrument["symbol"]
-    provider_symbol = yahoo_symbol(symbol)
-    encoded_symbol = urllib.parse.quote(
-        provider_symbol,
-        safe="-^=",
-    )
+    yahoo_symbol = symbol.replace(".", "-")
+    encoded = urllib.parse.quote(yahoo_symbol, safe="-^=")
     url = (
         "https://query1.finance.yahoo.com/v8/finance/chart/"
-        f"{encoded_symbol}?range=1y&interval=1d&events=div%2Csplits"
+        f"{encoded}?range=1y&interval=1d&events=div%2Csplits"
     )
     last_error = "Neznámá chyba"
     for attempt in range(RETRIES + 1):
         try:
-            payload = request_json(url)
+            payload = fetch_json(url)
             chart = payload.get("chart", {})
-            chart_error = chart.get("error")
-            if chart_error:
-                description = chart_error.get(
-                    "description",
-                    "Chyba Yahoo Finance",
+            if chart.get("error"):
+                description = chart["error"].get(
+                    "description", "Chyba Yahoo Finance"
                 )
                 return None, f"Yahoo: {description}"
-            chart_results = chart.get("result") or []
-            if not chart_results:
-                return None, "Yahoo nevrátilo cenová data"
-            result = chart_results[0]
+            results = chart.get("result") or []
+            if not results:
+                return None, "Yahoo nevrátilo data"
+            result = results[0]
             timestamps = result.get("timestamp") or []
-            indicators = result.get("indicators") or {}
-            quote_groups = indicators.get("quote") or []
-            if not timestamps or not quote_groups:
-                return None, "Chybí historie cen nebo objemu"
-            quote = quote_groups[0]
+            groups = (
+                result.get("indicators", {}).get("quote") or []
+            )
+            if not timestamps or not groups:
+                return None, "Chybí historie cen"
+            quote = groups[0]
             closes = quote.get("close") or []
             volumes = quote.get("volume") or []
             observations = []
             for index, timestamp in enumerate(timestamps):
-                close = (
-                    closes[index]
-                    if index < len(closes)
-                    else None
-                )
-                volume = (
-                    volumes[index]
-                    if index < len(volumes)
-                    else None
-                )
+                close = closes[index] if index < len(closes) else None
+                volume = volumes[index] if index < len(volumes) else 0
                 if close is None:
                     continue
                 try:
                     close = float(close)
-                    if close <= 0:
-                        continue
+                    volume = max(0, int(volume or 0))
                 except (ValueError, TypeError):
                     continue
-                try:
-                    volume = int(volume or 0)
-                except (ValueError, TypeError):
-                    volume = 0
+                if close <= 0:
+                    continue
                 observations.append({
                     "timestamp": int(timestamp),
                     "close": close,
-                    "volume": max(volume, 0),
+                    "volume": volume,
                 })
             if not observations:
-                return None, "Žádné použitelné denní ceny"
+                return None, "Žádné použitelné ceny"
             latest = observations[-1]
-            previous = (
-                observations[-2]
-                if len(observations) >= 2
-                else None
-            )
-            change_percent = None
+            previous = observations[-2] if len(observations) > 1 else None
+            change = None
             if previous and previous["close"]:
-                change_percent = (
-                    (
-                        latest["close"] - previous["close"]
-                    )
-                    / previous["close"]
-                    * 100
+                change = (
+                    (latest["close"] - previous["close"])
+                    / previous["close"] * 100
                 )
-            # Průměr objemu z posledních až 20 dostupných pozorování.
-            volume_history = [
-                row["volume"]
-                for row in observations[-20:]
-                if row["volume"] > 0
+            vols = [
+                item["volume"]
+                for item in observations[-20:]
+                if item["volume"] > 0
             ]
-            average_volume = (
-                sum(volume_history) / len(volume_history)
-                if volume_history
-                else None
-            )
-            # Odhad obratu: cena posledního dne × objem posledního dne.
-            turnover = latest["close"] * latest["volume"]
-            meta = result.get("meta") or {}
-            currency = meta.get("currency") or "USD"
-            dividend_events = (
-                (result.get("events") or {}).get("dividends") or {}
-            )
-            cutoff = (
-                latest["timestamp"] - 365 * 24 * 60 * 60
-            )
-            dividend_total = 0.0
+            avg_volume = sum(vols) / len(vols) if vols else None
+            events = result.get("events") or {}
+            dividends = events.get("dividends") or {}
+            cutoff = latest["timestamp"] - 365 * 86400
+            annual_dividend = 0.0
             dividend_count = 0
-            for event in dividend_events.values():
+            for event in dividends.values():
                 try:
-                    event_date = int(event.get("date", 0))
-                    amount = float(event.get("amount", 0))
-                    if event_date >= cutoff and amount > 0:
-                        dividend_total += amount
-                        dividend_count += 1
-                except (
-                    ValueError,
-                    TypeError,
-                    AttributeError,
-                ):
-                    continue
+                    if int(event.get("date", 0)) >= cutoff:
+                        amount = float(event.get("amount", 0))
+                        if amount > 0:
+                            annual_dividend += amount
+                            dividend_count += 1
+                except (ValueError, TypeError, AttributeError):
+                    pass
+            price = latest["close"]
             dividend_yield = (
-                dividend_total / latest["close"] * 100
-                if latest["close"] > 0
-                else None
+                annual_dividend / price * 100 if price > 0 else None
             )
-            output = {
+            return {
                 "symbol": symbol,
-                "name": instrument.get("name") or symbol,
-                "exchange": instrument.get("exchange") or "Unknown",
+                "name": instrument.get("name", symbol),
+                "exchange": instrument.get("exchange", "Unknown"),
                 "asset_type": "stock",
-                "price": round(latest["close"], 6),
-                "previous_close": (
-                    round(previous["close"], 6)
-                    if previous
-                    else None
-                ),
-                "change_percent": (
-                    round(change_percent, 4)
-                    if change_percent is not None
-                    else None
-                ),
+                "price": round(price, 6),
+                "previous_close": round(previous["close"], 6) if previous else None,
+                "change_percent": round(change, 4) if change is not None else None,
                 "volume": latest["volume"],
-                "average_volume": (
-                    round(average_volume, 2)
-                    if average_volume is not None
-                    else None
-                ),
-                "turnover_estimate": round(turnover, 2),
-                "currency": currency,
-                "market_cap": meta.get("marketCap"),
-                "dividend_per_share_year_estimate": round(
-                    dividend_total, 6
-                ),
-                "dividend_yield_percent_estimate": (
-                    round(dividend_yield, 4)
-                    if dividend_yield is not None
-                    else None
-                ),
+                "average_volume": round(avg_volume, 2) if avg_volume is not None else None,
+                "turnover_estimate": round(price * latest["volume"], 2),
+                "currency": (result.get("meta") or {}).get("currency", "USD"),
+                "market_cap": (result.get("meta") or {}).get("marketCap"),
+                "dividend_per_share_year_estimate": round(annual_dividend, 6),
+                "dividend_yield_percent_estimate": round(dividend_yield, 4) if dividend_yield is not None else None,
                 "dividend_observations": dividend_count,
                 "quote_timestamp": latest["timestamp"],
                 "quote_date_utc": datetime.fromtimestamp(
-                    latest["timestamp"],
-                    timezone.utc,
+                    latest["timestamp"], timezone.utc
                 ).strftime("%Y-%m-%d"),
                 "data_source": "Yahoo Finance chart endpoint",
-            }
-            return output, None
+            }, None
         except urllib.error.HTTPError as error:
             last_error = f"HTTP {error.code}"
-            # Opakování 404 nemá smysl: symbol nebo endpoint
-            # nebyl na dané adrese nalezen.
             if error.code == 404:
                 return None, last_error
-            if error.code not in (
-                408, 425, 429, 500, 502, 503, 504
-            ):
+            if error.code == 429:
+                # Sdílená pauza i pro ostatní pracovní vlákna.
+                wait_seconds = min(60 * (2 ** attempt), 600)
+                extend_cooldown(wait_seconds)
+                last_error = f"HTTP 429; čekání {wait_seconds}s"
+            elif error.code in (408, 425, 500, 502, 503, 504):
+                wait_seconds = min(5 * (2 ** attempt), 60)
+                time.sleep(wait_seconds + random.uniform(0.2, 2.0))
+            else:
                 return None, last_error
         except (
             urllib.error.URLError,
@@ -260,248 +200,129 @@ def fetch_quote(instrument):
             json.JSONDecodeError,
             OSError,
         ) as error:
-            last_error = (
-                f"{type(error).__name__}: {error}"
-            )
+            last_error = f"{type(error).__name__}: {error}"
+            time.sleep(min(3 * (2 ** attempt), 30))
         if attempt < RETRIES:
-            delay = (2 ** attempt) + random.uniform(0.2, 1.0)
-            time.sleep(delay)
+            wait_for_cooldown()
     return None, last_error
-def rank_rows(rows, key, reverse=True):
-    valid = [
-        row
-        for row in rows
-        if row.get(key) is not None
-    ]
-    return sorted(
-        valid,
-        key=lambda row: row[key],
-        reverse=reverse,
-    )[:TOP_COUNT]
-def count_error_types(errors):
+def rank(rows, key, reverse=True):
+    valid = [row for row in rows if row.get(key) is not None]
+    return sorted(valid, key=lambda row: row[key], reverse=reverse)[:TOP_COUNT]
+def error_counts(errors):
     counts = {}
     for item in errors:
-        error = item.get("error", "Neznámá chyba")
-        key = error.split(":", 1)[0]
+        key = item["error"].split(":", 1)[0]
         counts[key] = counts.get(key, 0) + 1
     return counts
-def build_market_data(total_symbols, rows, errors, started_at):
-    # Funkce přijímá počet symbolů jako celé číslo.
-    # Podporuje také seznam pro případ budoucího rozšíření.
-    if isinstance(total_symbols, int):
-        total = total_symbols
-    else:
-        total = len(total_symbols)
-    valid_changes = [
-        row
-        for row in rows
-        if row.get("change_percent") is not None
-    ]
-    unusual_volume = []
+def build_market(total, rows, errors, started):
+    gainers = [row for row in rows if row.get("change_percent") is not None]
+    unusual = []
     for row in rows:
-        current = row.get("volume")
-        average = row.get("average_volume")
-        if current is None or not average or average <= 0:
-            continue
-        ratio = current / average
-        if ratio >= 2:
-            item = dict(row)
-            item["volume_ratio"] = round(ratio, 2)
-            unusual_volume.append(item)
-    unusual_volume.sort(
-        key=lambda row: row.get("volume_ratio", 0),
-        reverse=True,
-    )
-    success = len(rows)
-    failure = len(errors)
+        avg = row.get("average_volume")
+        volume = row.get("volume")
+        if avg and avg > 0 and volume is not None:
+            ratio = volume / avg
+            if ratio >= 2:
+                item = dict(row)
+                item["volume_ratio"] = round(ratio, 2)
+                unusual.append(item)
+    unusual.sort(key=lambda item: item["volume_ratio"], reverse=True)
     return {
         "project": "HVLK AI",
-        "generated_at": utc_now(),
+        "generated_at": now_utc(),
         "market": "US",
-        "asset_scope": (
-            "US stocks only; actual instrument classification "
-            "depends on universe filtering"
-        ),
+        "asset_scope": "US stocks; symbol classification is not guaranteed perfect",
         "data_provider": "Yahoo Finance chart endpoint",
         "universe_symbols": total,
-        "scanned_symbols": success + failure,
-        "successful_quotes": success,
-        "failed_quotes": failure,
-        "coverage_percent": (
-            round(success / total * 100, 2)
-            if total
-            else 0
-        ),
-        "scan_started_at": started_at,
-        "scan_finished_at": utc_now(),
-        "top_gainers": rank_rows(
-            valid_changes,
-            "change_percent",
-            True,
-        ),
-        "top_losers": rank_rows(
-            valid_changes,
-            "change_percent",
-            False,
-        ),
-        "highest_volume": rank_rows(
-            rows,
-            "volume",
-            True,
-        ),
-        "highest_turnover": rank_rows(
-            rows,
-            "turnover_estimate",
-            True,
-        ),
-        "unusual_volume": unusual_volume[:TOP_COUNT],
-        "errors_by_type": count_error_types(errors),
+        "scanned_symbols": len(rows) + len(errors),
+        "successful_quotes": len(rows),
+        "failed_quotes": len(errors),
+        "coverage_percent": round(len(rows) / total * 100, 2) if total else 0,
+        "scan_started_at": started,
+        "scan_finished_at": now_utc(),
+        "top_gainers": rank(gainers, "change_percent", True),
+        "top_losers": rank(gainers, "change_percent", False),
+        "highest_volume": rank(rows, "volume", True),
+        "highest_turnover": rank(rows, "turnover_estimate", True),
+        "unusual_volume": unusual[:TOP_COUNT],
+        "errors_by_type": error_counts(errors),
         "sample_errors": errors[:50],
         "data_notes": [
-            (
-                "Změna ceny porovnává poslední dvě dostupné "
-                "denní závěrečné ceny."
-            ),
-            (
-                "Mimo obchodní hodiny může jít o poslední dostupný "
-                "obchodní den, nikoliv dnešní změnu."
-            ),
-            (
-                "Finanční obrat je odhad: poslední cena "
-                "násobená posledním denním objemem."
-            ),
-            (
-                "Průměrný objem vychází z posledních až 20 "
-                "dostupných denních pozorování včetně posledního dne."
-            ),
-            (
-                "Dividendové údaje jsou odhady odvozené "
-                "z událostí vrácených poskytovatelem."
-            ),
-            (
-                "Neúspěšné symboly nejsou automaticky důkazem, "
-                "že akcie neexistuje."
-            ),
-            (
-                "Změna ceny a objem vycházejí z denních dat, "
-                "nejde o živé intradenní kotace."
-            ),
+            "Denní závěrečné ceny, nikoli živé intradenní kotace.",
+            "Změna porovnává poslední dvě dostupné denní závěrečné ceny.",
+            "Obrat je odhad: poslední cena × poslední denní objem.",
+            "Průměr objemu vychází z posledních až 20 dostupných dnů.",
+            "Dividendové údaje jsou odhady z historických událostí poskytovatele.",
+            "HTTP 404 znamená, že zdroj pro daný požadavek data nenašel.",
+            "HTTP 429 znamená omezení požadavků poskytovatelem.",
         ],
     }
-def build_results_payload(total, rows, errors):
-    return {
+def save_all(total, rows, errors, started):
+    write_json(RESULTS_FILE, {
         "project": "HVLK AI",
-        "generated_at": utc_now(),
+        "generated_at": now_utc(),
         "market": "US",
         "data_provider": "Yahoo Finance chart endpoint",
         "total_symbols": total,
         "successful_quotes": len(rows),
         "failed_quotes": len(errors),
-        "coverage_percent": (
-            round(len(rows) / total * 100, 2)
-            if total
-            else 0
-        ),
+        "coverage_percent": round(len(rows) / total * 100, 2) if total else 0,
         "results": rows,
         "errors": errors[:500],
-    }
-def save_progress(total, results_by_symbol, errors, started_at):
-    rows = sorted(
-        results_by_symbol.values(),
-        key=lambda item: item["symbol"],
-    )
-    results_payload = build_results_payload(
-        total,
-        rows,
-        errors,
-    )
-    market_payload = build_market_data(
-        total,
-        rows,
-        errors,
-        started_at,
-    )
-    write_json(RESULTS_FILE, results_payload)
-    write_json(MARKET_FILE, market_payload)
+    })
+    write_json(MARKET_FILE, build_market(total, rows, errors, started))
 def main():
-    started_at = utc_now()
-    _, instruments = load_universe()
+    started = now_utc()
+    instruments = load_universe()
     total = len(instruments)
-    print(f"HVLK AI: začíná skenování {total} symbolů.")
-    print(f"Počet souběžných požadavků: {WORKERS}")
-    results_by_symbol = {}
+    print(f"HVLK AI: {total} symbolů; souběžnost {WORKERS}.")
+    rows_by_symbol = {}
     errors = []
     completed = 0
-    with ThreadPoolExecutor(max_workers=WORKERS) as executor:
-        future_map = {
-            executor.submit(fetch_quote, instrument): instrument
-            for instrument in instruments
+    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        futures = {
+            pool.submit(fetch_quote, item): item
+            for item in instruments
         }
-        for future in as_completed(future_map):
-            instrument = future_map[future]
-            symbol = instrument["symbol"]
+        for future in as_completed(futures):
+            item = futures[future]
+            symbol = item["symbol"]
             completed += 1
             try:
-                result, error = future.result()
+                row, error = future.result()
             except Exception as exception:
-                result = None
-                error = (
-                    f"{type(exception).__name__}: {exception}"
-                )
-            if result is not None:
-                results_by_symbol[symbol] = result
+                row = None
+                error = f"{type(exception).__name__}: {exception}"
+            if row:
+                rows_by_symbol[symbol] = row
             else:
                 errors.append({
                     "symbol": symbol,
-                    "name": instrument.get("name", symbol),
+                    "name": item.get("name", symbol),
                     "error": error or "Neznámá chyba",
                 })
             if completed % 25 == 0 or completed == total:
                 print(
-                    f"Průběh: {completed}/{total} | "
-                    f"úspěšné: {len(results_by_symbol)} | "
-                    f"chyby: {len(errors)}"
+                    f"{completed}/{total} | "
+                    f"úspěšné {len(rows_by_symbol)} | "
+                    f"chyby {len(errors)}"
                 )
             if completed % SAVE_EVERY == 0 or completed == total:
-                save_progress(
-                    total,
-                    results_by_symbol,
-                    errors,
-                    started_at,
+                current_rows = sorted(
+                    rows_by_symbol.values(),
+                    key=lambda row: row["symbol"],
                 )
-    # Závěrečné uložení výsledků.
-    save_progress(
-        total,
-        results_by_symbol,
-        errors,
-        started_at,
+                save_all(total, current_rows, errors, started)
+    current_rows = sorted(
+        rows_by_symbol.values(),
+        key=lambda row: row["symbol"],
     )
-    rows = sorted(
-        results_by_symbol.values(),
-        key=lambda item: item["symbol"],
-    )
-    market_payload = build_market_data(
-        total,
-        rows,
-        errors,
-        started_at,
-    )
-    print("\n--- SOUHRN HVLK AI ---")
-    print(f"Symboly v seznamu: {total}")
-    print(f"Úspěšná data: {len(rows)}")
+    save_all(total, current_rows, errors, started)
+    summary = build_market(total, current_rows, errors, started)
+    print("\n--- HVLK AI ---")
+    print(f"Úspěšné ceny: {len(current_rows)}")
     print(f"Chyby: {len(errors)}")
-    print(
-        f"Pokrytí: {market_payload['coverage_percent']} %"
-    )
-    print(f"Výstup: {RESULTS_FILE}")
-    print(f"Výstup: {MARKET_FILE}")
-    if errors:
-        print("\nNejčastější typy chyb:")
-        for error_type, count in sorted(
-            market_payload["errors_by_type"].items(),
-            key=lambda item: item[1],
-            reverse=True,
-        ):
-            print(f"  {error_type}: {count}")
+    print(f"Pokrytí: {summary['coverage_percent']} %")
+    print(f"Chyby podle typu: {summary['errors_by_type']}")
 if __name__ == "__main__":
     main()
