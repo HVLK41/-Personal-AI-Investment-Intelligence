@@ -48,7 +48,7 @@ jobs:
         run: python universe.py
         
         - name: Debug scanner source
-          run: |
+        run: |
           echo "=== COMMIT ==="
           git rev-parse HEAD
           echo "=== SCANNER LINES 90-110 ==="
