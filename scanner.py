@@ -127,67 +127,108 @@ def safe_float(value: Any) -> float | None:
 # LOAD STOCK UNIVERSE
 # ============================================================
 
-def load_universe() -> list[dict[str, Any]]:
-    if not UNIVERSE_FILE.exists():
+
+def load_universe():
+    """Načte akciový vesmír z data/universe.json v podporovaných formátech."""
+    import json
+    import re
+    from pathlib import Path
+
+    universe_path = (
+        Path(__file__).resolve().parent / "data" / "universe.json"
+    )
+
+    if not universe_path.is_file():
         raise FileNotFoundError(
-            f"Missing universe file: {UNIVERSE_FILE}"
+            f"Soubor s akciovým vesmírem neexistuje: {universe_path}"
         )
 
-    with UNIVERSE_FILE.open("r", encoding="utf-8") as handle:
-        raw = json.load(handle)
+    try:
+        with universe_path.open("r", encoding="utf-8-sig") as file:
+            data = json.load(file)
+    except json.JSONDecodeError as error:
+        raise ValueError(
+            f"Soubor {universe_path} neobsahuje platný JSON: {error}"
+        ) from error
 
-    if isinstance(raw, list):
-        candidates = raw
-    elif isinstance(raw, dict):
-        candidates = raw.get(
-            "symbols",
-            raw.get("universe", raw.get("instruments", [])),
-        )
+    # Podpora formátu vytvářeného tvým universe.py:
+    # {"total_symbols": ..., "results": [...]}
+    if isinstance(data, list):
+        rows = data
+    elif isinstance(data, dict):
+        rows = None
+        for key in ("results", "symbols", "universe", "instruments"):
+            value = data.get(key)
+            if isinstance(value, list):
+                rows = value
+                break
+
+        if rows is None:
+            raise ValueError(
+                "V data/universe.json nebyl nalezen seznam akcií. "
+                "Očekávám klíč 'results', 'symbols', 'universe' "
+                "nebo 'instruments'."
+            )
     else:
         raise ValueError(
-            "universe.json must contain a list or an object "
-            "with a symbols list."
+            "data/universe.json musí obsahovat JSON seznam nebo objekt."
         )
 
-    if not isinstance(candidates, list):
-        raise ValueError("Universe symbols must be a JSON list.")
+    instruments = []
+    seen = set()
+    invalid_count = 0
 
-    instruments: list[dict[str, Any]] = []
-    seen: set[str] = set()
-
-    for entry in candidates:
-        if isinstance(entry, str):
-            symbol = normalise_symbol(entry)
-            item: dict[str, Any] = {
-                "symbol": symbol,
-                "name": symbol,
-            }
-        elif isinstance(entry, dict):
-            symbol = normalise_symbol(
-                entry.get("symbol") or entry.get("ticker")
-            )
-            item = dict(entry)
+    for row in rows:
+        if isinstance(row, str):
+            symbol = row.strip()
+            item = {"symbol": symbol}
+        elif isinstance(row, dict):
+            symbol = str(
+                row.get("symbol") or row.get("ticker") or ""
+            ).strip()
+            item = dict(row)
             item["symbol"] = symbol
-            item["name"] = str(
-                entry.get("name") or symbol or "Unknown"
-            )[:200]
         else:
+            invalid_count += 1
             continue
 
-        if not symbol or symbol in seen:
+        # Povolené znaky zahrnují běžné tickery i třídy akcií,
+        # například BRK.B a BRK-B.
+        if not symbol or not re.fullmatch(
+            r"[A-Za-z0-9.^=_-]+", symbol
+        ):
+            invalid_count += 1
             continue
 
-        seen.add(symbol)
+        normalized = symbol.upper()
+        if normalized in seen:
+            continue
+
+        seen.add(normalized)
         item["symbol"] = symbol
-        item["name"] = str(item.get("name") or symbol)[:200]
+
+        # Doplníme metadata, pokud je zdroj neobsahuje.
+        item.setdefault("name", symbol)
+        item.setdefault("asset_type", "stock")
         instruments.append(item)
 
     if not instruments:
         raise ValueError(
-            "No valid symbols found in data/universe.json."
+            f"V {universe_path} nebyl nalezen žádný platný ticker. "
+            f"Položek ve zdroji: {len(rows)}, "
+            f"neplatných položek: {invalid_count}. "
+            "Zkontroluj výstup universe.py."
         )
 
+    print(
+        f"Načteno {len(instruments)} unikátních tickerů "
+        f"z {universe_path}."
+    )
+    if invalid_count:
+        print(f"Přeskočeno neplatných položek: {invalid_count}")
+
     return instruments
+
 
 
 # ============================================================
