@@ -1,30 +1,55 @@
 import json
+import re
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
-PROJECT_ROOT = Path(__file__).resolve().parent
-OUTPUT_FILE = PROJECT_ROOT / "data" / "universe.json"
+ROOT = Path(__file__).resolve().parent
+OUTPUT = ROOT / "data" / "universe.json"
 SOURCES = {
-    "nasdaq": (
-        "https://www.nasdaqtrader.com/dynamic/symdir/nasdaqlisted.txt"
-    ),
-    "other": (
-        "https://www.nasdaqtrader.com/dynamic/symdir/otherlisted.txt"
-    ),
+    "nasdaq": "https://www.nasdaqtrader.com/dynamic/symdir/nasdaqlisted.txt",
+    "other": "https://www.nasdaqtrader.com/dynamic/symdir/otherlisted.txt",
 }
+USER_AGENT = "HVLK-AI/1.0 personal research"
+# Zjevné typy cenných papírů, které nechceme v základním
+# seznamu běžných akcií. Jde o heuristický filtr, ne garanci.
+EXCLUDE_PATTERNS = [
+    r"\bWARRANTS?\b",
+    r"\bRIGHTS?\b",
+    r"\bUNITS?\b",
+    r"\bPREFERRED(?:\s+STOCK|\s+SHARES?)?\b",
+    r"\bDEBENTURES?\b",
+    r"\bBONDS?\b",
+    r"\bNOTES?\b",
+    r"\bETFS?\b",
+    r"\bEXCHANGE.TRADED.FUNDS?\b",
+    r"\bPURCHASE.CONTRACTS?\b",
+]
 def fetch_text(url):
     request = urllib.request.Request(
         url,
-        headers={"User-Agent": "HVLK-AI/1.0"},
+        headers={"User-Agent": USER_AGENT},
     )
     with urllib.request.urlopen(request, timeout=30) as response:
         return response.read().decode("utf-8-sig")
+def is_excluded(name, symbol):
+    upper_name = name.upper()
+    if any(re.search(pattern, upper_name) for pattern in EXCLUDE_PATTERNS):
+        return True
+    # Samostatné warrant/rights/unit tickery bývají často
+    # označené koncovkami. Nevyřazujeme běžné tečkové třídy akcií.
+    upper_symbol = symbol.upper()
+    if re.search(r"[-.]W(S|S[A-Z]?)?$", upper_symbol):
+        return True
+    if re.search(r"[-.]R(T|TS)?$", upper_symbol):
+        return True
+    return False
 def parse_symbols(text, source):
     lines = text.splitlines()
     if len(lines) < 2:
         raise RuntimeError(f"Zdroj {source} vrátil prázdný seznam.")
     headers = lines[0].split("|")
-    instruments = []
+    accepted = []
+    rejected = 0
     for line in lines[1:]:
         if not line or line.startswith("File Creation Time"):
             continue
@@ -39,79 +64,86 @@ def parse_symbols(text, source):
         ).strip()
         if not symbol:
             continue
-        if row.get("Test Issue", "N") == "Y":
+        if row.get("Test Issue", "N").strip().upper() == "Y":
+            rejected += 1
             continue
-        if row.get("ETF", "N") == "Y":
+        if row.get("ETF", "N").strip().upper() == "Y":
+            rejected += 1
             continue
-        if row.get("Exchange", "").strip() == "":
-            # Nasdaq seznam používá vlastní pole Exchange.
-            # Pokud burza není uvedena, zachováme původ zdroje.
-            exchange = source
-        else:
-            exchange = row["Exchange"].strip()
         name = (
             row.get("Security Name")
             or row.get("Company Name")
             or symbol
         ).strip()
-        instruments.append({
+        if is_excluded(name, symbol):
+            rejected += 1
+            continue
+        exchange = (
+            row.get("Exchange", "").strip()
+            or source
+        )
+        accepted.append({
             "symbol": symbol,
             "name": name,
             "exchange": exchange,
             "source": source,
             "asset_type": "stock",
         })
-    return instruments
+    return accepted, rejected
 def main():
-    all_instruments = {}
+    instruments = {}
     source_counts = {}
+    excluded_counts = {}
     errors = []
     for source, url in SOURCES.items():
         try:
             text = fetch_text(url)
-            instruments = parse_symbols(text, source)
-            source_counts[source] = len(instruments)
-            for instrument in instruments:
-                key = instrument["symbol"].upper()
-                if key not in all_instruments:
-                    all_instruments[key] = instrument
+            accepted, rejected = parse_symbols(text, source)
+            source_counts[source] = len(accepted)
+            excluded_counts[source] = rejected
+            for item in accepted:
+                key = item["symbol"].upper()
+                if key not in instruments:
+                    instruments[key] = item
         except Exception as error:
-            errors.append(f"{source}: {error}")
-    # Nepřepisujeme fungující seznam prázdným výsledkem,
-    # pokud selžou oba zdroje.
-    if not all_instruments:
+            errors.append(f"{source}: {type(error).__name__}: {error}")
+    if not instruments:
         raise RuntimeError(
             "Nepodařilo se načíst žádné symboly. "
             + " | ".join(errors)
         )
     results = sorted(
-        all_instruments.values(),
+        instruments.values(),
         key=lambda item: item["symbol"],
     )
     output = {
-        "project": PROJECT_ROOT.name,
+        "project": "HVLK AI",
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "market": "US",
         "provider": "Nasdaq Trader symbol directories",
         "total_symbols": len(results),
         "source_counts": source_counts,
+        "excluded_counts": excluded_counts,
         "partial_errors": errors,
         "results": results,
         "disclaimer": (
-            "Seznam obsahuje instrumenty nalezené ve zdrojových "
-            "adresářích. Nezaručuje úplné pokrytí všech amerických "
-            "tržišť ani dostupnost aktuálních cen pro každý symbol."
+            "Seznam je heuristicky filtrován na běžné akcie. "
+            "Klasifikace nemusí být dokonalá a seznam nemusí "
+            "obsahovat všechny americké trhy. Dostupnost ceny "
+            "u jednotlivých symbolů závisí na datovém poskytovateli."
         ),
     }
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_FILE.write_text(
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    temporary = OUTPUT.with_suffix(".json.tmp")
+    temporary.write_text(
         json.dumps(output, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    print(f"Načteno symbolů: {len(results)}")
-    print(f"Výstup: {OUTPUT_FILE}")
-    if errors:
-        print("Varování:")
-        for error in errors:
-            print(f"- {error}")
+    temporary.replace(OUTPUT)
+    print(f"Akcie v seznamu: {len(results)}")
+    print(f"Vyřazeno podle filtrů: {sum(excluded_counts.values())}")
+    print(f"Výstup: {OUTPUT}")
+    for error in errors:
+        print(f"VAROVÁNÍ: {error}")
 if __name__ == "__main__":
     main()
