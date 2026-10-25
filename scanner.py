@@ -214,8 +214,7 @@ def build_market_data(universe_data, rows, errors, started_at):
     unusual_volume.sort(
         key=lambda row: row.get("volume_ratio", 0),
         reverse=True,
-    )
-    total = len(universe_data)
+    )total = universe_data if isinstance(universe_data, int) else len(universe_data)
     success = len(rows)
     failure = len(errors)
     return {
