@@ -10,6 +10,7 @@
   color-scheme: dark;
   --bg:#080d18;
   --panel:#111a2b;
+  --panel2:#0d1626;
   --border:#26334a;
   --text:#f1f5f9;
   --muted:#8fa1bb;
@@ -26,582 +27,619 @@ body {
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 header {
-  padding:25px 18px 20px;
+  padding:26px 18px;
   background:linear-gradient(135deg,#142640,#080d18);
   border-bottom:1px solid var(--border);
 }
+.header-inner,.container { max-width:1200px; margin:auto; }
 .brand {
   color:var(--green);
-  font-size:12px;
+  font-size:11px;
   font-weight:800;
   letter-spacing:3px;
 }
-h1 { font-size:27px; margin:8px 0; }
+h1 { font-size:29px; margin:10px 0 5px; }
 .subtitle { color:var(--muted); font-size:13px; }
-.container { padding:16px; max-width:1100px; margin:auto; }
-.notice {
-  padding:12px;
-  border:1px solid #65532c;
-  border-radius:12px;
-  background:#292213;
-  color:var(--yellow);
-  font-size:12px;
-  line-height:1.6;
+.header-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
 }
-.section-title { margin:24px 0 12px; font-size:16px; }
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+.live-indicator {
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:8px 12px;
+  color:var(--yellow);
+  font-size:11px;
+}
+.container { padding:18px 14px 35px; }
+.section-title {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   gap:10px;
+  margin:26px 0 12px;
+  font-size:16px;
 }
 .card {
   background:var(--panel);
   border:1px solid var(--border);
   border-radius:14px;
-  padding:14px;
+  padding:15px;
   min-width:0;
 }
-.icon { font-size:23px; }
-.card h3 { font-size:14px; margin:10px 0 6px; }
-.card p { color:var(--muted); font-size:12px; line-height:1.5; }
-.status {
-  display:inline-block;
-  color:var(--green);
-  background:#15352f;
-  border-radius:6px;
-  padding:5px 7px;
-  font-size:10px;
-  margin-top:8px;
-}
-label { display:block; font-size:13px; margin:14px 0 7px; }
-input,select,button {
-  width:100%;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:#0b1322;
-  color:var(--text);
-  padding:12px;
-  font-size:14px;
-}
-button {
-  background:var(--green);
-  color:#062016;
-  border:0;
-  font-weight:800;
-  margin-top:12px;
-  cursor:pointer;
-}
-button.secondary {
-  background:#1b2b43;
-  color:var(--text);
-  border:1px solid var(--border);
-}
-button:disabled { opacity:.5; cursor:wait; }
-.metric {
-  display:flex;
-  justify-content:space-between;
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:10px;
-  padding:10px 0;
-  border-bottom:1px solid var(--border);
-  font-size:13px;
 }
-.metric span:first-child { color:var(--muted); }
+.metric-label { color:var(--muted); font-size:11px; }
+.metric-value { font-size:24px; font-weight:800; margin-top:8px; }
+.metric-note { color:var(--muted); font-size:11px; margin-top:6px; line-height:1.5; }
 .green { color:var(--green); }
 .blue { color:var(--blue); }
 .red { color:var(--red); }
+.yellow { color:var(--yellow); }
 .muted { color:var(--muted); }
+.notice {
+  border:1px solid #65532c;
+  background:#292213;
+  color:var(--yellow);
+  border-radius:12px;
+  padding:12px;
+  font-size:12px;
+  line-height:1.6;
+}
+.system-message {
+  padding:12px;
+  margin-top:12px;
+  border:1px solid var(--border);
+  background:var(--panel2);
+  border-radius:10px;
+  font-size:12px;
+  line-height:1.6;
+  overflow-wrap:anywhere;
+}
+.team-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.agent-icon { font-size:22px; }
+.agent-name { font-size:13px; font-weight:800; margin:8px 0 5px; }
+.agent-description { color:var(--muted); font-size:11px; line-height:1.5; }
+.agent-status {
+  display:inline-block;
+  margin-top:10px;
+  padding:5px 7px;
+  border-radius:6px;
+  background:#15352f;
+  color:var(--green);
+  font-size:9px;
+  font-weight:800;
+}
 .toolbar {
   display:grid;
   grid-template-columns:1fr;
-  gap:10px;
+  gap:9px;
   margin-bottom:12px;
 }
-.table-wrap {
-  overflow-x:auto;
+input,select,button {
   width:100%;
+  border-radius:9px;
   border:1px solid var(--border);
-  border-radius:12px;
+  background:#0b1322;
+  color:var(--text);
+  padding:11px;
+  font-size:13px;
+}
+button {
+  cursor:pointer;
+  background:#1b2b43;
+  font-weight:700;
+}
+button:hover { border-color:var(--blue); }
+button:disabled { opacity:.5; cursor:wait; }
+.table-wrap {
+  width:100%;
+  overflow-x:auto;
+  border:1px solid var(--border);
+  border-radius:10px;
 }
 table {
-  width:100%;
   border-collapse:collapse;
-  min-width:650px;
+  width:100%;
+  min-width:700px;
   font-size:12px;
 }
 th,td {
-  text-align:right;
   padding:12px 10px;
   border-bottom:1px solid var(--border);
+  text-align:right;
   white-space:nowrap;
 }
 th {
   color:var(--muted);
-  background:#0d1626;
+  background:var(--panel2);
   font-weight:600;
 }
 th:first-child,td:first-child { text-align:left; }
 tbody tr:last-child td { border-bottom:0; }
 tbody tr:hover { background:#17243a; }
-.ticker-button {
-  display:inline;
-  width:auto;
-  margin:0;
-  padding:0;
-  background:none;
+.ticker-link {
   color:var(--blue);
-  font-size:12px;
-  border:0;
+  cursor:pointer;
+  font-weight:800;
 }
-.summary-grid {
+.ticker-link:hover { text-decoration:underline; }
+.company-name { font-size:10px; color:var(--muted); margin-top:4px; }
+.pill {
+  display:inline-block;
+  border-radius:5px;
+  padding:4px 6px;
+  font-size:10px;
+  background:#15352f;
+  color:var(--green);
+}
+.pill.warn { background:#3a3018; color:var(--yellow); }
+.pill.bad { background:#3a1d2a; color:var(--red); }
+.two-columns {
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
-  margin-bottom:12px;
+  grid-template-columns:1fr;
+  gap:12px;
 }
-.summary-value { font-size:22px; font-weight:800; margin-top:7px; }
-.small { font-size:11px; color:var(--muted); line-height:1.5; }
-.result { margin-top:14px; line-height:1.65; font-size:13px; overflow-wrap:anywhere; }
+.list-item {
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.5;
+  font-size:12px;
+}
+.list-item:last-child { border-bottom:0; }
+.list-title { font-weight:800; }
+.list-detail { color:var(--muted); margin-top:4px; font-size:11px; }
 footer {
   color:var(--muted);
   font-size:11px;
   text-align:center;
-  padding:25px 12px;
+  padding:24px 12px;
+  line-height:1.7;
 }
-@media(min-width:600px) {
+@media(min-width:650px) {
+  .container { padding:22px 20px 40px; }
   .grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
-  .toolbar { grid-template-columns:2fr 1fr; }
-  .summary-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .team-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .toolbar { grid-template-columns:2fr 1fr auto; }
+  .two-columns { grid-template-columns:1fr 1fr; }
+}
+@media(min-width:950px) {
+  .team-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
 }
 </style>
 </head>
 <body>
 <header>
-  <div class="brand">HVLK / INTELLIGENCE SYSTEMS</div>
-  <h1>Investment Lab</h1>
-  <div class="subtitle">Tvoje osobní investiční analytická stanice</div>
+  <div class="header-inner">
+    <div class="header-row">
+      <div>
+        <div class="brand">HVLK / INTELLIGENCE SYSTEMS</div>
+        <h1>Investment Intelligence</h1>
+        <div class="subtitle">Autonomní sběr dat · Dividendový radar · Analýza rizik</div>
+      </div>
+      <div id="systemBadge" class="live-indicator">● INICIALIZACE SYSTÉMU</div>
+    </div>
+  </div>
 </header>
 <main class="container">
   <div class="notice">
-    DATA MODE · Ceny a dividendové údaje se načítají z automatického
-    scanneru. Data mohou být zpožděná nebo neúplná. Odhad dividendového
-    výnosu není zárukou budoucích výplat.
+    ANALYTICKÝ REŽIM · Dashboard zobrazuje výsledky posledního úspěšného skenu.
+    Data mohou být zpožděná nebo neúplná. Automatické hodnocení není investiční
+    doporučení. Skutečný AI model ani automatické obchodování nejsou připojené.
   </div>
-  <h2 class="section-title">Analytický tým</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="icon">🌐</div>
-      <h3>Web Hunter</h3>
-      <p>Příprava na vyhledávání zpráv a finančních informací.</p>
-      <span class="status">PŘIPRAVEN NA ROZŠÍŘENÍ</span>
-    </div>
-    <div class="card">
-      <div class="icon">💰</div>
-      <h3>Dividend Hunter</h3>
-      <p>Výpočet a porovnávání historického dividendového výnosu.</p>
-      <span class="status">DATA PŘIPOJENA</span>
-    </div>
-    <div class="card">
-      <div class="icon">📈</div>
-      <h3>Trading Hunter</h3>
-      <p>Zobrazení cen a poslední změny. Obchodní signály zatím nejsou aktivní.</p>
-      <span class="status">ZÁKLADNÍ DATA</span>
-    </div>
-    <div class="card">
-      <div class="icon">🛡️</div>
-      <h3>Risk Manager</h3>
-      <p>Upozorňuje na chybějící údaje a vysoký dividendový výnos.</p>
-      <span class="status">ZÁKLADNÍ KONTROLY</span>
-    </div>
+  <div id="systemMessage" class="system-message" aria-live="polite">
+    Načítám poslední výsledky scanneru…
   </div>
-  <h2 class="section-title">Market Scanner</h2>
-  <div class="summary-grid">
+  <h2 class="section-title">Market Overview <span class="muted" id="scanTime">—</span></h2>
+  <section class="grid">
     <div class="card">
-      <div class="small">Načtené ceny</div>
-      <div id="quoteCount" class="summary-value">—</div>
+      <div class="metric-label">Načtené ceny</div>
+      <div id="metricPrices" class="metric-value">—</div>
+      <div class="metric-note">Použitelné cenové záznamy</div>
     </div>
     <div class="card">
-      <div class="small">Sledované tickery</div>
-      <div id="symbolCount" class="summary-value">—</div>
+      <div class="metric-label">Sledované tickery</div>
+      <div id="metricTotal" class="metric-value">—</div>
+      <div class="metric-note">Aktuální seznam scanneru</div>
     </div>
     <div class="card">
-      <div class="small">Nejvyšší odhadovaný výnos</div>
-      <div id="topYield" class="summary-value">—</div>
-      <div id="topTicker" class="small"></div>
+      <div class="metric-label">Nejvyšší historický výnos</div>
+      <div id="metricYield" class="metric-value">—</div>
+      <div id="metricYieldTicker" class="metric-note">Čekám na data</div>
     </div>
     <div class="card">
-      <div class="small">Poslední sken</div>
-      <div id="updatedAt" style="font-size:13px;font-weight:700;margin-top:9px">Načítám…</div>
+      <div class="metric-label">Datový zdroj</div>
+      <div id="metricSource" style="font-size:15px;font-weight:800;margin-top:10px">—</div>
+      <div id="metricSourceNote" class="metric-note">Zdroj posledního skenu</div>
     </div>
-  </div>
+  </section>
+  <h2 class="section-title">Dividend Radar <span class="muted">Historický výnos</span></h2>
   <div class="card">
     <div class="toolbar">
-      <input id="search" type="search" placeholder="Filtrovat ticker nebo společnost…"
-        aria-label="Filtrovat akcie">
-      <select id="sort">
-        <option value="yield">Řadit: dividendový výnos</option>
-        <option value="symbol">Řadit: ticker A–Z</option>
-        <option value="price">Řadit: cena</option>
-        <option value="change">Řadit: denní změna</option>
+      <input id="searchInput" type="search" placeholder="Hledat ticker nebo společnost…"
+        aria-label="Hledat akcii">
+      <select id="sortSelect" aria-label="Řazení akcií">
+        <option value="yield">Nejvyšší výnos</option>
+        <option value="symbol">Ticker A–Z</option>
+        <option value="price">Cena sestupně</option>
+        <option value="change">Denní změna</option>
       </select>
-    </div>
-    <div id="scannerMessage" class="result" aria-live="polite">
-      Načítám výsledky scanneru…
+      <button id="refreshButton" type="button">↻ Obnovit data</button>
     </div>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Ticker</th>
-            <th>Cena</th>
-            <th>Denní změna*</th>
+            <th>Akcie / ETF</th>
+            <th>Poslední cena</th>
+            <th>Změna*</th>
             <th>Dividenda / rok**</th>
-            <th>Odhad výnosu**</th>
-            <th>Stav</th>
+            <th>Výnos**</th>
+            <th>Kontrola</th>
           </tr>
         </thead>
         <tbody id="marketRows">
-          <tr><td colspan="6" style="text-align:center">Načítám data…</td></tr>
+          <tr><td colspan="6" style="text-align:center">Načítám výsledky…</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="small">
-      * Změna je vypočtena z posledních dvou dostupných denních uzavíracích cen,
-      nikoli nutně od aktuálního okamžiku. ** Historický součet dividend za
-      posledních přibližně 365 dní dělený poslední cenou. Výsledek může být
-      neúplný, zejména pokud zdroj nevrátí všechny dividendové události.
-    </p>
-    <button class="secondary" id="reloadButton" type="button">Obnovit výsledky</button>
-  </div>
-  <h2 class="section-title">Dividendová laboratoř</h2>
-  <div class="card">
-    <p class="small">
-      Vyber načtenou akcii pro předvyplnění údajů. Výpočet je orientační
-      a nehodnotí finanční zdraví společnosti ani udržitelnost dividendy.
-    </p>
-    <label for="ticker">Ticker</label>
-    <input id="ticker" maxlength="12" value="AGNC" placeholder="Např. AGNC, O, MAIN">
-    <label for="price">Cena jedné akcie</label>
-    <input id="price" type="number" min="0.000001" step="any" placeholder="Načte se ze scanneru">
-    <label for="dividend">Dividenda za posledních 365 dní na akcii</label>
-    <input id="dividend" type="number" min="0" step="any" placeholder="Načte se ze scanneru">
-    <button id="analyzeButton" type="button">Analyzovat vybranou akcii</button>
-    <button id="clearButton" class="secondary" type="button">Vymazat výsledky</button>
-    <div id="analysisResult" class="result" aria-live="polite"></div>
-  </div>
-  <h2 class="section-title">Chief Analyst</h2>
-  <div class="card">
-    <p id="chief" aria-live="polite">Čekám na výsledky scanneru.</p>
-    <p class="small">
-      Chief Analyst zde používá pouze pravidla a data ze scanneru.
-      Není připojen externí jazykový AI model.
+    <p class="metric-note">
+      * Změna mezi posledními dvěma dostupnými denními uzavíracími cenami.
+      ** Součet dividendových událostí za přibližně 365 dní dělený poslední
+      cenou. Nejde o garantovaný budoucí výnos. ETF mohou mít odlišnou strukturu
+      distribucí; data je nutné ověřovat.
     </p>
   </div>
+  <section class="two-columns">
+    <div>
+      <h2 class="section-title">Risk Manager</h2>
+      <div id="riskPanel" class="card">
+        <p class="muted">Kontroluji dostupná data…</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="section-title">Chief Analyst</h2>
+      <div id="chiefPanel" class="card">
+        <p class="muted">Připravuji souhrn…</p>
+      </div>
+    </div>
+  </section>
+  <h2 class="section-title">Analytický tým</h2>
+  <section class="team-grid">
+    <div class="card">
+      <div class="agent-icon">💰</div>
+      <div class="agent-name">Dividend Hunter</div>
+      <div class="agent-description">Řadí dostupné tituly podle historického výnosu.</div>
+      <span class="agent-status">PRAVIDLA AKTIVNÍ</span>
+    </div>
+    <div class="card">
+      <div class="agent-icon">📈</div>
+      <div class="agent-name">Growth Hunter</div>
+      <div class="agent-description">Připraven pro fundamentální růstové metriky.</div>
+      <span class="agent-status">ČEKÁ NA DATA</span>
+    </div>
+    <div class="card">
+      <div class="agent-icon">⚡</div>
+      <div class="agent-name">Trading Hunter</div>
+      <div class="agent-description">Zobrazuje změny cen; pokročilé signály nejsou aktivní.</div>
+      <span class="agent-status">ZÁKLADNÍ DATA</span>
+    </div>
+    <div class="card">
+      <div class="agent-icon">🛡️</div>
+      <div class="agent-name">Risk Manager</div>
+      <div class="agent-description">Označuje chybějící data a extrémní historické výnosy.</div>
+      <span class="agent-status">PRAVIDLA AKTIVNÍ</span>
+    </div>
+    <div class="card">
+      <div class="agent-icon">🐻</div>
+      <div class="agent-name">Bear Analyst</div>
+      <div class="agent-description">Základní varování; plná analýza finančních výkazů není zapojena.</div>
+      <span class="agent-status">ZÁKLADNÍ KONTROLY</span>
+    </div>
+    <div class="card">
+      <div class="agent-icon">🌐</div>
+      <div class="agent-name">Web Hunter</div>
+      <div class="agent-description">Vyhledávání zpráv a externí AI analýza zatím nejsou zapojeny.</div>
+      <span class="agent-status">ČEKÁ NA INTEGRACI</span>
+    </div>
+  </section>
   <h2 class="section-title">Stav systému</h2>
   <div class="card">
-    <div class="metric"><span>Verze</span><strong>0.2 · Data Dashboard</strong></div>
-    <div class="metric"><span>Zdroj dat</span><strong id="provider">Načítám…</strong></div>
-    <div class="metric"><span>Načtení výsledků</span><strong id="dataStatus">Čekám…</strong></div>
-    <div class="metric"><span>AI model</span><strong class="red">Nepřipojen</strong></div>
-    <div class="metric"><span>Automatické obchodování</span><strong>Vypnuto</strong></div>
+    <div class="list-item">
+      <div class="list-title">Automatický scanner</div>
+      <div id="scannerStatus" class="list-detail">Čekám na data</div>
+    </div>
+    <div class="list-item">
+      <div class="list-title">Poslední aktualizace</div>
+      <div id="lastUpdate" class="list-detail">—</div>
+    </div>
+    <div class="list-item">
+      <div class="list-title">AI model</div>
+      <div class="list-detail">Není připojen. Aktuální souhrny generují lokální pravidla v prohlížeči.</div>
+    </div>
+    <div class="list-item">
+      <div class="list-title">Automatické obchodování</div>
+      <div class="list-detail">Vypnuto. Dashboard neposílá nákupní ani prodejní příkazy.</div>
+    </div>
   </div>
 </main>
 <footer>
   HVLK AI · Investment Intelligence<br>
-  Informativní údaje, nikoli investiční doporučení.
+  Historická data nejsou zárukou budoucích výsledků. Výstupy jsou informativní
+  a nenahrazují vlastní finanční analýzu.
 </footer>
 <script>
 "use strict";
 const DATA_URL = "./data/results.json";
-let marketResults = [];
+let results = [];
+let metadata = {};
 const $ = (id) => document.getElementById(id);
-function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[char]);
+function safeText(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (c) => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+  })[c]);
 }
-function numberValue(value) {
+function numeric(value) {
   return typeof value === "number" && Number.isFinite(value)
-    ? value
-    : null;
+    ? value : null;
 }
-function formatNumber(value, digits = 2) {
-  const number = numberValue(value);
-  return number === null
-    ? "—"
-    : number.toLocaleString("cs-CZ", {
-        minimumFractionDigits: digits,
-        maximumFractionDigits: digits
-      });
+function fmt(value, digits = 2) {
+  const n = numeric(value);
+  return n === null ? "—" : n.toLocaleString("cs-CZ", {
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits
+  });
 }
-function formatPrice(item) {
-  if (numberValue(item.price) === null) return "—";
-  const currency = item.currency || "měna neuvedena";
-  return formatNumber(item.price, 2) + " " + currency;
-}
-function formatDate(value) {
+function fmtDate(value) {
   if (!value) return "Neznámý čas";
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return "Neznámý čas";
-  return date.toLocaleString("cs-CZ", {
-    dateStyle: "short",
-    timeStyle: "short"
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return "Neznámý čas";
+  return d.toLocaleString("cs-CZ", {
+    dateStyle:"medium",
+    timeStyle:"short"
   });
 }
 function getYield(item) {
-  return numberValue(item.dividend_yield_percent_estimate);
+  return numeric(item.dividend_yield_percent_estimate);
 }
-function sortedResults() {
-  const query = $("search").value.trim().toUpperCase();
-  const sort = $("sort").value;
-  const filtered = marketResults.filter((item) => {
-    const ticker = String(item.symbol || "").toUpperCase();
-    const name = String(item.company_name || "").toUpperCase();
-    return ticker.includes(query) || name.includes(query);
-  });
+function getPriceCount() {
+  return results.filter(x => numeric(x.price) !== null).length;
+}
+function sortAndFilter() {
+  const q = $("searchInput").value.trim().toUpperCase();
+  const sort = $("sortSelect").value;
+  const filtered = results.filter(item =>
+    String(item.symbol || "").toUpperCase().includes(q) ||
+    String(item.company_name || "").toUpperCase().includes(q)
+  );
   filtered.sort((a, b) => {
     if (sort === "symbol") {
       return String(a.symbol || "").localeCompare(String(b.symbol || ""));
     }
-    const aValue = sort === "price"
-      ? numberValue(a.price)
-      : sort === "change"
-        ? numberValue(a.change_percent)
-        : getYield(a);
-    const bValue = sort === "price"
-      ? numberValue(b.price)
-      : sort === "change"
-        ? numberValue(b.change_percent)
-        : getYield(b);
-    if (aValue === null) return 1;
-    if (bValue === null) return -1;
-    return bValue - aValue;
+    let av, bv;
+    if (sort === "price") {
+      av = numeric(a.price);
+      bv = numeric(b.price);
+    } else if (sort === "change") {
+      av = numeric(a.change_percent);
+      bv = numeric(b.change_percent);
+    } else {
+      av = getYield(a);
+      bv = getYield(b);
+    }
+    if (av === null) return 1;
+    if (bv === null) return -1;
+    return bv - av;
   });
   return filtered;
 }
 function renderTable() {
-  const rows = sortedResults();
   const tbody = $("marketRows");
-  if (!rows.length) {
-    tbody.innerHTML =
-      '<tr><td colspan="6" style="text-align:center">Žádné odpovídající výsledky.</td></tr>';
+  const items = sortAndFilter();
+  if (!items.length) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center">Žádné výsledky.</td></tr>';
     return;
   }
-  tbody.innerHTML = rows.map((item) => {
-    const change = numberValue(item.change_percent);
+  tbody.innerHTML = items.map(item => {
+    const symbol = safeText(item.symbol || "—");
+    const company = safeText(item.company_name || "");
+    const price = numeric(item.price);
+    const change = numeric(item.change_percent);
+    const dividend = numeric(item.dividend_per_share_year_estimate);
     const yieldValue = getYield(item);
-    const annualDividend = numberValue(item.dividend_per_share_year_estimate);
-    const price = numberValue(item.price);
-    const status = item.status === "ok" && price !== null
-      ? '<span class="green">Cena OK</span>'
-      : '<span class="red">Chyba dat</span>';
-    const changeClass = change === null
-      ? "muted"
-      : change > 0
-        ? "green"
-        : change < 0
-          ? "red"
-          : "muted";
-    const company = escapeHTML(item.company_name || item.symbol || "");
-    const symbol = escapeHTML(item.symbol || "—");
-    return `
-      <tr>
-        <td>
-          <button class="ticker-button" type="button"
-            data-symbol="${symbol}" title="${company}">
-            <strong>${symbol}</strong>
-          </button>
-          <div class="small">${company}</div>
-        </td>
-        <td>${formatPrice(item)}</td>
-        <td class="${changeClass}">${change === null ? "—" : (change > 0 ? "+" : "") + formatNumber(change, 2) + "%"}</td>
-        <td>${annualDividend === null ? "—" : formatNumber(annualDividend, 3) + " " + escapeHTML(item.currency || "")}</td>
-        <td class="${yieldValue === null ? "muted" : yieldValue >= 10 ? "red" : "green"}">${yieldValue === null ? "—" : formatNumber(yieldValue, 2) + "%"}</td>
-        <td>${status}</td>
-      </tr>
-    `;
+    const currency = safeText(item.currency || "");
+    const changeClass = change === null ? "muted" :
+      change > 0 ? "green" : change < 0 ? "red" : "muted";
+    let status = '<span class="pill">CENA OK</span>';
+    if (price === null || item.status !== "ok") {
+      status = '<span class="pill bad">CHYBA DAT</span>';
+    } else if (yieldValue === null || item.dividend_observations === 0) {
+      status = '<span class="pill warn">OVĚŘIT DIVIDENDU</span>';
+    }
+    return `<tr>
+      <td><span class="ticker-link" data-ticker="${symbol}">${symbol}</span>
+      <div class="company-name">${company}</div></td>
+      <td>${price === null ? "—" : fmt(price, 2) + " " + currency}</td>
+      <td class="${changeClass}">${change === null ? "—" : (change > 0 ? "+" : "") + fmt(change, 2) + "%"}</td>
+      <td>${dividend === null ? "—" : fmt(dividend, 3) + " " + currency}</td>
+      <td class="${yieldValue === null ? "muted" : yieldValue >= 10 ? "red" : "green"}">${yieldValue === null ? "—" : fmt(yieldValue, 2) + "%"}</td>
+      <td>${status}</td>
+    </tr>`;
   }).join("");
-  tbody.querySelectorAll("[data-symbol]").forEach((button) => {
-    button.addEventListener("click", () => selectSymbol(button.dataset.symbol));
+  tbody.querySelectorAll("[data-ticker]").forEach(el => {
+    el.addEventListener("click", () => {
+      const item = results.find(x => x.symbol === el.dataset.ticker);
+      if (item) renderTickerDetail(item);
+    });
   });
 }
-function renderSummary(data) {
-  const priced = marketResults.filter((item) => numberValue(item.price) !== null);
-  const withYield = marketResults
-    .filter((item) => getYield(item) !== null)
-    .sort((a, b) => getYield(b) - getYield(a));
-  $("quoteCount").textContent = priced.length;
-  $("symbolCount").textContent = data.total_symbols ?? marketResults.length;
-  if (withYield.length) {
-    $("topYield").textContent = formatNumber(getYield(withYield[0]), 2) + "%";
-    $("topTicker").textContent = withYield[0].symbol;
+function renderTickerDetail(item) {
+  const y = getYield(item);
+  let message;
+  if (numeric(item.price) === null) {
+    message = "Cena není dostupná. Zatím nelze vypočítat výnos.";
+  } else if (y === null || item.dividend_observations === 0) {
+    message = "Cena je dostupná, ale dividendová historie chybí nebo nebyla vrácena. Nulová dividenda není potvrzena.";
+  } else if (y >= 10) {
+    message = "Vysoký historický výnos. Prověř možné snížení dividendy, propad ceny, zadlužení a finanční udržitelnost.";
+  } else if (y >= 6) {
+    message = "Zvýšený historický výnos. Před rozhodnutím prověř stabilitu výplat a finanční zdraví.";
   } else {
-    $("topYield").textContent = "—";
-    $("topTicker").textContent = "Bez dostupných údajů";
+    message = "Historický výnos je nižší. To samo o sobě neznamená nižší riziko.";
   }
-  $("updatedAt").textContent = formatDate(data.generated_at);
-  $("provider").textContent = data.data_provider || "Neznámý";
-  $("dataStatus").textContent = priced.length
-    ? "Načteno " + priced.length + "/" + (data.total_symbols ?? marketResults.length)
-    : "Bez cenových dat";
+  $("chiefPanel").innerHTML =
+    `<div class="list-title">${safeText(item.symbol)}</div>
+     <div class="list-detail">${safeText(item.company_name || "")}</div>
+     <div class="list-item">Cena: <strong>${numeric(item.price) === null ? "—" : fmt(item.price, 2) + " " + safeText(item.currency || "")}</strong></div>
+     <div class="list-item">Historický výnos: <strong>${y === null ? "—" : fmt(y, 2) + "%"}</strong></div>
+     <p>${safeText(message)}</p>`;
 }
-async function loadMarketData() {
-  $("reloadButton").disabled = true;
-  $("scannerMessage").textContent = "Načítám data ze scanneru…";
+function renderRisk() {
+  const issues = [];
+  for (const item of results) {
+    const y = getYield(item);
+    if (numeric(item.price) === null || item.status !== "ok") {
+      issues.push({
+        level:"bad",
+        title:`${item.symbol}: chybí použitelná cena`,
+        detail:(item.notes || []).join(" ") || "Zkontroluj zdroj dat a poslední sken."
+      });
+    } else if (y === null || (item.dividend_observations || 0) === 0) {
+      issues.push({
+        level:"warn",
+        title:`${item.symbol}: dividendy vyžadují ověření`,
+        detail:"Historická dividendová data mohou být neúplná; nelze automaticky předpokládat nulovou dividendu."
+      });
+    } else if (y >= 10) {
+      issues.push({
+        level:"warn",
+        title:`${item.symbol}: vysoký historický výnos ${fmt(y, 2)} %`,
+        detail:"Prověř riziko poklesu ceny, udržitelnost výplat a finanční výsledky."
+      });
+    }
+  }
+  const panel = $("riskPanel");
+  if (!issues.length) {
+    panel.innerHTML = '<div class="green">Základní automatické kontroly neodhalily zjevný problém. Nejde o potvrzení bezpečnosti investic.</div>';
+    return;
+  }
+  panel.innerHTML = issues.slice(0, 12).map(issue => `
+    <div class="list-item">
+      <div class="list-title ${issue.level === "bad" ? "red" : "yellow"}">${safeText(issue.title)}</div>
+      <div class="list-detail">${safeText(issue.detail)}</div>
+    </div>
+  `).join("");
+}
+function renderChief() {
+  const priced = results.filter(x => numeric(x.price) !== null);
+  const dividendData = results.filter(x => getYield(x) !== null && (x.dividend_observations || 0) > 0);
+  const ranked = [...dividendData].sort((a,b) => getYield(b) - getYield(a));
+  const high = ranked.filter(x => getYield(x) >= 10);
+  let html = `
+    <div class="list-item">
+      <div class="list-title">Stav skenu</div>
+      <div class="list-detail">Použitelné ceny: ${priced.length}/${results.length}. Tituly s historickými dividendovými událostmi: ${dividendData.length}.</div>
+    </div>`;
+  if (ranked.length) {
+    html += `
+      <div class="list-item">
+        <div class="list-title">Nejvyšší vypočtený historický výnos</div>
+        <div class="list-detail">${safeText(ranked[0].symbol)} — ${fmt(getYield(ranked[0]), 2)} %. Nejde automaticky o nejlepší investici.</div>
+      </div>`;
+  }
+  if (high.length) {
+    html += `
+      <div class="list-item">
+        <div class="list-title yellow">Zvýšená pozornost</div>
+        <div class="list-detail">${high.map(x => safeText(x.symbol)).join(", ")} mají vypočtený historický výnos alespoň 10 %. Takový výnos může souviset se zvýšeným rizikem.</div>
+      </div>`;
+  }
+  html += `
+    <div class="list-item">
+      <div class="list-title">Omezení analýzy</div>
+      <div class="list-detail">Systém zatím nemá finanční výkazy, ocenění, prognózy ani zprávy. Hodnocení je pouze základní automatická kontrola dostupných dat.</div>
+    </div>`;
+  $("chiefPanel").innerHTML = html;
+}
+function renderAll() {
+  $("metricPrices").textContent = getPriceCount();
+  $("metricTotal").textContent = metadata.total_symbols ?? results.length;
+  $("scanTime").textContent = fmtDate(metadata.generated_at);
+  $("lastUpdate").textContent = fmtDate(metadata.generated_at);
+  $("metricSource").textContent = metadata.data_provider || "Neznámý";
+  $("metricSourceNote").textContent = "Zdroj uložený ve výsledcích";
+  const ranked = results
+    .filter(x => getYield(x) !== null && (x.dividend_observations || 0) > 0)
+    .sort((a,b) => getYield(b) - getYield(a));
+  if (ranked.length) {
+    $("metricYield").textContent = fmt(getYield(ranked[0]), 2) + "%";
+    $("metricYieldTicker").textContent = ranked[0].symbol + " · historický odhad";
+  } else {
+    $("metricYield").textContent = "—";
+    $("metricYieldTicker").textContent = "Žádná ověřitelná dividendová data";
+  }
+  $("systemBadge").textContent = getPriceCount() > 0
+    ? "● DATA NAČTENA"
+    : "● DATA NEDOSTUPNÁ";
+  $("systemBadge").style.color = getPriceCount() > 0
+    ? "var(--green)" : "var(--red)";
+  $("scannerStatus").textContent =
+    `Poslední uložený sken: ${getPriceCount()}/${results.length} použitelných cen. Dashboard se automaticky obnovuje každých 5 minut.`;
+  renderTable();
+  renderRisk();
+  renderChief();
+}
+async function loadData() {
+  const button = $("refreshButton");
+  button.disabled = true;
+  button.textContent = "Načítám…";
   try {
-    const response = await fetch(DATA_URL + "?t=" + Date.now(), {
-      cache: "no-store"
+    const response = await fetch(DATA_URL + "?_=" + Date.now(), {
+      cache:"no-store"
     });
     if (!response.ok) {
       throw new Error("HTTP " + response.status);
     }
     const data = await response.json();
     if (!Array.isArray(data.results)) {
-      throw new Error("Soubor neobsahuje pole results.");
+      throw new Error("JSON neobsahuje results.");
     }
-    marketResults = data.results;
-    renderSummary(data);
-    renderTable();
-    $("scannerMessage").textContent =
-      "Data načtena. Úspěšné ceny: " +
-      (data.successful_quotes ?? marketResults.filter((x) => numberValue(x.price) !== null).length) +
-      "/" + (data.total_symbols ?? marketResults.length) +
-      ". Poslední sken: " + formatDate(data.generated_at) + ".";
-    $("scannerMessage").className = "result green";
-    const disclaimer = data.disclaimer;
-    if (disclaimer) {
-      $("scannerMessage").title = disclaimer;
-    }
-    const currentTicker = $("ticker").value.trim().toUpperCase();
-    if (currentTicker) selectSymbol(currentTicker, false);
-    $("chief").textContent = buildChiefSummary();
+    metadata = data;
+    results = data.results;
+    renderAll();
+    $("systemMessage").textContent =
+      `Data načtena ze zdroje ${data.data_provider || "neuvedeno"}. ` +
+      `Poslední sken: ${fmtDate(data.generated_at)}. ` +
+      `Úspěšné ceny: ${getPriceCount()}/${results.length}.`;
+    $("systemMessage").className = "system-message green";
   } catch (error) {
-    $("scannerMessage").textContent =
-      "Data se nepodařilo načíst (" + error.message +
-      "). Zkontroluj, že GitHub Pages obsahuje data/results.json a že je veřejně dostupný.";
-    $("scannerMessage").className = "result red";
-    $("dataStatus").textContent = "Chyba načítání";
-    $("provider").textContent = "Nedostupný";
-    $("marketRows").innerHTML =
-      '<tr><td colspan="6" style="text-align:center">Data nejsou dostupná. Zkus tlačítko Obnovit výsledky.</td></tr>';
-    $("chief").textContent = "Analýzu nelze připravit bez načtených dat.";
+    $("systemMessage").textContent =
+      "Nepodařilo se načíst data/results.json (" + error.message +
+      "). Ověř, že soubor existuje v publikované verzi GitHub Pages.";
+    $("systemMessage").className = "system-message red";
+    $("systemBadge").textContent = "● CHYBA DAT";
+    $("systemBadge").style.color = "var(--red)";
+    $("scannerStatus").textContent = "Data nejsou dostupná.";
   } finally {
-    $("reloadButton").disabled = false;
+    button.disabled = false;
+    button.textContent = "↻ Obnovit data";
   }
 }
-function selectSymbol(symbol, updateChief = true) {
-  const ticker = String(symbol || "").toUpperCase();
-  const item = marketResults.find((entry) =>
-    String(entry.symbol || "").toUpperCase() === ticker
-  );
-  $("ticker").value = ticker;
-  if (item) {
-    if (numberValue(item.price) !== null) {
-      $("price").value = item.price;
-    } else {
-      $("price").value = "";
-    }
-    if (numberValue(item.dividend_per_share_year_estimate) !== null) {
-      $("dividend").value = item.dividend_per_share_year_estimate;
-    } else {
-      $("dividend").value = "";
-    }
-    if (updateChief) {
-      $("chief").textContent = buildSymbolSummary(item);
-    }
-  }
-}
-function buildSymbolSummary(item) {
-  const yieldValue = getYield(item);
-  if (numberValue(item.price) === null) {
-    return item.symbol + ": chybí platná cena, takže spolehlivé porovnání není možné.";
-  }
-  if (yieldValue === null) {
-    return item.symbol + ": cena je načtena, ale dividendový výnos není dostupný.";
-  }
-  if (yieldValue >= 10) {
-    return item.symbol + ": historický odhad výnosu činí " +
-      formatNumber(yieldValue, 2) +
-      "%. Takto vysoký výnos vyžaduje prověření udržitelnosti dividendy a rizika poklesu ceny.";
-  }
-  if (yieldValue >= 6) {
-    return item.symbol + ": historický odhad výnosu činí " +
-      formatNumber(yieldValue, 2) +
-      "%. Prověř vývoj dividend, zadlužení a schopnost společnosti dividendy financovat.";
-  }
-  return item.symbol + ": historický odhad výnosu činí " +
-    formatNumber(yieldValue, 2) +
-    "%. Samotný výnos nestačí k posouzení kvality ani rizika investice.";
-}
-function buildChiefSummary() {
-  const priced = marketResults.filter((item) => numberValue(item.price) !== null);
-  const yields = marketResults.filter((item) => getYield(item) !== null);
-  if (!priced.length) {
-    return "Zatím nejsou k dispozici žádná použitelná cenová data.";
-  }
-  if (!yields.length) {
-    return "Ceny byly načteny u " + priced.length +
-      " tickerů, ale nemáme dost údajů pro porovnání dividendových výnosů.";
-  }
-  const highest = [...yields].sort((a, b) => getYield(b) - getYield(a))[0];
-  return "Scanner načetl " + priced.length + " z " + marketResults.length +
-    " sledovaných cen. Nejvyšší vypočtený historický dividendový výnos má " +
-    highest.symbol + " (" + formatNumber(getYield(highest), 2) +
-    "%). Nejde o doporučení k nákupu: vysoký výnos může signalizovat zvýšené riziko a historické dividendy nezaručují budoucí výplaty.";
-}
-function analyzeSelected() {
-  const ticker = $("ticker").value.trim().toUpperCase();
-  const priceText = $("price").value;
-  const dividendText = $("dividend").value;
-  const price = Number(priceText);
-  const dividend = Number(dividendText);
-  const output = $("analysisResult");
-  if (
-    !ticker ||
-    priceText === "" ||
-    dividendText === "" ||
-    !Number.isFinite(price) ||
-    price <= 0 ||
-    !Number.isFinite(dividend) ||
-    dividend < 0
-  ) {
-    output.innerHTML =
-      '<span class="red">Vyber akcii s dostupnou cenou a dividendovými údaji, nebo zadej platné hodnoty ručně.</span>';
-    return;
-  }
-  const yieldPct = dividend / price * 100;
-  let riskText;
-  let riskClass;
-  if (yieldPct >= 10) {
-    riskText = "Velmi vysoký historický výnos. Prověř riziko snížení dividendy, vývoj ceny a finanční zdraví.";
-    riskClass = "red";
-  } else if (yieldPct >= 6) {
-    riskText = "Zvýšený historický výnos. Prověř udržitelnost dividendy a celkové riziko.";
-    riskClass = "blue";
-  } else {
-    riskText = "Nižší historický výnos. Ani ten však sám o sobě nepotvrzuje bezpečnost investice.";
-    riskClass = "green";
-  }
-  output.innerHTML =
-    '<div class="metric"><span>Ticker</span><strong>' + escapeHTML(ticker) + '</strong></div>' +
-    '<div class="metric"><span>Cena</span><strong>' + formatNumber(price, 3) + '</strong></div>' +
-    '<div class="metric"><span>Historická dividenda / rok</span><strong>' + formatNumber(dividend, 3) + '</strong></div>' +
-    '<div class="metric"><span>Hrubý historický výnos</span><strong class="green">' + formatNumber(yieldPct, 2) + '%</strong></div>' +
-    '<p class="' + riskClass + '">' + riskText + '</p>' +
-    '<p class="small">Tento výpočet nezahrnuje daně, poplatky, měnové změny, celkový výnos ani budoucí změny dividendy.</p>';
-}
-function clearAnalysis() {
-  $("analysisResult").textContent = "";
-}
-$("search").addEventListener("input", renderTable);
-$("sort").addEventListener("change", renderTable);
-$("reloadButton").addEventListener("click", loadMarketData);
-$("analyzeButton").addEventListener("click", analyzeSelected);
-$("clearButton").addEventListener("click", clearAnalysis);
-loadMarketData();
+$("searchInput").addEventListener("input", renderTable);
+$("sortSelect").addEventListener("change", renderTable);
+$("refreshButton").addEventListener("click", loadData);
+loadData();
+setInterval(loadData, 5 * 60 * 1000);
 </script>
 </body>
 </html>
