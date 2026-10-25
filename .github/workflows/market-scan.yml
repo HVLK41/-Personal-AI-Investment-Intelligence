@@ -1,36 +1,185 @@
+
 name: HVLK AI US Market Scanner
+
 on:
   workflow_dispatch:
   schedule:
     - cron: "17 6 * * 1-5"
+
+# Výchozí oprávnění pro celý workflow.
 permissions:
-  contents: write
+  contents: read
+
 concurrency:
   group: hvlk-ai-market-scan
   cancel-in-progress: false
+
 jobs:
   scan:
+    name: Isolated market scan
+    if: github.repository == 'HVLK41/-Personal-AI-Investment-Intelligence' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
+    permissions:
+      contents: read
+
     steps:
-      - name: Checkout repository
+      - name: Checkout source
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Update US instrument universe
+
+      # Pokud má projekt requirements.txt, instaluj jen
+      # deklarované a připnuté závislosti. Nepoužívej
+      # instalaci balíčků z dynamických dat.
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            python -m pip install --disable-pip-version-check \
+              --no-input -r requirements.txt
+          fi
+
+      - name: Update instrument universe
         run: python universe.py
+
       - name: Run market scanner
         run: python scanner.py
-      - name: Save scan results
+
+      - name: Prepare data-only artifact
+        shell: bash
         run: |
+          set -euo pipefail
+          mkdir -p outgoing
+
+          for file in universe.json results.json market.json; do
+            test -f "data/$file"
+            test ! -L "data/$file"
+            test "$(stat -c %s "data/$file")" -le 5000000
+            cp -- "data/$file" "outgoing/$file"
+          done
+
+      - name: Upload scan output
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-json
+          path: outgoing/*.json
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Validate and publish
+    needs: scan
+    if: github.repository == 'HVLK41/-Personal-AI-Investment-Intelligence' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout trusted main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Download data-only artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: market-json
+          path: incoming
+
+      # Zde se nikdy nespouští kód stažený v artefaktu.
+      - name: Validate JSON files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I - <<'PY'
+          import json
+          from pathlib import Path
+
+          required = {"universe.json", "results.json", "market.json"}
+          incoming = Path("incoming")
+
+          if not incoming.is_dir():
+              raise SystemExit("Missing artifact directory")
+
+          actual = {p.name for p in incoming.iterdir()}
+          if actual != required:
+              raise SystemExit(
+                  f"Unexpected artifact files: {sorted(actual)}"
+              )
+
+          for name in sorted(required):
+              path = incoming / name
+
+              if path.is_symlink() or not path.is_file():
+                  raise SystemExit(f"Invalid file: {name}")
+
+              raw = path.read_bytes()
+              if not raw or len(raw) > 5_000_000:
+                  raise SystemExit(f"Invalid size: {name}")
+
+              try:
+                  data = json.loads(raw)
+              except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+                  raise SystemExit(f"Invalid JSON: {name}") from exc
+
+              # Základní kontrola typu; konkrétní schéma
+              # doplň podle skutečných výstupů scanneru.
+              if not isinstance(data, (dict, list)):
+                  raise SystemExit(f"Unexpected JSON root: {name}")
+
+              def check_depth(value, depth=0):
+                  if depth > 30:
+                      raise ValueError("JSON nesting too deep")
+                  if isinstance(value, dict):
+                      for k, v in value.items():
+                          if not isinstance(k, str):
+                              raise ValueError("Invalid object key")
+                          check_depth(v, depth + 1)
+                  elif isinstance(value, list):
+                      for item in value:
+                          check_depth(item, depth + 1)
+
+              try:
+                  check_depth(data)
+              except ValueError as exc:
+                  raise SystemExit(f"Unsafe JSON structure: {name}") from exc
+
+              print(f"Validated {name}: {len(raw)} bytes")
+          PY
+
+      - name: Replace only approved data files
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -m 0644 incoming/universe.json data/universe.json
+          install -m 0644 incoming/results.json data/results.json
+          install -m 0644 incoming/market.json data/market.json
+
+      - name: Commit and push data
+        shell: bash
+        run: |
+          set -euo pipefail
+
           git config user.name "HVLK AI Bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/universe.json data/results.json data/market.json
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -- \
+            data/universe.json \
+            data/results.json \
+            data/market.json
+
           if git diff --cached --quiet; then
-            echo "No changes to save."
-          else
-            git commit -m "Update HVLK AI US market data"
-            git push
+            echo "No changes to publish."
+            exit 0
           fi
+
+          git diff --cached --check
+          git commit -m "Update HVLK AI US market data"
+          git push origin HEAD:main
