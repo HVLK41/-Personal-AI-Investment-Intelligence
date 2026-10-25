@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d18">
+<title>HVLK AI | Investment Intelligence</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg:#080d18;
+  --panel:#111a2b;
+  --border:#26334a;
+  --text:#f1f5f9;
+  --muted:#8fa1bb;
+  --green:#43e0a0;
+  --blue:#69a7ff;
+  --red:#ff7185;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+header {
+  padding:25px 18px 20px;
+  background:linear-gradient(135deg,#142640,#080d18);
+  border-bottom:1px solid var(--border);
+}
+.brand {
+  color:var(--green);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:3px;
+}
+h1 { font-size:27px; margin:8px 0; }
+.subtitle { color:var(--muted); font-size:13px; }
+.container { padding:16px; max-width:850px; margin:auto; }
+.notice {
+  padding:12px;
+  border:1px solid #65532c;
+  border-radius:12px;
+  background:#292213;
+  color:#f5d58b;
+  font-size:12px;
+  line-height:1.5;
+}
+.section-title {
+  margin:24px 0 12px;
+  font-size:16px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.card {
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  min-width:0;
+}
+.icon { font-size:23px; }
+.card h3 { font-size:14px; margin:10px 0 6px; }
+.card p { color:var(--muted); font-size:12px; line-height:1.5; margin:0; }
+.status {
+  display:inline-block;
+  color:var(--green);
+  background:#15352f;
+  border-radius:6px;
+  padding:5px 7px;
+  font-size:10px;
+  margin-top:12px;
+}
+label { display:block; font-size:13px; margin:14px 0 7px; }
+input,select,button {
+  width:100%;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#0b1322;
+  color:var(--text);
+  padding:13px;
+  font-size:15px;
+}
+button {
+  background:var(--green);
+  color:#062016;
+  border:0;
+  font-weight:800;
+  margin-top:12px;
+  cursor:pointer;
+}
+button.secondary {
+  background:#1b2b43;
+  color:var(--text);
+  border:1px solid var(--border);
+}
+.result {
+  margin-top:14px;
+  line-height:1.65;
+  font-size:13px;
+  overflow-wrap:anywhere;
+}
+.metric {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+}
+.metric span:first-child { color:var(--muted); }
+.green { color:var(--green); }
+.blue { color:var(--blue); }
+.red { color:var(--red); }
+footer {
+  color:var(--muted);
+  font-size:11px;
+  text-align:center;
+  padding:25px 12px;
+}
+@media(min-width:600px) {
+  .grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">HVLK / INTELLIGENCE SYSTEMS</div>
+  <h1>Investment Lab</h1>
+  <div class="subtitle">Tvá osobní investiční analytická stanice</div>
+</header>
+<main class="container">
+  <div class="notice">
+    PROTOTYP v0.1 · Analýzy zatím používají pouze demonstrační data.
+    Živé tržní ceny ani skutečná AI zatím nejsou připojené.
+  </div>
+  <h2 class="section-title">Analytický tým</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🌐</div>
+      <h3>Web Hunter</h3>
+      <p>Příprava na vyhledávání zpráv a finančních informací.</p>
+      <span class="status">PŘIPRAVEN</span>
+    </div>
+    <div class="card">
+      <div class="icon">💰</div>
+      <h3>Dividend Hunter</h3>
+      <p>Hodnocení dividendového výnosu a udržitelnosti.</p>
+      <span class="status">ZÁKLADNÍ MODUL</span>
+    </div>
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>Trading Hunter</h3>
+      <p>Příprava technické analýzy a obchodních signálů.</p>
+      <span class="status">ZÁKLADNÍ MODUL</span>
+    </div>
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Risk Manager</h3>
+      <p>Kontrola dat, předpokladů a investičních rizik.</p>
+      <span class="status">PŘIPRAVEN</span>
+    </div>
+  </div>
+  <h2 class="section-title">Analytická laboratoř</h2>
+  <div class="card">
+    <p>Zadej ticker a orientační roční dividendu na akcii.
+    Výpočet používá tvoje vstupy, nikoli automaticky načtená tržní data.</p>
+<label for="ticker">Ticker akcie</label>
+<input id="ticker" maxlength="12" value="AGNC"
+  placeholder="Např. AGNC, O, NNN">
+<label for="price">Cena jedné akcie (USD)</label>
+<input id="price" type="number" min="0.01" step="0.01"
+  placeholder="Zadej aktuální cenu">
+<label for="dividend">Roční dividenda na akcii (USD)</label>
+<input id="dividend" type="number" min="0" step="0.01"
+  placeholder="Zadej roční dividendu">
+<button onclick="analyze()">Analyzovat vstupy</button>
+<button class="secondary" onclick="clearResults()">Vymazat výsledky</button>
+<div id="result" class="result" aria-live="polite"></div>
+  </div>
+  <h2 class="section-title">Chief Analyst</h2>
+  <div class="card">
+    <p id="chief">Čekám na vstupy analytických modulů.</p>
+  </div>
+  <h2 class="section-title">Stav systému</h2>
+  <div class="card">
+    <div class="metric"><span>Verze</span><strong>0.1 Prototype</strong></div>
+    <div class="metric"><span>Živá burzovní data</span><strong class="red">Nepřipojena</strong></div>
+    <div class="metric"><span>AI model</span><strong class="red">Nepřipojen</strong></div>
+    <div class="metric"><span>Automatické obchodování</span><strong>Vypnuto</strong></div>
+  </div>
+</main>
+<footer>
+  HVLK AI · Investment Intelligence<br>
+  Výpočty jsou informativní a nejsou investičním doporučením.
+</footer>
+<script>
+function analyze() {
+  const ticker = document.getElementById("ticker").value
+    .trim().toUpperCase();
+  const price = Number(document.getElementById("price").value);
+  const dividend = Number(document.getElementById("dividend").value);
+  const result = document.getElementById("result");
+  const chief = document.getElementById("chief");
+  if (!ticker || !Number.isFinite(price) || price <= 0 ||
+      !Number.isFinite(dividend) || dividend < 0 ||
+      document.getElementById("price").value === "" ||
+      document.getElementById("dividend").value === "") {
+    result.innerHTML =
+      '<span class="red">Zadej ticker, cenu vyšší než nula a nezápornou roční dividendu.</span>';
+    chief.textContent = "Analýza nebyla provedena. Chybí platné vstupy.";
+    return;
+  }
+  const yieldPct = dividend / price * 100;
+  let riskText;
+  let riskClass;
+  if (yieldPct > 10) {
+    riskText = "Vysoký výnos vyžaduje důkladné prověření.";
+    riskClass = "red";
+  } else if (yieldPct > 6) {
+    riskText = "Zvýšený výnos. Prověř udržitelnost dividendy.";
+    riskClass = "blue";
+  } else {
+    riskText = "Samotný výnos neukazuje celkové investiční riziko.";
+    riskClass = "green";
+  }
+  result.innerHTML =
+    '<div class="metric"><span>Ticker</span><strong>' + ticker + '</strong></div>' +
+    '<div class="metric"><span>Zadaná cena</span><strong>$' + price.toFixed(2) + '</strong></div>' +
+    '<div class="metric"><span>Roční dividenda</span><strong>$' + dividend.toFixed(2) + '</strong></div>' +
+    '<div class="metric"><span>Hrubý dividendový výnos</span><strong class="green">' + yieldPct.toFixed(2) + '%</strong></div>' +
+    '<p class="' + riskClass + '">' + riskText + '</p>' +
+    '<p>Výpočet vychází výhradně z tvých vstupů. Neověřuje cenu, dividendu, finanční zdraví ani pravděpodobnost budoucích výplat.</p>';
+  chief.textContent = ticker + ": vypočtený hrubý dividendový výnos je " +
+    yieldPct.toFixed(2) + "%. Pro další závěr potřebujeme ověřená finanční data.";
+}
+function clearResults() {
+  document.getElementById("result").textContent = "";
+  document.getElementById("chief").textContent =
+    "Čekám na vstupy analytických modulů.";
+}
+</script>
+</body>
+</html>
