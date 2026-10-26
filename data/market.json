@@ -1,1863 +1,2644 @@
 {
   "project": "HVLK AI",
-  "generated_at": "2026-10-26T07:27:10Z",
+  "generated_at": "2026-10-26T19:54:41Z",
   "market": "US",
-  "asset_scope": "US-listed common stocks and ADRs where identified; classification may be imperfect.",
+  "asset_scope": "US-listed instruments supplied by Universe. Instrument classification may be imperfect.",
   "data_provider": "Yahoo Finance chart endpoint",
   "universe_symbols": 5901,
   "scanned_symbols": 5901,
-  "successful_quotes": 5874,
-  "failed_quotes": 27,
-  "coverage_percent": 99.54,
-  "scan_started_at": "2026-10-26T07:12:23Z",
-  "scan_finished_at": "2026-10-26T07:27:10Z",
+  "successful_quotes": 5899,
+  "failed_quotes": 2,
+  "coverage_percent": 99.97,
+  "scan_started_at": "2026-10-26T19:39:54Z",
+  "scan_finished_at": "2026-10-26T19:54:41Z",
   "top_gainers": [
     {
-      "symbol": "AIOK",
-      "name": "AI OKTO CORP. - Common Stock",
-      "price": 12.02,
-      "previous_close": 4.25,
-      "change_percent": 182.8235,
-      "volume": 42564200,
-      "average_volume_20d": 65220.0,
-      "volume_ratio": 652.62,
-      "turnover_estimate": 511621703.48,
+      "symbol": "AZTR",
+      "provider_symbol": "AZTR",
+      "name": "Azitra Inc Common Stock",
+      "price": 1.6,
+      "previous_close": 0.715,
+      "change_percent": 123.7762,
+      "volume": 140522465,
+      "average_volume_20d": 84217.37,
+      "volume_ratio": 1668.57,
+      "turnover_estimate": 224835947.35,
       "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:12:52Z",
+      "exchange": "ASE",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:19Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "A"
+      ]
     },
     {
       "symbol": "CLRO",
+      "provider_symbol": "CLRO",
       "name": "ClearOne, Inc. - Common Stock",
-      "price": 3.25,
-      "previous_close": 1.92,
-      "change_percent": 69.2708,
-      "volume": 36089700,
-      "average_volume_20d": 1647660.0,
-      "volume_ratio": 21.9,
-      "turnover_estimate": 117291525.0,
+      "price": 5.0094,
+      "previous_close": 3.25,
+      "change_percent": 54.1354,
+      "volume": 78954204,
+      "average_volume_20d": 3398770.0,
+      "volume_ratio": 23.23,
+      "turnover_estimate": 395513180.9,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:15:20Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:51Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "BOLT",
-      "name": "Bolt Biotherapeutics, Inc. - Common Stock",
-      "price": 6.27,
-      "previous_close": 4.19,
-      "change_percent": 49.642,
-      "volume": 12784300,
-      "average_volume_20d": 22100.0,
-      "volume_ratio": 578.48,
-      "turnover_estimate": 80157560.76,
+      "symbol": "SGRY",
+      "provider_symbol": "SGRY",
+      "name": "Surgery Partners, Inc. - Common Stock",
+      "price": 23.245001,
+      "previous_close": 15.75,
+      "change_percent": 47.5873,
+      "volume": 56343275,
+      "average_volume_20d": 1761175.0,
+      "volume_ratio": 31.99,
+      "turnover_estimate": 1309699474.66,
       "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:14:24Z",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:49Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "MYND",
-      "name": "Mynd.ai, Inc. American Depositary Shares",
-      "price": 0.24,
-      "previous_close": 0.163,
-      "change_percent": 47.2393,
-      "volume": 55591400,
-      "average_volume_20d": 648645.0,
-      "volume_ratio": 85.7,
-      "turnover_estimate": 13341935.7,
-      "currency": "USD",
-      "exchange": "ASE",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:19Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "ESLA",
-      "name": "Estrella Immunopharma, Inc. - Common Stock",
-      "price": 0.985,
-      "previous_close": 0.727,
-      "change_percent": 35.4883,
-      "volume": 3671500,
-      "average_volume_20d": 5236480.0,
-      "volume_ratio": 0.7,
-      "turnover_estimate": 3616427.55,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:16:56Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "JYD",
-      "name": "Jayud Global Logistics Limited - Class A Ordinary Shares",
-      "price": 1.83,
-      "previous_close": 1.38,
-      "change_percent": 32.6087,
-      "volume": 3623900,
-      "average_volume_20d": 1869870.0,
-      "volume_ratio": 1.94,
-      "turnover_estimate": 6631737.16,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:39Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "GPUS",
-      "name": "Hyperscale Data, Inc. Common Stock",
-      "price": 0.17,
-      "previous_close": 0.13,
-      "change_percent": 30.7692,
-      "volume": 381278900,
-      "average_volume_20d": 33293380.0,
-      "volume_ratio": 11.45,
-      "turnover_estimate": 64817413.68,
-      "currency": "USD",
-      "exchange": "ASE",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:13Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "HTCO",
-      "name": "High-Trend International Group - Class A Ordinary Shares",
-      "price": 1.53,
-      "previous_close": 1.17,
-      "change_percent": 30.7692,
-      "volume": 3550500,
-      "average_volume_20d": 220290.0,
-      "volume_ratio": 16.12,
-      "turnover_estimate": 5432264.9,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:46Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "IMC",
-      "name": "IMC Rare Earths Ltd Ordinary Shares",
-      "price": 8.99,
-      "previous_close": 7.0,
-      "change_percent": 28.4286,
-      "volume": 81400,
-      "average_volume_20d": 111590.0,
-      "volume_ratio": 0.73,
-      "turnover_estimate": 731785.98,
-      "currency": "USD",
-      "exchange": "ASE",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:05Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "UWMC",
-      "name": "UWM Holdings Corporation Class A Common Stock",
-      "price": 1.45,
-      "previous_close": 1.15,
-      "change_percent": 26.087,
-      "volume": 25449500,
-      "average_volume_20d": 11931350.0,
-      "volume_ratio": 2.13,
-      "turnover_estimate": 36901776.21,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:05Z",
-      "dividend_yield_estimate_percent": 20.69,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "XTIA",
-      "name": "XTI Aerospace, Inc. Common Stock  - Common Stock",
-      "price": 1.07,
-      "previous_close": 0.85,
-      "change_percent": 25.8824,
-      "volume": 4394500,
-      "average_volume_20d": 862095.0,
-      "volume_ratio": 5.1,
-      "turnover_estimate": 4702115.23,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:56Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "BKHA",
-      "name": "Black Hawk Acquisition Corporation - Class A Ordinary Shares",
-      "price": 5.4,
-      "previous_close": 4.29,
-      "change_percent": 25.8741,
-      "volume": 200700,
-      "average_volume_20d": 51444.44,
-      "volume_ratio": 3.9,
-      "turnover_estimate": 1083780.02,
+      "symbol": "RFAI",
+      "provider_symbol": "RFAI",
+      "name": "RF Acquisition Corp II - Ordinary Shares",
+      "price": 37.0,
+      "previous_close": 26.15,
+      "change_percent": 41.4914,
+      "volume": 103251,
+      "average_volume_20d": 8375.0,
+      "volume_ratio": 12.33,
+      "turnover_estimate": 3820287.0,
       "currency": "USD",
       "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:14:13Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:08Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "NWTG",
+      "provider_symbol": "NWTG",
+      "name": "Newton Golf Company, Inc. - Common Stock",
+      "price": 1.19,
+      "previous_close": 0.92,
+      "change_percent": 29.3478,
+      "volume": 206118,
+      "average_volume_20d": 212895.0,
+      "volume_ratio": 0.97,
+      "turnover_estimate": 245280.43,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:30Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "MSGY",
+      "provider_symbol": "MSGY",
+      "name": "Masonglory Limited - Class A Ordinary Shares",
+      "price": 3.51,
+      "previous_close": 2.73,
+      "change_percent": 28.5714,
+      "volume": 450138,
+      "average_volume_20d": 2803685.0,
+      "volume_ratio": 0.16,
+      "turnover_estimate": 1579984.38,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:48:41Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "EFOI",
+      "provider_symbol": "EFOI",
+      "name": "Energy Focus, Inc. - Common Stock",
+      "price": 3.755,
+      "previous_close": 2.93,
+      "change_percent": 28.157,
+      "volume": 336296,
+      "average_volume_20d": 14115.0,
+      "volume_ratio": 23.83,
+      "turnover_estimate": 1262791.52,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:44:07Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "LUCD",
+      "provider_symbol": "LUCD",
       "name": "Lucid Diagnostics Inc. - Common Stock",
-      "price": 0.411,
-      "previous_close": 0.328,
-      "change_percent": 25.3049,
-      "volume": 110910300,
-      "average_volume_20d": 4764290.0,
-      "volume_ratio": 23.28,
-      "turnover_estimate": 45584134.78,
+      "price": 0.5089,
+      "previous_close": 0.411,
+      "change_percent": 23.8199,
+      "volume": 41768587,
+      "average_volume_20d": 10250385.0,
+      "volume_ratio": 4.07,
+      "turnover_estimate": 21256033.37,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:25Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:47:56Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "EPOW",
-      "name": "E-Power Inc. - Class A Ordinary Shares",
-      "price": 3.54,
-      "previous_close": 2.83,
-      "change_percent": 25.0883,
-      "volume": 50000,
-      "average_volume_20d": 25660.0,
-      "volume_ratio": 1.95,
-      "turnover_estimate": 177000.0,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:16:51Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "NAUT",
-      "name": "Nautilus Biotechnology, Inc. - Common Stock",
-      "price": 3.24,
-      "previous_close": 2.6,
-      "change_percent": 24.6154,
-      "volume": 13582300,
-      "average_volume_20d": 11340080.0,
-      "volume_ratio": 1.2,
-      "turnover_estimate": 44006652.13,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:23Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "AIRE",
-      "name": "reAlpha Tech Corp. - Common Stock",
-      "price": 0.991,
-      "previous_close": 0.8,
-      "change_percent": 23.875,
-      "volume": 152400,
-      "average_volume_20d": 39420.0,
-      "volume_ratio": 3.87,
-      "turnover_estimate": 151028.4,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:12:53Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "BKYI",
-      "name": "BIO-key International, Inc. - Common Stock",
-      "price": 3.39,
-      "previous_close": 2.74,
-      "change_percent": 23.7226,
-      "volume": 35209900,
-      "average_volume_20d": 14660850.0,
-      "volume_ratio": 2.4,
-      "turnover_estimate": 119361564.69,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:14:14Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "STEX",
-      "name": "Streamex Corp. - Common Stock",
-      "price": 0.44,
-      "previous_close": 0.357,
-      "change_percent": 23.2493,
-      "volume": 2733800,
-      "average_volume_20d": 961280.0,
-      "volume_ratio": 2.84,
-      "turnover_estimate": 1202871.99,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:54Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "NIVF",
-      "name": "NewGenIvf Group Limited - Class A Ordinary Shares",
-      "price": 1.46,
-      "previous_close": 1.192,
-      "change_percent": 22.4832,
-      "volume": 1083500,
-      "average_volume_20d": 4064024.15,
-      "volume_ratio": 0.27,
-      "turnover_estimate": 1581910.04,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:37Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "SAIH",
-      "name": "SAIHEAT Limited - Class A Ordinary Shares",
-      "price": 29.32,
-      "previous_close": 24.07,
-      "change_percent": 21.8114,
-      "volume": 17800,
-      "average_volume_20d": 18270.0,
-      "volume_ratio": 0.97,
-      "turnover_estimate": 521895.99,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:02Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "QSI",
-      "name": "Quantum-Si Incorporated - Class A Common Stock",
-      "price": 1.4,
-      "previous_close": 1.15,
-      "change_percent": 21.7391,
-      "volume": 11414800,
-      "average_volume_20d": 11816110.0,
-      "volume_ratio": 0.97,
-      "turnover_estimate": 15980719.73,
-      "currency": "USD",
-      "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:21Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "RHI",
-      "name": "Robert Half Inc. Common Stock",
-      "price": 45.869999,
-      "previous_close": 37.68,
-      "change_percent": 21.7357,
-      "volume": 6894100,
-      "average_volume_20d": 1811520.0,
-      "volume_ratio": 3.81,
-      "turnover_estimate": 316232359.64,
+      "symbol": "EAF",
+      "provider_symbol": "EAF",
+      "name": "GrafTech International Ltd. Common Stock",
+      "price": 10.43,
+      "previous_close": 8.51,
+      "change_percent": 22.5617,
+      "volume": 1926541,
+      "average_volume_20d": 513275.0,
+      "volume_ratio": 3.75,
+      "turnover_estimate": 20093823.22,
       "currency": "USD",
       "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:40Z",
-      "dividend_yield_estimate_percent": 5.145,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "REED",
-      "name": "Reed's, Inc. Common Stock",
-      "price": 0.59,
-      "previous_close": 0.49,
-      "change_percent": 20.4082,
-      "volume": 1304800,
-      "average_volume_20d": 3273855.0,
-      "volume_ratio": 0.4,
-      "turnover_estimate": 769831.97,
-      "currency": "USD",
-      "exchange": "ASE",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:33Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:44:01Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
     },
     {
-      "symbol": "CNDT",
-      "name": "Conduent Incorporated - Common Stock",
-      "price": 1.79,
-      "previous_close": 1.49,
-      "change_percent": 20.1342,
-      "volume": 2609100,
-      "average_volume_20d": 1038995.0,
-      "volume_ratio": 2.51,
-      "turnover_estimate": 4670288.9,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:15:25Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "YHC",
-      "name": "LQR House Inc. - Common Stock",
-      "price": 3.0,
-      "previous_close": 2.5,
-      "change_percent": 20.0,
-      "volume": 307100,
-      "average_volume_20d": 341365.0,
-      "volume_ratio": 0.9,
-      "turnover_estimate": 921300.0,
+      "symbol": "VEEA",
+      "provider_symbol": "VEEA",
+      "name": "Veea Inc. - Common Stock",
+      "price": 6.0218,
+      "previous_close": 4.93,
+      "change_percent": 22.146,
+      "volume": 1664470,
+      "average_volume_20d": 12665105.0,
+      "volume_ratio": 0.13,
+      "turnover_estimate": 10023105.51,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:59Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:53:40Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "HOST",
+      "provider_symbol": "HOST",
+      "name": "Host Digital Inc. Class A Common Stock",
+      "price": 2.9299,
+      "previous_close": 2.41,
+      "change_percent": 21.5726,
+      "volume": 479728,
+      "average_volume_20d": 539255.0,
+      "volume_ratio": 0.89,
+      "turnover_estimate": 1405555.03,
+      "currency": "USD",
+      "exchange": "ASE",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:46:12Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "A"
+      ]
+    },
+    {
+      "symbol": "XTND",
+      "provider_symbol": "XTND",
+      "name": "Xtend AI Robotics, Inc. Common Stock",
+      "price": 2.15,
+      "previous_close": 1.77,
+      "change_percent": 21.4689,
+      "volume": 40247363,
+      "average_volume_20d": 1038425.0,
+      "volume_ratio": 38.76,
+      "turnover_estimate": 86531834.29,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:27Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "CENN",
+      "provider_symbol": "CENN",
+      "name": "Cenntro Inc. - Common Stock",
+      "price": 2.84,
+      "previous_close": 2.34,
+      "change_percent": 21.3675,
+      "volume": 901554,
+      "average_volume_20d": 15525.0,
+      "volume_ratio": 58.07,
+      "turnover_estimate": 2560413.28,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:32Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "RPGL",
+      "provider_symbol": "RPGL",
+      "name": "Republic Power Group Limited - Class A Ordinary Shares",
+      "price": 8.07,
+      "previous_close": 6.65,
+      "change_percent": 21.3534,
+      "volume": 331979,
+      "average_volume_20d": 171570.0,
+      "volume_ratio": 1.93,
+      "turnover_estimate": 2679070.43,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:22Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "RENT",
+      "provider_symbol": "RENT",
+      "name": "Rent the Runway, Inc. - Class A Common Stock",
+      "price": 2.79,
+      "previous_close": 2.3,
+      "change_percent": 21.3043,
+      "volume": 25557383,
+      "average_volume_20d": 362410.0,
+      "volume_ratio": 70.52,
+      "turnover_estimate": 71305097.6,
+      "currency": "USD",
+      "exchange": "NGM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:06Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "RPD",
+      "provider_symbol": "RPD",
+      "name": "Rapid7, Inc. - Common Stock",
+      "price": 17.959999,
+      "previous_close": 14.91,
+      "change_percent": 20.4561,
+      "volume": 3908116,
+      "average_volume_20d": 1568990.0,
+      "volume_ratio": 2.49,
+      "turnover_estimate": 70189759.78,
+      "currency": "USD",
+      "exchange": "NGM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:21Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "ABOS",
+      "provider_symbol": "ABOS",
+      "name": "Acumen Pharmaceuticals, Inc. - Common Stock",
+      "price": 2.375,
+      "previous_close": 1.98,
+      "change_percent": 19.9495,
+      "volume": 1437290,
+      "average_volume_20d": 638935.0,
+      "volume_ratio": 2.25,
+      "turnover_estimate": 3413563.75,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:39:59Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "AMOD",
+      "provider_symbol": "AMOD",
+      "name": "Alpha Modus Holdings, Inc. - Class A Common Stock",
+      "price": 1.125,
+      "previous_close": 0.94,
+      "change_percent": 19.6809,
+      "volume": 3777473,
+      "average_volume_20d": 19765255.0,
+      "volume_ratio": 0.19,
+      "turnover_estimate": 4249657.12,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:40:38Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "SWRD",
+      "provider_symbol": "SWRD",
+      "name": "Stewards Inc - Common Stock",
+      "price": 2.98,
+      "previous_close": 2.5,
+      "change_percent": 19.2,
+      "volume": 585018,
+      "average_volume_20d": 198650.0,
+      "volume_ratio": 2.94,
+      "turnover_estimate": 1743353.65,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:35Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "BRLS",
+      "provider_symbol": "BRLS",
+      "name": "Borealis Foods Inc. - Class A Common Shares",
+      "price": 1.16,
+      "previous_close": 0.98,
+      "change_percent": 18.3673,
+      "volume": 6771,
+      "average_volume_20d": 11272.22,
+      "volume_ratio": 0.6,
+      "turnover_estimate": 7854.36,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:00Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "RIBB",
+      "provider_symbol": "RIBB",
+      "name": "Ribbon Acquisition Corp - Class A Ordinary Shares",
+      "price": 6.7101,
+      "previous_close": 5.67,
+      "change_percent": 18.3439,
+      "volume": 8651,
+      "average_volume_20d": 7952.94,
+      "volume_ratio": 1.09,
+      "turnover_estimate": 58049.08,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:11Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "RRC",
+      "provider_symbol": "RRC",
+      "name": "Range Resources Corporation Common Stock",
+      "price": 53.415001,
+      "previous_close": 45.52,
+      "change_percent": 17.344,
+      "volume": 23119644,
+      "average_volume_20d": 2709990.0,
+      "volume_ratio": 8.53,
+      "turnover_estimate": 1234935805.43,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:23Z",
+      "dividend_yield_estimate_percent": 0.73,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "YOUL",
+      "provider_symbol": "YOUL",
+      "name": "Youlife Group Inc. - American Depositary Shares",
+      "price": 0.31,
+      "previous_close": 0.265,
+      "change_percent": 16.9811,
+      "volume": 204430,
+      "average_volume_20d": 267695.0,
+      "volume_ratio": 0.76,
+      "turnover_estimate": 63373.3,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:32Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "IMC",
+      "provider_symbol": "IMC",
+      "name": "IMC Rare Earths Ltd Ordinary Shares",
+      "price": 10.505,
+      "previous_close": 8.99,
+      "change_percent": 16.8521,
+      "volume": 102277,
+      "average_volume_20d": 113710.0,
+      "volume_ratio": 0.9,
+      "turnover_estimate": 1074419.9,
+      "currency": "USD",
+      "exchange": "ASE",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:46:36Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "A"
+      ]
+    },
+    {
+      "symbol": "XRTX",
+      "provider_symbol": "XRTX",
+      "name": "XORTX Therapeutics Inc. - Common Shares",
+      "price": 1.07,
+      "previous_close": 0.92,
+      "change_percent": 16.3044,
+      "volume": 111731,
+      "average_volume_20d": 1605235.0,
+      "volume_ratio": 0.07,
+      "turnover_estimate": 119552.18,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:26Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     }
   ],
   "top_losers": [
     {
-      "symbol": "AARD",
-      "name": "Aardvark Therapeutics, Inc. - Common Stock",
-      "price": 1.39,
-      "previous_close": 3.95,
-      "change_percent": -64.8101,
-      "volume": 16135900,
-      "average_volume_20d": 190895.0,
-      "volume_ratio": 84.53,
-      "turnover_estimate": 22428900.77,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:12:26Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "SHFS",
-      "name": "SHF Holdings, Inc. - Class A Common Stock",
-      "price": 0.132,
-      "previous_close": 0.343,
-      "change_percent": -61.516,
-      "volume": 215174900,
-      "average_volume_20d": 91921625.45,
-      "volume_ratio": 2.34,
-      "turnover_estimate": 28403086.65,
+      "symbol": "XXII",
+      "provider_symbol": "XXII",
+      "name": "22nd Century Group, Inc - Common Stock",
+      "price": 0.0905,
+      "previous_close": 0.198,
+      "change_percent": -54.2929,
+      "volume": 31661695,
+      "average_volume_20d": 18615005.0,
+      "volume_ratio": 1.7,
+      "turnover_estimate": 2865383.31,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:19Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:27Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "XP",
+      "provider_symbol": "XP",
+      "name": "XP Inc. - Class A Common Stock",
+      "price": 15.92,
+      "previous_close": 30.41,
+      "change_percent": -47.6488,
+      "volume": 125472631,
+      "average_volume_20d": 13160265.0,
+      "volume_ratio": 9.53,
+      "turnover_estimate": 1997524295.09,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:24Z",
+      "dividend_yield_estimate_percent": 2.387,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "CPIX",
+      "provider_symbol": "CPIX",
+      "name": "Cumberland Pharmaceuticals Inc. - Common Stock",
+      "price": 4.625,
+      "previous_close": 8.49,
+      "change_percent": -45.5241,
+      "volume": 321975,
+      "average_volume_20d": 47785.0,
+      "volume_ratio": 6.74,
+      "turnover_estimate": 1489134.38,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:43:07Z",
+      "dividend_yield_estimate_percent": 32.432,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "AGBK",
+      "provider_symbol": "AGBK",
+      "name": "AGI Inc Class A Common Shares",
+      "price": 4.63,
+      "previous_close": 7.58,
+      "change_percent": -38.9182,
+      "volume": 3047271,
+      "average_volume_20d": 380925.0,
+      "volume_ratio": 8.0,
+      "turnover_estimate": 14108865.08,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:40:16Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "BAK",
+      "provider_symbol": "BAK",
+      "name": "Braskem SA ADR",
+      "price": 1.075,
+      "previous_close": 1.7,
+      "change_percent": -36.7647,
+      "volume": 15393256,
+      "average_volume_20d": 1935665.0,
+      "volume_ratio": 7.95,
+      "turnover_estimate": 16547750.93,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:20Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "PICS",
+      "provider_symbol": "PICS",
+      "name": "PicS N.V. - Class A Common Shares",
+      "price": 8.735,
+      "previous_close": 13.8,
+      "change_percent": -36.7029,
+      "volume": 2559986,
+      "average_volume_20d": 679445.0,
+      "volume_ratio": 3.77,
+      "turnover_estimate": 22361476.83,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:50:20Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "BRBI",
+      "provider_symbol": "BRBI",
+      "name": "BRBI BR Partners S.A. - ADSs",
+      "price": 9.62,
+      "previous_close": 15.06,
+      "change_percent": -36.1222,
+      "volume": 19737,
+      "average_volume_20d": 2900.0,
+      "volume_ratio": 6.81,
+      "turnover_estimate": 189869.94,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:57Z",
+      "dividend_yield_estimate_percent": 10.904,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "INTR",
+      "provider_symbol": "INTR",
+      "name": "Inter & Co. Inc. - Class A Common Shares",
+      "price": 4.665,
+      "previous_close": 7.19,
+      "change_percent": -35.1182,
+      "volume": 52238038,
+      "average_volume_20d": 11537570.0,
+      "volume_ratio": 4.53,
+      "turnover_estimate": 243690445.28,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:46:45Z",
+      "dividend_yield_estimate_percent": 2.422,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "DAVI",
+      "provider_symbol": "DAVI",
       "name": "Davion Healthcare Plc - Ordinary Shares",
-      "price": 6.0,
-      "previous_close": 11.65,
-      "change_percent": -48.4979,
-      "volume": 466100,
-      "average_volume_20d": 558400.0,
-      "volume_ratio": 0.83,
-      "turnover_estimate": 2796600.0,
+      "price": 4.0194,
+      "previous_close": 6.0,
+      "change_percent": -33.01,
+      "volume": 209738,
+      "average_volume_20d": 512250.0,
+      "volume_ratio": 0.41,
+      "turnover_estimate": 843020.94,
       "currency": "USD",
       "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:16:03Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:43:34Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "BURU",
-      "name": "Nuburu, Inc. Common Stock",
-      "price": 0.236,
-      "previous_close": 0.41,
-      "change_percent": -42.439,
-      "volume": 5379400,
-      "average_volume_20d": 3423700.0,
-      "volume_ratio": 1.57,
-      "turnover_estimate": 1269538.41,
-      "currency": "USD",
-      "exchange": "ASE",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:14:37Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "POM",
-      "name": "POMDOCTOR LIMITED - Class A Ordinary Shares",
-      "price": 1.17,
-      "previous_close": 2.03,
-      "change_percent": -42.3645,
-      "volume": 4376700,
-      "average_volume_20d": 3217765.0,
-      "volume_ratio": 1.36,
-      "turnover_estimate": 5120738.81,
-      "currency": "USD",
-      "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:01Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "NCPL",
-      "name": "Netcapital Inc. - Common Stock",
-      "price": 1.33,
-      "previous_close": 2.23,
-      "change_percent": -40.3587,
-      "volume": 9650800,
-      "average_volume_20d": 15179155.0,
-      "volume_ratio": 0.64,
-      "turnover_estimate": 12835564.41,
+      "symbol": "UPC",
+      "provider_symbol": "UPC",
+      "name": "Universe Pharmaceuticals Inc - Class A Ordinary Shares",
+      "price": 2.9305,
+      "previous_close": 4.34,
+      "change_percent": -32.477,
+      "volume": 183676,
+      "average_volume_20d": 64705.0,
+      "volume_ratio": 2.84,
+      "turnover_estimate": 538262.52,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:28Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:53:30Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "NANO",
-      "name": "Forge Nano Holdings Inc. - Common stock",
-      "price": 6.13,
-      "previous_close": 10.1,
-      "change_percent": -39.3069,
-      "volume": 237000,
-      "average_volume_20d": 355535.0,
-      "volume_ratio": 0.67,
-      "turnover_estimate": 1452810.03,
-      "currency": "USD",
-      "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:22Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "MGNX",
-      "name": "MacroGenics, Inc. - Common Stock",
-      "price": 2.25,
-      "previous_close": 3.63,
-      "change_percent": -38.0165,
-      "volume": 3996800,
-      "average_volume_20d": 641820.0,
-      "volume_ratio": 6.23,
-      "turnover_estimate": 8992800.0,
+      "symbol": "ORIC",
+      "provider_symbol": "ORIC",
+      "name": "Oric Pharmaceuticals, Inc. - Common Stock",
+      "price": 9.025,
+      "previous_close": 13.17,
+      "change_percent": -31.473,
+      "volume": 5714007,
+      "average_volume_20d": 1458135.0,
+      "volume_ratio": 3.92,
+      "turnover_estimate": 51568911.0,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:48Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:52Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "LNAI",
-      "name": "Lunai Bioworks Inc. - Common Stock",
-      "price": 0.295,
-      "previous_close": 0.47,
-      "change_percent": -37.234,
-      "volume": 9369900,
-      "average_volume_20d": 119230.0,
-      "volume_ratio": 78.59,
-      "turnover_estimate": 2764120.38,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:16Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "FGL",
-      "name": "Founder Group Limited - Class A Ordinary Shares",
-      "price": 1.81,
-      "previous_close": 2.87,
-      "change_percent": -36.9338,
-      "volume": 8187200,
-      "average_volume_20d": 63590.0,
-      "volume_ratio": 128.75,
-      "turnover_estimate": 14818831.53,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:17:19Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "LABT",
-      "name": "Lakewood-Amedex Biotherapeutics Inc. - Common Stock",
-      "price": 0.31,
-      "previous_close": 0.49,
-      "change_percent": -36.7347,
-      "volume": 39457700,
-      "average_volume_20d": 2430830.0,
-      "volume_ratio": 16.23,
-      "turnover_estimate": 12231887.09,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:59Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "CLIK",
-      "name": "Click Holdings Limited - Ordinary Share",
-      "price": 0.88,
-      "previous_close": 1.29,
-      "change_percent": -31.7829,
-      "volume": 13103000,
-      "average_volume_20d": 274150.0,
-      "volume_ratio": 47.8,
-      "turnover_estimate": 11530639.94,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:15:18Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "HUHU",
-      "name": "HUHUTECH International Group Inc. - Ordinary Shares",
-      "price": 1.19,
-      "previous_close": 1.69,
-      "change_percent": -29.5858,
-      "volume": 218700,
-      "average_volume_20d": 308390.0,
-      "volume_ratio": 0.71,
-      "turnover_estimate": 260253.01,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:49Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "OWLS",
-      "name": "OBOOK Holdings Inc. - Class A Common Shares",
-      "price": 1.98,
-      "previous_close": 2.8,
-      "change_percent": -29.2857,
-      "volume": 158200,
-      "average_volume_20d": 28610.0,
-      "volume_ratio": 5.53,
-      "turnover_estimate": 313236.0,
-      "currency": "USD",
-      "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:22:26Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "XLAB",
-      "name": "Exascale Labs Holdings Inc. - Class A Common Stock",
-      "price": 3.35,
-      "previous_close": 4.71,
-      "change_percent": -28.8747,
-      "volume": 7575900,
-      "average_volume_20d": 16986505.0,
-      "volume_ratio": 0.45,
-      "turnover_estimate": 25379264.28,
-      "currency": "USD",
-      "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:52Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "CATX",
-      "name": "Perspective Therapeutics, Inc. Common Stock",
-      "price": 1.61,
-      "previous_close": 2.26,
-      "change_percent": -28.7611,
-      "volume": 5601500,
-      "average_volume_20d": 1697460.0,
-      "volume_ratio": 3.3,
-      "turnover_estimate": 9018415.08,
-      "currency": "USD",
-      "exchange": "ASE",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:14:50Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "TANH",
-      "name": "Tantech Holdings Ltd. - Class A Common Shares",
-      "price": 17.709999,
-      "previous_close": 24.83,
-      "change_percent": -28.675,
-      "volume": 606700,
-      "average_volume_20d": 175410.0,
-      "volume_ratio": 3.46,
-      "turnover_estimate": 10744656.44,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:25:08Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "MKDW",
-      "name": "MKDWELL Tech Inc. - Ordinary Shares",
-      "price": 0.346,
-      "previous_close": 0.481,
-      "change_percent": -28.0665,
-      "volume": 246300,
-      "average_volume_20d": 89590.0,
-      "volume_ratio": 2.75,
-      "turnover_estimate": 85219.8,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:53Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "TCRT",
-      "name": "Alaunos Therapeutics, Inc. - Common Stock",
-      "price": 2.28,
-      "previous_close": 3.04,
-      "change_percent": -25.0,
-      "volume": 1333700,
-      "average_volume_20d": 21398320.0,
-      "volume_ratio": 0.06,
-      "turnover_estimate": 3040835.96,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:25:12Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "RFAI",
-      "name": "RF Acquisition Corp II - Ordinary Shares",
-      "price": 26.15,
-      "previous_close": 34.5,
-      "change_percent": -24.2029,
-      "volume": 9700,
-      "average_volume_20d": 9240.0,
-      "volume_ratio": 1.05,
-      "turnover_estimate": 253655.0,
-      "currency": "USD",
-      "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:37Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "CANG",
+      "provider_symbol": "CANG",
       "name": "Cango Inc. Class A Ordinary Shares",
-      "price": 1.82,
-      "previous_close": 2.37,
-      "change_percent": -23.2067,
-      "volume": 4128000,
-      "average_volume_20d": 2237660.0,
-      "volume_ratio": 1.84,
-      "turnover_estimate": 7512960.22,
+      "price": 1.25,
+      "previous_close": 1.82,
+      "change_percent": -31.3187,
+      "volume": 4199784,
+      "average_volume_20d": 2434675.0,
+      "volume_ratio": 1.72,
+      "turnover_estimate": 5249730.0,
       "currency": "USD",
       "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:14:47Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:18Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
     },
     {
-      "symbol": "HUBC",
-      "name": "Hub Cyber Security Ltd. - Ordinary Shares",
-      "price": 0.156,
-      "previous_close": 0.202,
-      "change_percent": -22.7723,
-      "volume": 35604700,
-      "average_volume_20d": 1791185.0,
-      "volume_ratio": 19.88,
-      "turnover_estimate": 5554333.31,
+      "symbol": "BRAI",
+      "provider_symbol": "BRAI",
+      "name": "Braiin Limited - Common Stock",
+      "price": 2.45,
+      "previous_close": 3.55,
+      "change_percent": -30.9859,
+      "volume": 2572736,
+      "average_volume_20d": 55060.0,
+      "volume_ratio": 46.73,
+      "turnover_estimate": 6303203.32,
       "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:48Z",
+      "exchange": "NGM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:57Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "IPST",
-      "name": "IP Strategy Holdings, Inc. - Common Stock",
-      "price": 2.03,
-      "previous_close": 2.62,
-      "change_percent": -22.5191,
-      "volume": 24600,
-      "average_volume_20d": 277670.0,
-      "volume_ratio": 0.09,
-      "turnover_estimate": 49938.0,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:19Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "LKQ",
-      "name": "LKQ Corporation - Common Stock",
-      "price": 17.42,
-      "previous_close": 22.469999,
-      "change_percent": -22.4744,
-      "volume": 23397400,
-      "average_volume_20d": 3260115.0,
-      "volume_ratio": 7.18,
-      "turnover_estimate": 407582709.79,
+      "symbol": "AFYA",
+      "provider_symbol": "AFYA",
+      "name": "Afya Limited - Class A Common Shares",
+      "price": 10.516,
+      "previous_close": 15.09,
+      "change_percent": -30.3115,
+      "volume": 1501223,
+      "average_volume_20d": 420155.0,
+      "volume_ratio": 3.57,
+      "turnover_estimate": 15786860.76,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:14Z",
-      "dividend_yield_estimate_percent": 6.889,
-      "asset_type": "stock"
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:40:16Z",
+      "dividend_yield_estimate_percent": 6.238,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "SPHL",
-      "name": "Springview Holdings Ltd - Ordinary shares",
-      "price": 2.42,
-      "previous_close": 3.12,
-      "change_percent": -22.4359,
-      "volume": 163500,
-      "average_volume_20d": 2636390.0,
-      "volume_ratio": 0.06,
-      "turnover_estimate": 395670.01,
+      "symbol": "SRTM",
+      "provider_symbol": "SRTM",
+      "name": "Stratum Holdings Corp. - Common Stock",
+      "price": 0.2999,
+      "previous_close": 0.43,
+      "change_percent": -30.2558,
+      "volume": 114377291,
+      "average_volume_20d": 1133845.0,
+      "volume_ratio": 100.88,
+      "turnover_estimate": 34301749.04,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:44Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:20Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "SHFS",
+      "provider_symbol": "SHFS",
+      "name": "SHF Holdings, Inc. - Class A Common Stock",
+      "price": 0.0927,
+      "previous_close": 0.132,
+      "change_percent": -29.7727,
+      "volume": 93941141,
+      "average_volume_20d": 102679609.6,
+      "volume_ratio": 0.91,
+      "turnover_estimate": 8708343.5,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:50Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "ETS",
+      "provider_symbol": "ETS",
+      "name": "Elite Express Holding Inc. - Class A Common Stock",
+      "price": 1.7,
+      "previous_close": 2.41,
+      "change_percent": -29.4606,
+      "volume": 357870,
+      "average_volume_20d": 47440.0,
+      "volume_ratio": 7.54,
+      "turnover_estimate": 608379.02,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:44:30Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "AIOK",
+      "provider_symbol": "AIOK",
+      "name": "AI OKTO CORP. - Common Stock",
+      "price": 8.6,
+      "previous_close": 12.02,
+      "change_percent": -28.4526,
+      "volume": 2866300,
+      "average_volume_20d": 3928763.64,
+      "volume_ratio": 0.73,
+      "turnover_estimate": 24650181.09,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:40:23Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "BBD",
+      "provider_symbol": "BBD",
+      "name": "Banco Bradesco Sa American Depositary Shares",
+      "price": 2.92,
+      "previous_close": 4.07,
+      "change_percent": -28.2555,
+      "volume": 185762728,
+      "average_volume_20d": 51975220.0,
+      "volume_ratio": 3.57,
+      "turnover_estimate": 542427179.93,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:24Z",
+      "dividend_yield_estimate_percent": 2.911,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "CELU",
+      "provider_symbol": "CELU",
+      "name": "Celularity Inc. - Class A Common Stock",
+      "price": 0.7018,
+      "previous_close": 0.978,
+      "change_percent": -28.2413,
+      "volume": 546178,
+      "average_volume_20d": 112285.0,
+      "volume_ratio": 4.86,
+      "turnover_estimate": 383307.71,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:32Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "CDT",
+      "provider_symbol": "CDT",
+      "name": "CDT Equity Inc. - Common Stock",
+      "price": 0.0939,
+      "previous_close": 0.13,
+      "change_percent": -27.7692,
+      "volume": 6131507,
+      "average_volume_20d": 2837976.0,
+      "volume_ratio": 2.16,
+      "turnover_estimate": 575748.52,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:30Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "AZUL",
+      "provider_symbol": "AZUL",
+      "name": "Azul S.A. American Depositary Shares, each representing two (2) Common Shares",
+      "price": 4.345,
+      "previous_close": 6.01,
+      "change_percent": -27.7038,
+      "volume": 722821,
+      "average_volume_20d": 140780.0,
+      "volume_ratio": 5.13,
+      "turnover_estimate": 3140657.09,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:19Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "OXBR",
+      "provider_symbol": "OXBR",
+      "name": "Oxbridge Re Holdings Limited - Ordinary Shares",
+      "price": 0.69,
+      "previous_close": 0.95,
+      "change_percent": -27.3684,
+      "volume": 82948,
+      "average_volume_20d": 17490.0,
+      "volume_ratio": 4.74,
+      "turnover_estimate": 57234.12,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:58Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "STNE",
+      "provider_symbol": "STNE",
+      "name": "StoneCo Ltd. - Class A Common Share",
+      "price": 8.365,
+      "previous_close": 11.48,
+      "change_percent": -27.1341,
+      "volume": 27064228,
+      "average_volume_20d": 7030965.0,
+      "volume_ratio": 3.85,
+      "turnover_estimate": 226392261.03,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:27Z",
+      "dividend_yield_estimate_percent": 30.245,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "AVBP",
+      "provider_symbol": "AVBP",
+      "name": "ArriVent BioPharma, Inc. - Common Stock",
+      "price": 15.42,
+      "previous_close": 21.0,
+      "change_percent": -26.5714,
+      "volume": 4499591,
+      "average_volume_20d": 2327355.0,
+      "volume_ratio": 1.93,
+      "turnover_estimate": 69383693.56,
+      "currency": "USD",
+      "exchange": "NGM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:12Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     }
   ],
   "highest_volume": [
     {
-      "symbol": "GPUS",
-      "name": "Hyperscale Data, Inc. Common Stock",
-      "price": 0.17,
-      "previous_close": 0.13,
-      "change_percent": 30.7692,
-      "volume": 381278900,
-      "average_volume_20d": 33293380.0,
-      "volume_ratio": 11.45,
-      "turnover_estimate": 64817413.68,
-      "currency": "USD",
-      "exchange": "ASE",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:13Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "SHFS",
-      "name": "SHF Holdings, Inc. - Class A Common Stock",
-      "price": 0.132,
-      "previous_close": 0.343,
-      "change_percent": -61.516,
-      "volume": 215174900,
-      "average_volume_20d": 91921625.45,
-      "volume_ratio": 2.34,
-      "turnover_estimate": 28403086.65,
+      "symbol": "RCT",
+      "provider_symbol": "RCT",
+      "name": "RedCloud Holdings plc - Ordinary Shares",
+      "price": 0.0831,
+      "previous_close": 0.076,
+      "change_percent": 9.3421,
+      "volume": 475776364,
+      "average_volume_20d": 5234365.0,
+      "volume_ratio": 90.89,
+      "turnover_estimate": 39537015.15,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:19Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:01Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "XXII",
-      "name": "22nd Century Group, Inc - Common Stock",
-      "price": 0.198,
-      "previous_close": 0.216,
-      "change_percent": -8.3333,
-      "volume": 214068200,
-      "average_volume_20d": 7920960.0,
-      "volume_ratio": 27.03,
-      "turnover_estimate": 42385503.37,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:56Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "LUCD",
-      "name": "Lucid Diagnostics Inc. - Common Stock",
-      "price": 0.411,
-      "previous_close": 0.328,
-      "change_percent": 25.3049,
-      "volume": 110910300,
-      "average_volume_20d": 4764290.0,
-      "volume_ratio": 23.28,
-      "turnover_estimate": 45584134.78,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:25Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "SPCX",
-      "name": "Space Exploration Technologies Corp. - Class A Common Stock",
-      "price": 147.490005,
-      "previous_close": 144.75,
-      "change_percent": 1.8929,
-      "volume": 110352500,
-      "average_volume_20d": 98791575.0,
-      "volume_ratio": 1.12,
-      "turnover_estimate": 16275890831.18,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:43Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "T",
-      "name": "AT&T Inc.",
-      "price": 20.93,
-      "previous_close": 22.74,
-      "change_percent": -7.9595,
-      "volume": 99723100,
-      "average_volume_20d": 47799130.0,
-      "volume_ratio": 2.09,
-      "turnover_estimate": 2087204513.43,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:25:07Z",
-      "dividend_yield_estimate_percent": 5.313,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "NU",
+      "provider_symbol": "NU",
       "name": "Nu Holdings Ltd. Class A Ordinary Shares",
-      "price": 15.16,
-      "previous_close": 14.73,
-      "change_percent": 2.9192,
-      "volume": 87041100,
-      "average_volume_20d": 83353000.0,
-      "volume_ratio": 1.04,
-      "turnover_estimate": 1319543062.72,
+      "price": 12.675,
+      "previous_close": 15.16,
+      "change_percent": -16.3918,
+      "volume": 317754993,
+      "average_volume_20d": 85063115.0,
+      "volume_ratio": 3.74,
+      "turnover_estimate": 4027544596.88,
       "currency": "USD",
       "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:53Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:24Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "NOK",
-      "name": "Nokia Corporation Sponsored American Depositary Shares",
-      "price": 8.14,
-      "previous_close": 7.88,
-      "change_percent": 3.2995,
-      "volume": 84564400,
-      "average_volume_20d": 74671425.0,
-      "volume_ratio": 1.13,
-      "turnover_estimate": 688354245.03,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:44Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "NVDA",
-      "name": "NVIDIA Corporation - Common Stock",
-      "price": 210.960007,
-      "previous_close": 212.210007,
-      "change_percent": -0.589,
-      "volume": 79987200,
-      "average_volume_20d": 105792595.0,
-      "volume_ratio": 0.76,
-      "turnover_estimate": 16874100249.02,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:55Z",
-      "dividend_yield_estimate_percent": 0.246,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "RIME",
-      "name": "Algorhythm Holdings, Inc. - Common Stock",
-      "price": 0.11,
-      "previous_close": 0.12,
-      "change_percent": -8.3333,
-      "volume": 73585600,
-      "average_volume_20d": 4682150.0,
-      "volume_ratio": 15.72,
-      "turnover_estimate": 8094415.96,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:41Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "INTC",
-      "name": "Intel Corporation - Common Stock",
-      "price": 86.959999,
-      "previous_close": 85.489998,
-      "change_percent": 1.7195,
-      "volume": 71813700,
-      "average_volume_20d": 99333755.0,
-      "volume_ratio": 0.72,
-      "turnover_estimate": 6244919286.25,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:14Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "AAL",
-      "name": "American Airlines Group, Inc. - Common Stock",
-      "price": 12.11,
-      "previous_close": 12.6,
-      "change_percent": -3.8889,
-      "volume": 62442100,
-      "average_volume_20d": 61671260.0,
-      "volume_ratio": 1.01,
-      "turnover_estimate": 756173809.56,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:12:25Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
     },
     {
       "symbol": "BBD",
+      "provider_symbol": "BBD",
       "name": "Banco Bradesco Sa American Depositary Shares",
-      "price": 4.07,
-      "previous_close": 3.95,
-      "change_percent": 3.038,
-      "volume": 62301300,
-      "average_volume_20d": 49685540.0,
-      "volume_ratio": 1.25,
-      "turnover_estimate": 253566301.69,
+      "price": 2.92,
+      "previous_close": 4.07,
+      "change_percent": -28.2555,
+      "volume": 185762728,
+      "average_volume_20d": 51975220.0,
+      "volume_ratio": 3.57,
+      "turnover_estimate": 542427179.93,
       "currency": "USD",
       "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:13:53Z",
-      "dividend_yield_estimate_percent": 2.088,
-      "asset_type": "stock"
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:24Z",
+      "dividend_yield_estimate_percent": 2.911,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
     },
     {
-      "symbol": "STLA",
-      "name": "Stellantis N.V. Common Shares",
-      "price": 4.06,
-      "previous_close": 4.27,
-      "change_percent": -4.918,
-      "volume": 61224600,
-      "average_volume_20d": 29992140.0,
-      "volume_ratio": 2.04,
-      "turnover_estimate": 248571872.5,
+      "symbol": "TGL",
+      "provider_symbol": "TGL",
+      "name": "Treasure Global Inc. - Common Stock",
+      "price": 0.2382,
+      "previous_close": 0.222,
+      "change_percent": 7.2973,
+      "volume": 156371547,
+      "average_volume_20d": 14552145.0,
+      "volume_ratio": 10.75,
+      "turnover_estimate": 37247701.55,
       "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:56Z",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:51Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "MYND",
-      "name": "Mynd.ai, Inc. American Depositary Shares",
-      "price": 0.24,
-      "previous_close": 0.163,
-      "change_percent": 47.2393,
-      "volume": 55591400,
-      "average_volume_20d": 648645.0,
-      "volume_ratio": 85.7,
-      "turnover_estimate": 13341935.7,
+      "symbol": "AZTR",
+      "provider_symbol": "AZTR",
+      "name": "Azitra Inc Common Stock",
+      "price": 1.6,
+      "previous_close": 0.715,
+      "change_percent": 123.7762,
+      "volume": 140522465,
+      "average_volume_20d": 84217.37,
+      "volume_ratio": 1668.57,
+      "turnover_estimate": 224835947.35,
       "currency": "USD",
       "exchange": "ASE",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:19Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:19Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "A"
+      ]
     },
     {
-      "symbol": "YFOR",
-      "name": "YYForce Inc. - Class A Ordinary Shares",
-      "price": 0.224,
-      "previous_close": 0.227,
-      "change_percent": -1.3216,
-      "volume": 52548800,
-      "average_volume_20d": 3986030.0,
-      "volume_ratio": 13.18,
-      "turnover_estimate": 11770931.56,
+      "symbol": "XP",
+      "provider_symbol": "XP",
+      "name": "XP Inc. - Class A Common Stock",
+      "price": 15.92,
+      "previous_close": 30.41,
+      "change_percent": -47.6488,
+      "volume": 125472631,
+      "average_volume_20d": 13160265.0,
+      "volume_ratio": 9.53,
+      "turnover_estimate": 1997524295.09,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:24Z",
+      "dividend_yield_estimate_percent": 2.387,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "SRTM",
+      "provider_symbol": "SRTM",
+      "name": "Stratum Holdings Corp. - Common Stock",
+      "price": 0.2999,
+      "previous_close": 0.43,
+      "change_percent": -30.2558,
+      "volume": 114377291,
+      "average_volume_20d": 1133845.0,
+      "volume_ratio": 100.88,
+      "turnover_estimate": 34301749.04,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:59Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:20Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "RBNE",
-      "name": "Robin Energy Ltd. - Common Stock",
-      "price": 0.19,
-      "previous_close": 0.195,
-      "change_percent": -2.5641,
-      "volume": 52200900,
-      "average_volume_20d": 12460995.0,
-      "volume_ratio": 4.19,
-      "turnover_estimate": 9918170.88,
+      "symbol": "WFF",
+      "provider_symbol": "WFF",
+      "name": "WF Holding Limited - Ordinary Shares",
+      "price": 0.0901,
+      "previous_close": 0.08,
+      "change_percent": 12.625,
+      "volume": 102872395,
+      "average_volume_20d": 64236610.0,
+      "volume_ratio": 1.6,
+      "turnover_estimate": 9268802.57,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:27Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:05Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "VZ",
-      "name": "Verizon Communications Inc. Common Stock",
-      "price": 44.66,
-      "previous_close": 45.200001,
-      "change_percent": -1.1947,
-      "volume": 51094800,
-      "average_volume_20d": 26227230.0,
-      "volume_ratio": 1.95,
-      "turnover_estimate": 2281893760.2,
+      "symbol": "SPCX",
+      "provider_symbol": "SPCX",
+      "name": "Space Exploration Technologies Corp. - Class A Common Stock",
+      "price": 147.345001,
+      "previous_close": 147.490005,
+      "change_percent": -0.0983,
+      "volume": 94812236,
+      "average_volume_20d": 101579440.0,
+      "volume_ratio": 0.93,
+      "turnover_estimate": 13970109029.16,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:14Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "PBR",
+      "provider_symbol": "PBR",
+      "name": "Petroleo Brasileiro S.A. Petrobras ADS",
+      "price": 22.469999,
+      "previous_close": 26.16,
+      "change_percent": -14.1055,
+      "volume": 94447107,
+      "average_volume_20d": 24123135.0,
+      "volume_ratio": 3.92,
+      "turnover_estimate": 2122226429.44,
       "currency": "USD",
       "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:28Z",
-      "dividend_yield_estimate_percent": 6.301,
-      "asset_type": "stock"
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:50:07Z",
+      "dividend_yield_estimate_percent": 3.547,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
     },
     {
-      "symbol": "YMAT",
-      "name": "J-Star Holding Co., Ltd. - Class A Ordinary Shares",
-      "price": 2.05,
-      "previous_close": 1.92,
-      "change_percent": 6.7708,
-      "volume": 46864200,
-      "average_volume_20d": 10605290.0,
-      "volume_ratio": 4.42,
-      "turnover_estimate": 96071607.77,
+      "symbol": "SHFS",
+      "provider_symbol": "SHFS",
+      "name": "SHF Holdings, Inc. - Class A Common Stock",
+      "price": 0.0927,
+      "previous_close": 0.132,
+      "change_percent": -29.7727,
+      "volume": 93941141,
+      "average_volume_20d": 102679609.6,
+      "volume_ratio": 0.91,
+      "turnover_estimate": 8708343.5,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:27:00Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:50Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "VALE",
+      "provider_symbol": "VALE",
+      "name": "VALE S.A.  American Depositary Shares Each Representing one common share",
+      "price": 11.96,
+      "previous_close": 12.4,
+      "change_percent": -3.5484,
+      "volume": 88968555,
+      "average_volume_20d": 34519990.0,
+      "volume_ratio": 2.58,
+      "turnover_estimate": 1064063921.19,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:53:37Z",
+      "dividend_yield_estimate_percent": 8.93,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "CLRO",
+      "provider_symbol": "CLRO",
+      "name": "ClearOne, Inc. - Common Stock",
+      "price": 5.0094,
+      "previous_close": 3.25,
+      "change_percent": 54.1354,
+      "volume": 78954204,
+      "average_volume_20d": 3398770.0,
+      "volume_ratio": 23.23,
+      "turnover_estimate": 395513180.9,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:51Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "INTC",
+      "provider_symbol": "INTC",
+      "name": "Intel Corporation - Common Stock",
+      "price": 91.400101,
+      "previous_close": 86.959999,
+      "change_percent": 5.1059,
+      "volume": 78006286,
+      "average_volume_20d": 98038020.0,
+      "volume_ratio": 0.8,
+      "turnover_estimate": 7129782396.26,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:46:45Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "NOK",
+      "provider_symbol": "NOK",
+      "name": "Nokia Corporation Sponsored American Depositary Shares",
+      "price": 8.68,
+      "previous_close": 8.14,
+      "change_percent": 6.6339,
+      "volume": 67037895,
+      "average_volume_20d": 76606805.0,
+      "volume_ratio": 0.88,
+      "turnover_estimate": 581888949.06,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:15Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "NVDA",
+      "provider_symbol": "NVDA",
+      "name": "NVIDIA Corporation - Common Stock",
+      "price": 216.309906,
+      "previous_close": 210.960007,
+      "change_percent": 2.536,
+      "volume": 66958890,
+      "average_volume_20d": 105294570.0,
+      "volume_ratio": 0.64,
+      "turnover_estimate": 14483871202.16,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:26Z",
+      "dividend_yield_estimate_percent": 0.24,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "GCDT",
+      "provider_symbol": "GCDT",
+      "name": "Green Circle Decarbonize Technology Limited Class A Ordinary Shares",
+      "price": 0.1463,
+      "previous_close": 0.176,
+      "change_percent": -16.875,
+      "volume": 65001260,
+      "average_volume_20d": 5616823.3,
+      "volume_ratio": 11.57,
+      "turnover_estimate": 9509684.53,
+      "currency": "USD",
+      "exchange": "ASE",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:45:20Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "A"
+      ]
+    },
+    {
+      "symbol": "NWGL",
+      "provider_symbol": "NWGL",
+      "name": "CL Workshop Group Limited - American Depositary Shares",
+      "price": 0.0883,
+      "previous_close": 0.082,
+      "change_percent": 7.6829,
+      "volume": 63112648,
+      "average_volume_20d": 50692460.0,
+      "volume_ratio": 1.25,
+      "turnover_estimate": 5572846.64,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:29Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "CRWV",
+      "provider_symbol": "CRWV",
       "name": "CoreWeave, Inc. - Class A Common Stock",
-      "price": 54.235001,
-      "previous_close": 55.599998,
-      "change_percent": -2.455,
-      "volume": 46499600,
-      "average_volume_20d": 50644630.0,
-      "volume_ratio": 0.92,
-      "turnover_estimate": 2521905834.38,
+      "price": 56.084999,
+      "previous_close": 54.235001,
+      "change_percent": 3.4111,
+      "volume": 61051325,
+      "average_volume_20d": 51791145.0,
+      "volume_ratio": 1.18,
+      "turnover_estimate": 3424063506.73,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:15:45Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:43:16Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "INFY",
-      "name": "Infosys Limited American Depositary Shares",
-      "price": 12.35,
-      "previous_close": 13.22,
-      "change_percent": -6.5809,
-      "volume": 45958400,
-      "average_volume_20d": 21867780.0,
-      "volume_ratio": 2.1,
-      "turnover_estimate": 567586257.53,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:10Z",
-      "dividend_yield_estimate_percent": 4.194,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "RIG",
-      "name": "Transocean Ltd (Switzerland) Common Stock",
-      "price": 6.41,
-      "previous_close": 6.08,
-      "change_percent": 5.4276,
-      "volume": 45944000,
-      "average_volume_20d": 40245100.0,
-      "volume_ratio": 1.14,
-      "turnover_estimate": 294501032.99,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:40Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "F",
-      "name": "Ford Motor Company Common Stock",
-      "price": 11.6,
-      "previous_close": 11.94,
-      "change_percent": -2.8476,
-      "volume": 44101200,
-      "average_volume_20d": 39518630.0,
-      "volume_ratio": 1.12,
-      "turnover_estimate": 511573936.82,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:17:08Z",
-      "dividend_yield_estimate_percent": 5.172,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "GRAB",
-      "name": "Grab Holdings Limited - Class A Ordinary Shares",
-      "price": 2.79,
-      "previous_close": 2.85,
-      "change_percent": -2.1053,
-      "volume": 43024400,
-      "average_volume_20d": 63903630.0,
-      "volume_ratio": 0.67,
-      "turnover_estimate": 120038074.36,
+      "symbol": "JBLU",
+      "provider_symbol": "JBLU",
+      "name": "JetBlue Airways Corporation - Common Stock",
+      "price": 2.355,
+      "previous_close": 2.63,
+      "change_percent": -10.4563,
+      "volume": 61023727,
+      "average_volume_20d": 27540490.0,
+      "volume_ratio": 2.22,
+      "turnover_estimate": 143710878.25,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:13Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:47:01Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "AIOK",
-      "name": "AI OKTO CORP. - Common Stock",
-      "price": 12.02,
-      "previous_close": 4.25,
-      "change_percent": 182.8235,
-      "volume": 42564200,
-      "average_volume_20d": 65220.0,
-      "volume_ratio": 652.62,
-      "turnover_estimate": 511621703.48,
+      "symbol": "GPUS",
+      "provider_symbol": "GPUS",
+      "name": "Hyperscale Data, Inc. Common Stock",
+      "price": 0.1815,
+      "previous_close": 0.17,
+      "change_percent": 6.7647,
+      "volume": 59334118,
+      "average_volume_20d": 40897810.0,
+      "volume_ratio": 1.45,
+      "turnover_estimate": 10769142.58,
       "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:12:52Z",
+      "exchange": "ASE",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:45:44Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "A"
+      ]
+    },
+    {
+      "symbol": "ABEV",
+      "provider_symbol": "ABEV",
+      "name": "Ambev S.A. American Depositary Shares (Each representing 1 Common Share)",
+      "price": 2.835,
+      "previous_close": 3.3,
+      "change_percent": -14.0909,
+      "volume": 58420597,
+      "average_volume_20d": 23477310.0,
+      "volume_ratio": 2.49,
+      "turnover_estimate": 165622394.72,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:39:58Z",
+      "dividend_yield_estimate_percent": 0.811,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "SGRY",
+      "provider_symbol": "SGRY",
+      "name": "Surgery Partners, Inc. - Common Stock",
+      "price": 23.245001,
+      "previous_close": 15.75,
+      "change_percent": 47.5873,
+      "volume": 56343275,
+      "average_volume_20d": 1761175.0,
+      "volume_ratio": 31.99,
+      "turnover_estimate": 1309699474.66,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:49Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "AAL",
+      "provider_symbol": "AAL",
+      "name": "American Airlines Group, Inc. - Common Stock",
+      "price": 12.2699,
+      "previous_close": 12.11,
+      "change_percent": 1.3204,
+      "volume": 54178602,
+      "average_volume_20d": 60989140.0,
+      "volume_ratio": 0.89,
+      "turnover_estimate": 664766046.12,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:39:56Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "IREN",
+      "provider_symbol": "IREN",
+      "name": "IREN Limited - Ordinary Shares",
+      "price": 25.709999,
+      "previous_close": 24.905001,
+      "change_percent": 3.2323,
+      "volume": 52672988,
+      "average_volume_20d": 50863085.0,
+      "volume_ratio": 1.04,
+      "turnover_estimate": 1354222473.26,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:46:52Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     }
   ],
   "highest_turnover": [
     {
-      "symbol": "MU",
-      "name": "Micron Technology, Inc. - Common Stock",
-      "price": 877.549988,
-      "previous_close": 856.48999,
-      "change_percent": 2.4589,
-      "volume": 21166800,
-      "average_volume_20d": 26886320.0,
-      "volume_ratio": 0.79,
-      "turnover_estimate": 18574925081.62,
+      "symbol": "TSLA",
+      "provider_symbol": "TSLA",
+      "name": "Tesla, Inc.  - Common Stock",
+      "price": 391.725006,
+      "previous_close": 372.220001,
+      "change_percent": 5.2402,
+      "volume": 45118643,
+      "average_volume_20d": 36252695.0,
+      "volume_ratio": 1.24,
+      "turnover_estimate": 17674100704.56,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:15Z",
-      "dividend_yield_estimate_percent": 0.064,
-      "asset_type": "stock"
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:53:13Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "MU",
+      "provider_symbol": "MU",
+      "name": "Micron Technology, Inc. - Common Stock",
+      "price": 907.009888,
+      "previous_close": 877.549988,
+      "change_percent": 3.3571,
+      "volume": 19025593,
+      "average_volume_20d": 26897265.0,
+      "volume_ratio": 0.71,
+      "turnover_estimate": 17256400970.27,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:48:46Z",
+      "dividend_yield_estimate_percent": 0.062,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "NVDA",
+      "provider_symbol": "NVDA",
       "name": "NVIDIA Corporation - Common Stock",
-      "price": 210.960007,
-      "previous_close": 212.210007,
-      "change_percent": -0.589,
-      "volume": 79987200,
-      "average_volume_20d": 105792595.0,
-      "volume_ratio": 0.76,
-      "turnover_estimate": 16874100249.02,
+      "price": 216.309906,
+      "previous_close": 210.960007,
+      "change_percent": 2.536,
+      "volume": 66958890,
+      "average_volume_20d": 105294570.0,
+      "volume_ratio": 0.64,
+      "turnover_estimate": 14483871202.16,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:55Z",
-      "dividend_yield_estimate_percent": 0.246,
-      "asset_type": "stock"
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:26Z",
+      "dividend_yield_estimate_percent": 0.24,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "SPCX",
+      "provider_symbol": "SPCX",
       "name": "Space Exploration Technologies Corp. - Class A Common Stock",
-      "price": 147.490005,
-      "previous_close": 144.75,
-      "change_percent": 1.8929,
-      "volume": 110352500,
-      "average_volume_20d": 98791575.0,
-      "volume_ratio": 1.12,
-      "turnover_estimate": 16275890831.18,
+      "price": 147.345001,
+      "previous_close": 147.490005,
+      "change_percent": -0.0983,
+      "volume": 94812236,
+      "average_volume_20d": 101579440.0,
+      "volume_ratio": 0.93,
+      "turnover_estimate": 13970109029.16,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:43Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:14Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "AAPL",
-      "name": "Apple Inc. - Common Stock",
-      "price": 347.730011,
-      "previous_close": 348.220001,
-      "change_percent": -0.1407,
-      "volume": 39496500,
-      "average_volume_20d": 38034150.0,
-      "volume_ratio": 1.04,
-      "turnover_estimate": 13734118378.92,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:12:26Z",
-      "dividend_yield_estimate_percent": 0.305,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "TSLA",
-      "name": "Tesla, Inc.  - Common Stock",
-      "price": 372.220001,
-      "previous_close": 374.579987,
-      "change_percent": -0.63,
-      "volume": 34689700,
-      "average_volume_20d": 36818185.0,
-      "volume_ratio": 0.94,
-      "turnover_estimate": 12912200176.35,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:25:41Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "SNDK",
-      "name": "Sandisk Corporation - Common Stock When-Issued",
-      "price": 1238.030029,
-      "previous_close": 1260.930054,
-      "change_percent": -1.8161,
-      "volume": 7876100,
-      "average_volume_20d": 7999180.0,
-      "volume_ratio": 0.98,
-      "turnover_estimate": 9750848313.75,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:36Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "META",
+      "provider_symbol": "META",
       "name": "Meta Platforms, Inc. - Class A Common Stock",
-      "price": 642.619995,
-      "previous_close": 648.849976,
-      "change_percent": -0.9602,
-      "volume": 14761500,
-      "average_volume_20d": 19807125.0,
-      "volume_ratio": 0.75,
-      "turnover_estimate": 9486035057.92,
+      "price": 632.0,
+      "previous_close": 642.619995,
+      "change_percent": -1.6526,
+      "volume": 20137219,
+      "average_volume_20d": 19253865.0,
+      "volume_ratio": 1.05,
+      "turnover_estimate": 12726722408.0,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:45Z",
-      "dividend_yield_estimate_percent": 0.327,
-      "asset_type": "stock"
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:48:15Z",
+      "dividend_yield_estimate_percent": 0.332,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "AMD",
-      "name": "Advanced Micro Devices, Inc. - Common Stock",
-      "price": 516.789978,
-      "previous_close": 507.929993,
-      "change_percent": 1.7443,
-      "volume": 15135900,
-      "average_volume_20d": 19609995.0,
-      "volume_ratio": 0.77,
-      "turnover_estimate": 7822081428.42,
+      "symbol": "AAPL",
+      "provider_symbol": "AAPL",
+      "name": "Apple Inc. - Common Stock",
+      "price": 344.380005,
+      "previous_close": 347.730011,
+      "change_percent": -0.9634,
+      "volume": 23031872,
+      "average_volume_20d": 38508850.0,
+      "volume_ratio": 0.6,
+      "turnover_estimate": 7931716191.82,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:13:06Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:39:57Z",
+      "dividend_yield_estimate_percent": 0.308,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "SNDK",
+      "provider_symbol": "SNDK",
+      "name": "Sandisk Corporation - Common Stock When-Issued",
+      "price": 1254.790039,
+      "previous_close": 1238.030029,
+      "change_percent": 1.3538,
+      "volume": 5938443,
+      "average_volume_20d": 8025895.0,
+      "volume_ratio": 0.74,
+      "turnover_estimate": 7451499123.94,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:07Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "MSFT",
-      "name": "Microsoft Corporation - Common Stock",
-      "price": 524.51001,
-      "previous_close": 521.080017,
-      "change_percent": 0.6582,
-      "volume": 13671500,
-      "average_volume_20d": 21421840.0,
-      "volume_ratio": 0.64,
-      "turnover_estimate": 7170838598.51,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:09Z",
-      "dividend_yield_estimate_percent": 0.694,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "BE",
-      "name": "Bloom Energy Corporation Class A Common Stock",
-      "price": 193.300003,
-      "previous_close": 217.770004,
-      "change_percent": -11.2366,
-      "volume": 35877300,
-      "average_volume_20d": 14270475.0,
-      "volume_ratio": 2.51,
-      "turnover_estimate": 6935082199.49,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:14:00Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "AMZN",
-      "name": "Amazon.com, Inc. - Common Stock",
-      "price": 248.0,
-      "previous_close": 250.380005,
-      "change_percent": -0.9506,
-      "volume": 25518200,
-      "average_volume_20d": 36252820.0,
-      "volume_ratio": 0.7,
-      "turnover_estimate": 6328513600.0,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:13:11Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "INTC",
+      "provider_symbol": "INTC",
       "name": "Intel Corporation - Common Stock",
-      "price": 86.959999,
-      "previous_close": 85.489998,
-      "change_percent": 1.7195,
-      "volume": 71813700,
-      "average_volume_20d": 99333755.0,
-      "volume_ratio": 0.72,
-      "turnover_estimate": 6244919286.25,
+      "price": 91.400101,
+      "previous_close": 86.959999,
+      "change_percent": 5.1059,
+      "volume": 78006286,
+      "average_volume_20d": 98038020.0,
+      "volume_ratio": 0.8,
+      "turnover_estimate": 7129782396.26,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:14Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:46:45Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "AMD",
+      "provider_symbol": "AMD",
+      "name": "Advanced Micro Devices, Inc. - Common Stock",
+      "price": 532.460022,
+      "previous_close": 516.789978,
+      "change_percent": 3.0322,
+      "volume": 12141012,
+      "average_volume_20d": 19485185.0,
+      "volume_ratio": 0.62,
+      "turnover_estimate": 6464603516.29,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:40:37Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "provider_symbol": "MSFT",
+      "name": "Microsoft Corporation - Common Stock",
+      "price": 532.440002,
+      "previous_close": 524.51001,
+      "change_percent": 1.5119,
+      "volume": 11228078,
+      "average_volume_20d": 20195760.0,
+      "volume_ratio": 0.56,
+      "turnover_estimate": 5978277877.73,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:48:40Z",
+      "dividend_yield_estimate_percent": 0.684,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "AMZN",
+      "provider_symbol": "AMZN",
+      "name": "Amazon.com, Inc. - Common Stock",
+      "price": 248.925003,
+      "previous_close": 248.0,
+      "change_percent": 0.373,
+      "volume": 22960878,
+      "average_volume_20d": 35815535.0,
+      "volume_ratio": 0.64,
+      "turnover_estimate": 5715536626.22,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:40:42Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "GOOGL",
+      "provider_symbol": "GOOGL",
       "name": "Alphabet Inc. - Class A Common Stock",
-      "price": 320.209991,
-      "previous_close": 324.220001,
-      "change_percent": -1.2368,
-      "volume": 17535800,
-      "average_volume_20d": 23902150.0,
-      "volume_ratio": 0.73,
-      "turnover_estimate": 5615138368.16,
+      "price": 316.940002,
+      "previous_close": 320.209991,
+      "change_percent": -1.0212,
+      "volume": 16599456,
+      "average_volume_20d": 23684900.0,
+      "volume_ratio": 0.7,
+      "turnover_estimate": 5261031625.17,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:10Z",
-      "dividend_yield_estimate_percent": 0.269,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "AVGO",
-      "name": "Broadcom Inc. - Common Stock",
-      "price": 321.679993,
-      "previous_close": 323.23999,
-      "change_percent": -0.4826,
-      "volume": 15871100,
-      "average_volume_20d": 21699730.0,
-      "volume_ratio": 0.73,
-      "turnover_estimate": 5105415331.76,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:13:41Z",
-      "dividend_yield_estimate_percent": 0.808,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "WDC",
-      "name": "Western Digital Corporation - Common Stock",
-      "price": 343.670013,
-      "previous_close": 354.190002,
-      "change_percent": -2.9702,
-      "volume": 13924000,
-      "average_volume_20d": 9493240.0,
-      "volume_ratio": 1.47,
-      "turnover_estimate": 4785261266.97,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:32Z",
-      "dividend_yield_estimate_percent": 0.16,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "MRNA",
-      "name": "Moderna, Inc. - Common Stock",
-      "price": 200.100006,
-      "previous_close": 202.630005,
-      "change_percent": -1.2486,
-      "volume": 21524700,
-      "average_volume_20d": 19463195.0,
-      "volume_ratio": 1.11,
-      "turnover_estimate": 4307092601.38,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:06Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "TSM",
-      "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
-      "price": 418.51001,
-      "previous_close": 412.350006,
-      "change_percent": 1.4939,
-      "volume": 9478300,
-      "average_volume_20d": 11286755.0,
-      "volume_ratio": 0.84,
-      "turnover_estimate": 3966763425.56,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:25:42Z",
-      "dividend_yield_estimate_percent": 0.921,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "STX",
-      "name": "Seagate Technology Holdings PLC - Ordinary Shares (Ireland)",
-      "price": 630.48999,
-      "previous_close": 642.140015,
-      "change_percent": -1.8142,
-      "volume": 5567300,
-      "average_volume_20d": 4985565.0,
-      "volume_ratio": 1.12,
-      "turnover_estimate": 3510126922.63,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:24:59Z",
-      "dividend_yield_estimate_percent": 0.469,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "PLTR",
-      "name": "Palantir Technologies Inc. - Class A Common Stock",
-      "price": 196.75,
-      "previous_close": 196.190002,
-      "change_percent": 0.2854,
-      "volume": 17614200,
-      "average_volume_20d": 22198290.0,
-      "volume_ratio": 0.79,
-      "turnover_estimate": 3465593850.0,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:22:55Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "CRWD",
-      "name": "CrowdStrike Holdings, Inc. - Class A Common Stock",
-      "price": 257.570007,
-      "previous_close": 237.940002,
-      "change_percent": 8.25,
-      "volume": 13367500,
-      "average_volume_20d": 8328700.0,
-      "volume_ratio": 1.6,
-      "turnover_estimate": 3443067072.91,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:15:45Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "GOOG",
-      "name": "Alphabet Inc. - Class C Capital Stock",
-      "price": 317.279999,
-      "previous_close": 320.76001,
-      "change_percent": -1.0849,
-      "volume": 10825000,
-      "average_volume_20d": 15746190.0,
-      "volume_ratio": 0.69,
-      "turnover_estimate": 3434555986.79,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:10Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:45:41Z",
       "dividend_yield_estimate_percent": 0.271,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "GEV",
-      "name": "GE Vernova Inc. Common Stock",
-      "price": 815.0,
-      "previous_close": 827.419983,
-      "change_percent": -1.501,
-      "volume": 3858200,
-      "average_volume_20d": 2384470.0,
-      "volume_ratio": 1.62,
-      "turnover_estimate": 3144433000.0,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:17:54Z",
-      "dividend_yield_estimate_percent": 0.184,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "MRVL",
-      "name": "Marvell Technology, Inc. - Common Stock",
-      "price": 228.509995,
-      "previous_close": 223.470001,
-      "change_percent": 2.2553,
-      "volume": 12994000,
-      "average_volume_20d": 20439475.0,
-      "volume_ratio": 0.64,
-      "turnover_estimate": 2969258868.62,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:07Z",
-      "dividend_yield_estimate_percent": 0.105,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "LITE",
+      "provider_symbol": "LITE",
       "name": "Lumentum Holdings Inc. - Common Stock",
-      "price": 756.169983,
-      "previous_close": 752.539978,
-      "change_percent": 0.4824,
-      "volume": 3912800,
-      "average_volume_20d": 4900080.0,
-      "volume_ratio": 0.8,
-      "turnover_estimate": 2958741909.13,
+      "price": 823.059998,
+      "previous_close": 756.169983,
+      "change_percent": 8.8459,
+      "volume": 5419890,
+      "average_volume_20d": 4903030.0,
+      "volume_ratio": 1.11,
+      "turnover_estimate": 4460894650.17,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:13Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:47:44Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "LRCX",
-      "name": "Lam Research Corporation - Common Stock",
-      "price": 230.100006,
-      "previous_close": 230.149994,
-      "change_percent": -0.0217,
-      "volume": 12731400,
-      "average_volume_20d": 9490725.0,
-      "volume_ratio": 1.34,
-      "turnover_estimate": 2929495217.71,
+      "symbol": "NU",
+      "provider_symbol": "NU",
+      "name": "Nu Holdings Ltd. Class A Ordinary Shares",
+      "price": 12.675,
+      "previous_close": 15.16,
+      "change_percent": -16.3918,
+      "volume": 317754993,
+      "average_volume_20d": 85063115.0,
+      "volume_ratio": 3.74,
+      "turnover_estimate": 4027544596.88,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:24Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "NBIS",
+      "provider_symbol": "NBIS",
+      "name": "Nebius Group N.V. - Class A Ordinary Shares",
+      "price": 157.229996,
+      "previous_close": 158.740005,
+      "change_percent": -0.9512,
+      "volume": 25301753,
+      "average_volume_20d": 20438110.0,
+      "volume_ratio": 1.24,
+      "turnover_estimate": 3978194516.09,
       "currency": "USD",
       "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:21Z",
-      "dividend_yield_estimate_percent": 0.482,
-      "asset_type": "stock"
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:48:55Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "BE",
+      "provider_symbol": "BE",
+      "name": "Bloom Energy Corporation Class A Common Stock",
+      "price": 205.949997,
+      "previous_close": 193.300003,
+      "change_percent": 6.5442,
+      "volume": 18294317,
+      "average_volume_20d": 15196340.0,
+      "volume_ratio": 1.2,
+      "turnover_estimate": 3767714530.32,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:31Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "AVGO",
+      "provider_symbol": "AVGO",
+      "name": "Broadcom Inc. - Common Stock",
+      "price": 330.734985,
+      "previous_close": 321.679993,
+      "change_percent": 2.8149,
+      "volume": 11327947,
+      "average_volume_20d": 21680510.0,
+      "volume_ratio": 0.52,
+      "turnover_estimate": 3746548385.11,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:12Z",
+      "dividend_yield_estimate_percent": 0.786,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "MELI",
+      "provider_symbol": "MELI",
+      "name": "MercadoLibre, Inc. - Common Stock",
+      "price": 1663.219971,
+      "previous_close": 1810.150024,
+      "change_percent": -8.117,
+      "volume": 2136081,
+      "average_volume_20d": 475015.0,
+      "volume_ratio": 4.5,
+      "turnover_estimate": 3552772578.24,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:48:14Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "GOOG",
+      "provider_symbol": "GOOG",
+      "name": "Alphabet Inc. - Class C Capital Stock",
+      "price": 313.720001,
+      "previous_close": 317.279999,
+      "change_percent": -1.122,
+      "volume": 11187508,
+      "average_volume_20d": 15594505.0,
+      "volume_ratio": 0.72,
+      "turnover_estimate": 3509745023.42,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:45:40Z",
+      "dividend_yield_estimate_percent": 0.274,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "CRWV",
+      "provider_symbol": "CRWV",
+      "name": "CoreWeave, Inc. - Class A Common Stock",
+      "price": 56.084999,
+      "previous_close": 54.235001,
+      "change_percent": 3.4111,
+      "volume": 61051325,
+      "average_volume_20d": 51791145.0,
+      "volume_ratio": 1.18,
+      "turnover_estimate": 3424063506.73,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:43:16Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "TSM",
+      "provider_symbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+      "price": 425.179108,
+      "previous_close": 418.51001,
+      "change_percent": 1.5935,
+      "volume": 7396272,
+      "average_volume_20d": 11373075.0,
+      "volume_ratio": 0.65,
+      "turnover_estimate": 3144740329.02,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:53:13Z",
+      "dividend_yield_estimate_percent": 0.906,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
+      "symbol": "WDC",
+      "provider_symbol": "WDC",
+      "name": "Western Digital Corporation - Common Stock",
+      "price": 358.304993,
+      "previous_close": 343.670013,
+      "change_percent": 4.2584,
+      "volume": 8228090,
+      "average_volume_20d": 9892675.0,
+      "volume_ratio": 0.83,
+      "turnover_estimate": 2948165727.19,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:03Z",
+      "dividend_yield_estimate_percent": 0.154,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "MRNA",
+      "provider_symbol": "MRNA",
+      "name": "Moderna, Inc. - Common Stock",
+      "price": 197.490005,
+      "previous_close": 200.100006,
+      "change_percent": -1.3043,
+      "volume": 14880121,
+      "average_volume_20d": 19842180.0,
+      "volume_ratio": 0.75,
+      "turnover_estimate": 2938675178.03,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:48:37Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "NFLX",
+      "provider_symbol": "NFLX",
+      "name": "Netflix, Inc. - Common Stock",
+      "price": 63.709999,
+      "previous_close": 65.849998,
+      "change_percent": -3.2498,
+      "volume": 44163400,
+      "average_volume_20d": 42381970.0,
+      "volume_ratio": 1.04,
+      "turnover_estimate": 2813650173.57,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:49:04Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "MRVL",
+      "provider_symbol": "MRVL",
+      "name": "Marvell Technology, Inc. - Common Stock",
+      "price": 235.199997,
+      "previous_close": 228.509995,
+      "change_percent": 2.9277,
+      "volume": 10598022,
+      "average_volume_20d": 20467780.0,
+      "volume_ratio": 0.52,
+      "turnover_estimate": 2492654742.06,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:48:38Z",
+      "dividend_yield_estimate_percent": 0.102,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     }
   ],
   "unusual_volume": [
     {
-      "symbol": "AIOK",
-      "name": "AI OKTO CORP. - Common Stock",
-      "price": 12.02,
-      "previous_close": 4.25,
-      "change_percent": 182.8235,
-      "volume": 42564200,
-      "average_volume_20d": 65220.0,
-      "volume_ratio": 652.62,
-      "turnover_estimate": 511621703.48,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:12:52Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "BOLT",
-      "name": "Bolt Biotherapeutics, Inc. - Common Stock",
-      "price": 6.27,
-      "previous_close": 4.19,
-      "change_percent": 49.642,
-      "volume": 12784300,
-      "average_volume_20d": 22100.0,
-      "volume_ratio": 578.48,
-      "turnover_estimate": 80157560.76,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:14:24Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "FGL",
-      "name": "Founder Group Limited - Class A Ordinary Shares",
-      "price": 1.81,
-      "previous_close": 2.87,
-      "change_percent": -36.9338,
-      "volume": 8187200,
-      "average_volume_20d": 63590.0,
-      "volume_ratio": 128.75,
-      "turnover_estimate": 14818831.53,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:17:19Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "MYND",
-      "name": "Mynd.ai, Inc. American Depositary Shares",
-      "price": 0.24,
-      "previous_close": 0.163,
-      "change_percent": 47.2393,
-      "volume": 55591400,
-      "average_volume_20d": 648645.0,
-      "volume_ratio": 85.7,
-      "turnover_estimate": 13341935.7,
+      "symbol": "AZTR",
+      "provider_symbol": "AZTR",
+      "name": "Azitra Inc Common Stock",
+      "price": 1.6,
+      "previous_close": 0.715,
+      "change_percent": 123.7762,
+      "volume": 140522465,
+      "average_volume_20d": 84217.37,
+      "volume_ratio": 1668.57,
+      "turnover_estimate": 224835947.35,
       "currency": "USD",
       "exchange": "ASE",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:19Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:19Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "A"
+      ]
     },
     {
-      "symbol": "AARD",
-      "name": "Aardvark Therapeutics, Inc. - Common Stock",
-      "price": 1.39,
-      "previous_close": 3.95,
-      "change_percent": -64.8101,
-      "volume": 16135900,
-      "average_volume_20d": 190895.0,
-      "volume_ratio": 84.53,
-      "turnover_estimate": 22428900.77,
-      "currency": "USD",
-      "exchange": "NMS",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:12:26Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "LNAI",
-      "name": "Lunai Bioworks Inc. - Common Stock",
-      "price": 0.295,
-      "previous_close": 0.47,
-      "change_percent": -37.234,
-      "volume": 9369900,
-      "average_volume_20d": 119230.0,
-      "volume_ratio": 78.59,
-      "turnover_estimate": 2764120.38,
+      "symbol": "MKDW",
+      "provider_symbol": "MKDW",
+      "name": "MKDWELL Tech Inc. - Ordinary Shares",
+      "price": 0.39,
+      "previous_close": 0.346,
+      "change_percent": 12.7168,
+      "volume": 15337125,
+      "average_volume_20d": 96295.0,
+      "volume_ratio": 159.27,
+      "turnover_estimate": 5981478.53,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:16Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:48:24Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "CLIK",
-      "name": "Click Holdings Limited - Ordinary Share",
-      "price": 0.88,
-      "previous_close": 1.29,
-      "change_percent": -31.7829,
-      "volume": 13103000,
-      "average_volume_20d": 274150.0,
-      "volume_ratio": 47.8,
-      "turnover_estimate": 11530639.94,
+      "symbol": "SRTM",
+      "provider_symbol": "SRTM",
+      "name": "Stratum Holdings Corp. - Common Stock",
+      "price": 0.2999,
+      "previous_close": 0.43,
+      "change_percent": -30.2558,
+      "volume": 114377291,
+      "average_volume_20d": 1133845.0,
+      "volume_ratio": 100.88,
+      "turnover_estimate": 34301749.04,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:15:18Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:20Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "KEYY",
-      "name": "Keystone Acquisition Corp. - Class A Ordinary Shares",
-      "price": 9.91,
-      "previous_close": 9.95,
-      "change_percent": -0.402,
-      "volume": 1371700,
-      "average_volume_20d": 35863.64,
-      "volume_ratio": 38.25,
-      "turnover_estimate": 13593546.79,
+      "symbol": "RCT",
+      "provider_symbol": "RCT",
+      "name": "RedCloud Holdings plc - Ordinary Shares",
+      "price": 0.0831,
+      "previous_close": 0.076,
+      "change_percent": 9.3421,
+      "volume": 475776364,
+      "average_volume_20d": 5234365.0,
+      "volume_ratio": 90.89,
+      "turnover_estimate": 39537015.15,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:01Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "YHGJ",
+      "provider_symbol": "YHGJ",
+      "name": "Yunhong Green CTI Ltd. - Common Stock",
+      "price": 2.6,
+      "previous_close": 2.51,
+      "change_percent": 3.5857,
+      "volume": 402644,
+      "average_volume_20d": 5417.65,
+      "volume_ratio": 74.32,
+      "turnover_estimate": 1046874.36,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:30Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "RENT",
+      "provider_symbol": "RENT",
+      "name": "Rent the Runway, Inc. - Class A Common Stock",
+      "price": 2.79,
+      "previous_close": 2.3,
+      "change_percent": 21.3043,
+      "volume": 25557383,
+      "average_volume_20d": 362410.0,
+      "volume_ratio": 70.52,
+      "turnover_estimate": 71305097.6,
       "currency": "USD",
       "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:44Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:06Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "CENN",
+      "provider_symbol": "CENN",
+      "name": "Cenntro Inc. - Common Stock",
+      "price": 2.84,
+      "previous_close": 2.34,
+      "change_percent": 21.3675,
+      "volume": 901554,
+      "average_volume_20d": 15525.0,
+      "volume_ratio": 58.07,
+      "turnover_estimate": 2560413.28,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:32Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "BRAI",
+      "provider_symbol": "BRAI",
+      "name": "Braiin Limited - Common Stock",
+      "price": 2.45,
+      "previous_close": 3.55,
+      "change_percent": -30.9859,
+      "volume": 2572736,
+      "average_volume_20d": 55060.0,
+      "volume_ratio": 46.73,
+      "turnover_estimate": 6303203.32,
+      "currency": "USD",
+      "exchange": "NGM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:41:57Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "XTND",
+      "provider_symbol": "XTND",
+      "name": "Xtend AI Robotics, Inc. Common Stock",
+      "price": 2.15,
+      "previous_close": 1.77,
+      "change_percent": 21.4689,
+      "volume": 40247363,
+      "average_volume_20d": 1038425.0,
+      "volume_ratio": 38.76,
+      "turnover_estimate": 86531834.29,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:54:27Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
     },
     {
       "symbol": "POLE",
+      "provider_symbol": "POLE",
       "name": "Andretti Acquisition Corp. II - Class A Ordinary Shares",
       "price": 10.73,
       "previous_close": 10.73,
@@ -1869,420 +2650,391 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:01Z",
+      "quote_timestamp": "2026-10-26T19:50:32Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "RENT",
-      "name": "Rent the Runway, Inc. - Class A Common Stock",
-      "price": 2.3,
-      "previous_close": 2.37,
-      "change_percent": -2.9536,
-      "volume": 4692800,
-      "average_volume_20d": 138610.0,
-      "volume_ratio": 33.86,
-      "turnover_estimate": 10793439.78,
-      "currency": "USD",
-      "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:35Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "GUAC",
-      "name": "Berto Acquisition Corp. II - Ordinary Shares",
-      "price": 9.88,
-      "previous_close": 9.88,
-      "change_percent": 0.0,
-      "volume": 2001400,
-      "average_volume_20d": 72546.67,
-      "volume_ratio": 27.59,
-      "turnover_estimate": 19773832.23,
-      "currency": "USD",
-      "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:21Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "MACI",
-      "name": "Melar Acquisition Corp. I - Class A Ordinary Shares",
-      "price": 11.0,
-      "previous_close": 11.365,
-      "change_percent": -3.2116,
-      "volume": 395900,
-      "average_volume_20d": 14350.0,
-      "volume_ratio": 27.59,
-      "turnover_estimate": 4354900.0,
-      "currency": "USD",
-      "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:31Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "XXII",
-      "name": "22nd Century Group, Inc - Common Stock",
-      "price": 0.198,
-      "previous_close": 0.216,
-      "change_percent": -8.3333,
-      "volume": 214068200,
-      "average_volume_20d": 7920960.0,
-      "volume_ratio": 27.03,
-      "turnover_estimate": 42385503.37,
+      "symbol": "AMAN",
+      "provider_symbol": "AMAN",
+      "name": "Amanat Acquisition Corp - Class A Ordinary Shares",
+      "price": 10.2,
+      "previous_close": 10.22,
+      "change_percent": -0.1957,
+      "volume": 291046,
+      "average_volume_20d": 8644.44,
+      "volume_ratio": 33.67,
+      "turnover_estimate": 2968669.14,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:56Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:40:35Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "JACS",
-      "name": "Jackson Acquisition Company II Class A Ordinary Shares",
-      "price": 10.83,
-      "previous_close": 10.83,
-      "change_percent": 0.0,
-      "volume": 261000,
-      "average_volume_20d": 10455.0,
-      "volume_ratio": 24.96,
-      "turnover_estimate": 2826629.98,
+      "symbol": "SGRY",
+      "provider_symbol": "SGRY",
+      "name": "Surgery Partners, Inc. - Common Stock",
+      "price": 23.245001,
+      "previous_close": 15.75,
+      "change_percent": 47.5873,
+      "volume": 56343275,
+      "average_volume_20d": 1761175.0,
+      "volume_ratio": 31.99,
+      "turnover_estimate": 1309699474.66,
       "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:28Z",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:49Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "LUCD",
-      "name": "Lucid Diagnostics Inc. - Common Stock",
-      "price": 0.411,
-      "previous_close": 0.328,
-      "change_percent": 25.3049,
-      "volume": 110910300,
-      "average_volume_20d": 4764290.0,
-      "volume_ratio": 23.28,
-      "turnover_estimate": 45584134.78,
+      "symbol": "FMFC",
+      "provider_symbol": "FMFC",
+      "name": "Kandal M Venture Limited - Class A ordinary Shares",
+      "price": 3.75,
+      "previous_close": 4.07,
+      "change_percent": -7.8624,
+      "volume": 1734227,
+      "average_volume_20d": 61228.75,
+      "volume_ratio": 28.32,
+      "turnover_estimate": 6503351.25,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:20:25Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:44:58Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "CANF",
+      "provider_symbol": "CANF",
+      "name": "Can-Fite Biopharma Ltd American Depositary Shares, each representing two (2) Ordinary Shares",
+      "price": 1.67,
+      "previous_close": 1.78,
+      "change_percent": -6.1798,
+      "volume": 831436,
+      "average_volume_20d": 29540.0,
+      "volume_ratio": 28.15,
+      "turnover_estimate": 1388498.08,
+      "currency": "USD",
+      "exchange": "ASE",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:18Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "A"
+      ]
+    },
+    {
+      "symbol": "PLUR",
+      "provider_symbol": "PLUR",
+      "name": "Pluri Inc. - Common Stock",
+      "price": 1.115,
+      "previous_close": 0.99,
+      "change_percent": 12.6263,
+      "volume": 462879,
+      "average_volume_20d": 17980.0,
+      "volume_ratio": 25.74,
+      "turnover_estimate": 516110.09,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:50:26Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "EFOI",
+      "provider_symbol": "EFOI",
+      "name": "Energy Focus, Inc. - Common Stock",
+      "price": 3.755,
+      "previous_close": 2.93,
+      "change_percent": 28.157,
+      "volume": 336296,
+      "average_volume_20d": 14115.0,
+      "volume_ratio": 23.83,
+      "turnover_estimate": 1262791.52,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:44:07Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
       "symbol": "CLRO",
+      "provider_symbol": "CLRO",
       "name": "ClearOne, Inc. - Common Stock",
-      "price": 3.25,
-      "previous_close": 1.92,
-      "change_percent": 69.2708,
-      "volume": 36089700,
-      "average_volume_20d": 1647660.0,
-      "volume_ratio": 21.9,
-      "turnover_estimate": 117291525.0,
+      "price": 5.0094,
+      "previous_close": 3.25,
+      "change_percent": 54.1354,
+      "volume": 78954204,
+      "average_volume_20d": 3398770.0,
+      "volume_ratio": 23.23,
+      "turnover_estimate": 395513180.9,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:15:20Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:42:51Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "HUBC",
-      "name": "Hub Cyber Security Ltd. - Ordinary Shares",
-      "price": 0.156,
-      "previous_close": 0.202,
-      "change_percent": -22.7723,
-      "volume": 35604700,
-      "average_volume_20d": 1791185.0,
-      "volume_ratio": 19.88,
-      "turnover_estimate": 5554333.31,
+      "symbol": "SPRC",
+      "provider_symbol": "SPRC",
+      "name": "SciSparc Ltd. - Ordinary Shares",
+      "price": 1.2082,
+      "previous_close": 1.09,
+      "change_percent": 10.844,
+      "volume": 35815224,
+      "average_volume_20d": 1879645.0,
+      "volume_ratio": 19.05,
+      "turnover_estimate": 43271952.84,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:48Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:16Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "GLE",
-      "name": "Global Engine Group Holding Limited - Class A Ordinary Shares",
-      "price": 2.73,
-      "previous_close": 2.82,
-      "change_percent": -3.1915,
-      "volume": 319900,
-      "average_volume_20d": 19241.5,
-      "volume_ratio": 16.63,
-      "turnover_estimate": 873327.01,
+      "symbol": "STKH",
+      "provider_symbol": "STKH",
+      "name": "Steakholder Foods Ltd. - American Depositary Shares",
+      "price": 0.3736,
+      "previous_close": 0.402,
+      "change_percent": -7.0647,
+      "volume": 16283946,
+      "average_volume_20d": 1105630.0,
+      "volume_ratio": 14.73,
+      "turnover_estimate": 6083682.32,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:02Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:52:26Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "LABT",
-      "name": "Lakewood-Amedex Biotherapeutics Inc. - Common Stock",
-      "price": 0.31,
-      "previous_close": 0.49,
-      "change_percent": -36.7347,
-      "volume": 39457700,
-      "average_volume_20d": 2430830.0,
-      "volume_ratio": 16.23,
-      "turnover_estimate": 12231887.09,
+      "symbol": "ICMB",
+      "provider_symbol": "ICMB",
+      "name": "Investcorp Credit Management BDC, Inc. - Common Stock",
+      "price": 0.7635,
+      "previous_close": 0.7,
+      "change_percent": 9.0714,
+      "volume": 763720,
+      "average_volume_20d": 54410.0,
+      "volume_ratio": 14.04,
+      "turnover_estimate": 583100.2,
+      "currency": "USD",
+      "exchange": "NMS",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:46:29Z",
+      "dividend_yield_estimate_percent": 18.337,
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
+      "symbol": "APLM",
+      "provider_symbol": "APLM",
+      "name": "Apollomics Inc. - Class A Ordinary Shares",
+      "price": 20.450001,
+      "previous_close": 21.84,
+      "change_percent": -6.3645,
+      "volume": 75289,
+      "average_volume_20d": 5412.5,
+      "volume_ratio": 13.91,
+      "turnover_estimate": 1539660.11,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:19:59Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:40:48Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "HTCO",
-      "name": "High-Trend International Group - Class A Ordinary Shares",
-      "price": 1.53,
-      "previous_close": 1.17,
-      "change_percent": 30.7692,
-      "volume": 3550500,
-      "average_volume_20d": 220290.0,
-      "volume_ratio": 16.12,
-      "turnover_estimate": 5432264.9,
+      "symbol": "GELS",
+      "provider_symbol": "GELS",
+      "name": "Gelteq Limited - Ordinary Shares",
+      "price": 0.4485,
+      "previous_close": 0.43,
+      "change_percent": 4.3023,
+      "volume": 794864,
+      "average_volume_20d": 60200.0,
+      "volume_ratio": 13.2,
+      "turnover_estimate": 356496.51,
       "currency": "USD",
       "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:18:46Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:45:24Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "RIME",
-      "name": "Algorhythm Holdings, Inc. - Common Stock",
-      "price": 0.11,
-      "previous_close": 0.12,
-      "change_percent": -8.3333,
-      "volume": 73585600,
-      "average_volume_20d": 4682150.0,
-      "volume_ratio": 15.72,
-      "turnover_estimate": 8094415.96,
+      "symbol": "TWLV",
+      "provider_symbol": "TWLV",
+      "name": "Twelve Seas Investment Company III - Class A Ordinary Shares",
+      "price": 10.08,
+      "previous_close": 10.07,
+      "change_percent": 0.0993,
+      "volume": 725137,
+      "average_volume_20d": 56536.36,
+      "volume_ratio": 12.83,
+      "turnover_estimate": 7309380.9,
       "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:23:41Z",
+      "exchange": "NGM",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:53:19Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "NMP",
-      "name": "NMP Acquisition Corp. - Class A Ordinary Shares",
-      "price": 10.41,
-      "previous_close": 10.41,
+      "symbol": "ALOV",
+      "provider_symbol": "ALOV",
+      "name": "Aldabra 4 Liquidity Opportunity Vehicle, Inc. - Class A Ordinary Shares",
+      "price": 10.0,
+      "previous_close": 10.0,
       "change_percent": 0.0,
-      "volume": 61900,
-      "average_volume_20d": 4370.0,
-      "volume_ratio": 14.16,
-      "turnover_estimate": 644378.99,
+      "volume": 375001,
+      "average_volume_20d": 30011.76,
+      "volume_ratio": 12.5,
+      "turnover_estimate": 3750010.0,
       "currency": "USD",
       "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:21:40Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:40:32Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     },
     {
-      "symbol": "TACO",
-      "name": "Berto Acquisition Corp. - Ordinary Shares",
-      "price": 10.48,
-      "previous_close": 10.47,
-      "change_percent": 0.0955,
-      "volume": 1733600,
-      "average_volume_20d": 126065.0,
-      "volume_ratio": 13.75,
-      "turnover_estimate": 18168127.21,
+      "symbol": "RFAI",
+      "provider_symbol": "RFAI",
+      "name": "RF Acquisition Corp II - Ordinary Shares",
+      "price": 37.0,
+      "previous_close": 26.15,
+      "change_percent": 41.4914,
+      "volume": 103251,
+      "average_volume_20d": 8375.0,
+      "volume_ratio": 12.33,
+      "turnover_estimate": 3820287.0,
       "currency": "USD",
       "exchange": "NGM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:25:07Z",
+      "last_trade_date": "2026-10-26",
+      "quote_timestamp": "2026-10-26T19:51:08Z",
       "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "YFOR",
-      "name": "YYForce Inc. - Class A Ordinary Shares",
-      "price": 0.224,
-      "previous_close": 0.227,
-      "change_percent": -1.3216,
-      "volume": 52548800,
-      "average_volume_20d": 3986030.0,
-      "volume_ratio": 13.18,
-      "turnover_estimate": 11770931.56,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:26:59Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "CMCM",
-      "name": "Cheetah Mobile Inc. American Depositary Shares, each representing fifty (50) Class A Ordinary Shares",
-      "price": 2.37,
-      "previous_close": 2.35,
-      "change_percent": 0.8511,
-      "volume": 110900,
-      "average_volume_20d": 8580.0,
-      "volume_ratio": 12.93,
-      "turnover_estimate": 262832.99,
-      "currency": "USD",
-      "exchange": "NYQ",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-26T07:15:22Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
+      "asset_type": "stock",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
     }
   ],
   "errors_by_type": {
-    "RuntimeError": 27
+    "RuntimeError": 2
   },
   "sample_errors": [
     {
-      "symbol": "AGM.A",
-      "name": "Federal Agricultural Mortgage Corporation Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "AKO.A",
-      "name": "Embotelladora Andina S.A. Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "AKO.B",
-      "name": "Embotelladora Andina S.A. Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "BF.A",
-      "name": "Brown Forman Inc Class A Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "BF.B",
-      "name": "Brown Forman Inc Class B Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "BH.A",
-      "name": "Biglari Holdings Inc. Class A Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "BIO.B",
-      "name": "Bio-Rad Laboratories, Inc. Class B  Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "BRK.A",
-      "name": "Berkshire Hathaway Inc. Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "BRK.B",
-      "name": "Berkshire Hathaway Inc. New Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "CIG.C",
-      "name": "Comp En De Mn Cemig ADS American Depositary Receipts",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "CRD.A",
-      "name": "Crawford & Company Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "CRD.B",
-      "name": "Crawford & Company Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "GEF.B",
-      "name": "Greif, Inc. Corporation Class B Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "GTN.A",
-      "name": "Gray Media, Inc. Class A Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "GUNN",
-      "name": "Gunnison Copper Corp. American Depositary Shares (each representing thirty (30) Common Shares)",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "HEI.A",
-      "name": "Heico Corporation Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "HVT.A",
-      "name": "Haverty Furniture Companies, Inc. Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "LEN.B",
-      "name": "Lennar Corporation Class B",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "MKC.V",
-      "name": "McCormick & Company, Incorporated Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "MOG.A",
-      "name": "Moog Inc. Class A Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "MOG.B",
-      "name": "Moog Inc. Class B Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
       "symbol": "MSGK.V",
+      "provider_symbol": "MSGK-V",
       "name": "Madison Square Garden Sports Corp. Class A Common Stock When-Issued",
       "error": "RuntimeError: HTTP 404"
     },
     {
       "symbol": "MSGR.V",
+      "provider_symbol": "MSGR-V",
       "name": "MSG Rangers Corp. Class A Common Stock When-Issued",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "PTIV",
-      "name": "Pineapple Financial Inc. Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "TAP.A",
-      "name": "Molson Coors Beverage Company Class A Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "UHAL.B",
-      "name": "U-Haul Holding Company Series N Non-Voting Common Stock",
-      "error": "RuntimeError: HTTP 404"
-    },
-    {
-      "symbol": "WSO.B",
-      "name": "Watsco, Inc. Class B Common Stock",
       "error": "RuntimeError: HTTP 404"
     }
   ],
@@ -2293,6 +3045,7 @@
     "Average volume uses up to 20 earlier available sessions.",
     "Dividend data is a rough historical estimate, not a forecast.",
     "HTTP 404 means data was unavailable for the request.",
-    "HTTP 429 means the provider is rate-limiting requests."
+    "HTTP 429 means the provider is rate-limiting requests.",
+    "Ticker duplicates are removed before scanning."
   ]
 }
