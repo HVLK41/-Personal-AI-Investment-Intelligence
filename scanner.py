@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """HVLK AI — US stock market scanner."""
 
@@ -30,16 +31,12 @@ UNIVERSE_FILE = DATA_DIR / "universe.json"
 RESULTS_FILE = DATA_DIR / "results.json"
 MARKET_FILE = DATA_DIR / "market.json"
 
-WORKERS = max(
-    1, min(int(os.getenv("HVLK_WORKERS", "8")), 8)
-)
+WORKERS = max(1, min(int(os.getenv("HVLK_WORKERS", "8")), 8))
 MIN_REQUEST_INTERVAL = max(
     0.1, float(os.getenv("HVLK_MIN_REQUEST_INTERVAL", "0.15"))
 )
 SAVE_EVERY = max(1, int(os.getenv("HVLK_SAVE_EVERY", "50")))
-TOP_COUNT = max(
-    1, min(int(os.getenv("HVLK_TOP_COUNT", "25")), 100)
-)
+TOP_COUNT = max(1, min(int(os.getenv("HVLK_TOP_COUNT", "25")), 100))
 REQUEST_TIMEOUT = max(
     5, int(os.getenv("HVLK_REQUEST_TIMEOUT", "20"))
 )
@@ -54,6 +51,7 @@ _last_request_at = 0.0
 
 _rate_limit_lock = threading.Lock()
 _rate_limit_events = 0
+
 _abort_event = threading.Event()
 
 
@@ -93,6 +91,14 @@ def write_json(path: Path, payload: Any) -> None:
 
 
 def normalise_symbol(value: Any) -> str | None:
+    """
+    Normalize a ticker for the data provider.
+
+    Example:
+        BRK.B -> BRK-B
+
+    The original symbol is retained separately in the instrument metadata.
+    """
     if not isinstance(value, str):
         return None
 
@@ -101,7 +107,7 @@ def normalise_symbol(value: Any) -> str | None:
     if not symbol or len(symbol) > 32:
         return None
 
-    if not re.fullmatch(r"[A-Z0-9^_-]+", symbol):
+    if not re.fullmatch(r"[A-Z0-9^=_-]+", symbol):
         return None
 
     return symbol
@@ -122,112 +128,157 @@ def safe_float(value: Any) -> float | None:
     return number
 
 
+def instrument_key(value: Any) -> str | None:
+    """Canonical key used to prevent duplicate scans."""
+    return normalise_symbol(value)
+
+
 # ============================================================
-# LOAD STOCK UNIVERSE
+# LOAD AND DEDUPLICATE UNIVERSE
 # ============================================================
 
+def load_universe() -> list[dict[str, Any]]:
+    """
+    Read data/universe.json.
 
-def load_universe():
-    """Načte akciový vesmír z data/universe.json v podporovaných formátech."""
-    import json
-    import re
-    from pathlib import Path
+    Supported input formats:
+      - a list of ticker strings
+      - a list of instrument objects
+      - an object containing results, symbols, universe or instruments
 
-    universe_path = (
-        Path(__file__).resolve().parent / "data" / "universe.json"
-    )
-
-    if not universe_path.is_file():
+    Duplicate tickers are removed before any network requests.
+    """
+    if not UNIVERSE_FILE.is_file():
         raise FileNotFoundError(
-            f"Soubor s akciovým vesmírem neexistuje: {universe_path}"
+            f"Universe file not found: {UNIVERSE_FILE}"
         )
 
     try:
-        with universe_path.open("r", encoding="utf-8-sig") as file:
-            data = json.load(file)
-    except json.JSONDecodeError as error:
+        with UNIVERSE_FILE.open(
+            "r", encoding="utf-8-sig"
+        ) as handle:
+            data = json.load(handle)
+    except json.JSONDecodeError as exc:
         raise ValueError(
-            f"Soubor {universe_path} neobsahuje platný JSON: {error}"
-        ) from error
+            f"Invalid JSON in {UNIVERSE_FILE}: {exc}"
+        ) from exc
 
-    # Podpora formátu vytvářeného tvým universe.py:
-    # {"total_symbols": ..., "results": [...]}
     if isinstance(data, list):
-        rows = data
+        source_rows = data
     elif isinstance(data, dict):
-        rows = None
-        for key in ("results", "symbols", "universe", "instruments"):
-            value = data.get(key)
+        source_rows = None
+
+        for field in (
+            "results",
+            "symbols",
+            "universe",
+            "instruments",
+        ):
+            value = data.get(field)
+
             if isinstance(value, list):
-                rows = value
+                source_rows = value
                 break
 
-        if rows is None:
+        if source_rows is None:
             raise ValueError(
-                "V data/universe.json nebyl nalezen seznam akcií. "
-                "Očekávám klíč 'results', 'symbols', 'universe' "
-                "nebo 'instruments'."
+                "No instrument list found in universe.json. "
+                "Expected results, symbols, universe or instruments."
             )
     else:
         raise ValueError(
-            "data/universe.json musí obsahovat JSON seznam nebo objekt."
+            "universe.json must contain a JSON list or object."
         )
 
-    instruments = []
-    seen = set()
+    instruments_by_key: dict[str, dict[str, Any]] = {}
     invalid_count = 0
+    duplicate_count = 0
 
-    for row in rows:
+    for row in source_rows:
         if isinstance(row, str):
-            symbol = row.strip()
-            item = {"symbol": symbol}
+            original_symbol = row.strip()
+            instrument: dict[str, Any] = {
+                "symbol": original_symbol,
+            }
         elif isinstance(row, dict):
-            symbol = str(
+            original_symbol = str(
                 row.get("symbol") or row.get("ticker") or ""
             ).strip()
-            item = dict(row)
-            item["symbol"] = symbol
+
+            instrument = dict(row)
+            instrument["symbol"] = original_symbol
         else:
             invalid_count += 1
             continue
 
-        # Povolené znaky zahrnují běžné tickery i třídy akcií,
-        # například BRK.B a BRK-B.
-        if not symbol or not re.fullmatch(
-            r"[A-Za-z0-9.^=_-]+", symbol
-        ):
+        provider_symbol = normalise_symbol(original_symbol)
+
+        if not provider_symbol:
             invalid_count += 1
             continue
 
-        normalized = symbol.upper()
-        if normalized in seen:
+        key = instrument_key(original_symbol)
+
+        if key is None:
+            invalid_count += 1
             continue
 
-        seen.add(normalized)
-        item["symbol"] = symbol
+        if key in instruments_by_key:
+            duplicate_count += 1
+            existing = instruments_by_key[key]
 
-        # Doplníme metadata, pokud je zdroj neobsahuje.
-        item.setdefault("name", symbol)
-        item.setdefault("asset_type", "stock")
-        instruments.append(item)
+            # Merge source/exchange metadata if supplied by Universe.
+            for field in ("sources", "exchanges"):
+                old_values = existing.get(field, [])
+                new_values = instrument.get(field, [])
+
+                if isinstance(old_values, str):
+                    old_values = [old_values]
+                if isinstance(new_values, str):
+                    new_values = [new_values]
+
+                if isinstance(old_values, list) and isinstance(
+                    new_values, list
+                ):
+                    existing[field] = sorted(
+                        set(
+                            str(value)
+                            for value in old_values + new_values
+                            if value
+                        )
+                    )
+
+            if not existing.get("name") and instrument.get("name"):
+                existing["name"] = instrument["name"]
+
+            continue
+
+        instrument["symbol"] = original_symbol
+        instrument["provider_symbol"] = provider_symbol
+        instrument.setdefault("name", original_symbol)
+        instrument.setdefault("asset_type", "US equity")
+
+        instruments_by_key[key] = instrument
+
+    instruments = sorted(
+        instruments_by_key.values(),
+        key=lambda item: item["provider_symbol"],
+    )
 
     if not instruments:
         raise ValueError(
-            f"V {universe_path} nebyl nalezen žádný platný ticker. "
-            f"Položek ve zdroji: {len(rows)}, "
-            f"neplatných položek: {invalid_count}. "
-            "Zkontroluj výstup universe.py."
+            "No valid tickers found in universe.json. "
+            f"Source rows: {len(source_rows)}, "
+            f"invalid rows: {invalid_count}."
         )
 
-    print(
-        f"Načteno {len(instruments)} unikátních tickerů "
-        f"z {universe_path}."
-    )
-    if invalid_count:
-        print(f"Přeskočeno neplatných položek: {invalid_count}")
+    print(f"Universe file: {UNIVERSE_FILE}")
+    print(f"Input rows: {len(source_rows)}")
+    print(f"Invalid rows skipped: {invalid_count}")
+    print(f"Duplicate tickers removed: {duplicate_count}")
+    print(f"Unique tickers loaded: {len(instruments)}")
 
     return instruments
-
 
 
 # ============================================================
@@ -251,6 +302,7 @@ def throttle() -> None:
 
 
 def read_limited(response: Any) -> bytes:
+    """Read a response without accepting unlimited payload sizes."""
     chunks: list[bytes] = []
     total_bytes = 0
 
@@ -277,9 +329,19 @@ def read_limited(response: Any) -> bytes:
 # ============================================================
 
 def fetch_chart(symbol: str) -> dict[str, Any]:
+    """
+    Fetch one year of daily chart data.
+
+    This endpoint returns daily market data, not guaranteed live quotes.
+    """
     global _rate_limit_events
 
-    encoded_symbol = urllib.parse.quote(symbol, safe="")
+    provider_symbol = normalise_symbol(symbol)
+
+    if not provider_symbol:
+        raise ValueError(f"Invalid provider ticker: {symbol!r}")
+
+    encoded_symbol = urllib.parse.quote(provider_symbol, safe="")
     url = (
         "https://query1.finance.yahoo.com/v8/finance/chart/"
         f"{encoded_symbol}"
@@ -341,7 +403,6 @@ def fetch_chart(symbol: str) -> dict[str, Any]:
                     _rate_limit_events += 1
                     event_count = _rate_limit_events
 
-                # Stop rather than repeatedly hammering the provider.
                 if event_count >= 3:
                     _abort_event.set()
                     raise RuntimeError(
@@ -361,7 +422,9 @@ def fetch_chart(symbol: str) -> dict[str, Any]:
                         else min(180.0, 30.0 * (attempt + 1))
                     )
                 except (TypeError, ValueError):
-                    delay = min(180.0, 30.0 * (attempt + 1))
+                    delay = min(
+                        180.0, 30.0 * (attempt + 1)
+                    )
 
             elif exc.code in (
                 408, 425, 500, 502, 503, 504
@@ -401,10 +464,20 @@ def fetch_chart(symbol: str) -> dict[str, Any]:
 def fetch_quote(
     instrument: dict[str, Any],
 ) -> tuple[dict[str, Any] | None, str | None]:
-    symbol = str(instrument.get("symbol", ""))
+    """Fetch and normalize one instrument's market data."""
+    original_symbol = str(
+        instrument.get("symbol") or ""
+    ).strip()
+
+    provider_symbol = normalise_symbol(
+        instrument.get("provider_symbol") or original_symbol
+    )
+
+    if not provider_symbol:
+        return None, "Invalid ticker symbol"
 
     try:
-        chart = fetch_chart(symbol)
+        chart = fetch_chart(provider_symbol)
 
         meta = chart.get("meta") or {}
         timestamps = chart.get("timestamp") or []
@@ -457,7 +530,7 @@ def fetch_quote(
         else:
             change_percent = 0.0
 
-        # Use up to 20 earlier sessions, excluding the latest session.
+        # Average of up to 20 earlier sessions, excluding latest day.
         previous_volumes = [
             row[2]
             for row in daily_data[-21:-1]
@@ -487,7 +560,7 @@ def fetch_quote(
             instrument.get("name")
             or meta.get("longName")
             or meta.get("shortName")
-            or symbol
+            or original_symbol
         )[:200]
 
         dividend_events = (
@@ -505,7 +578,7 @@ def fetch_quote(
             if amount is not None and amount > 0:
                 dividend_amounts.append(amount)
 
-        # Historical dividends are not a forward yield forecast.
+        # Historical dividend estimate, not a forward yield forecast.
         dividend_yield = (
             sum(dividend_amounts[-4:]) / last_close * 100
             if dividend_amounts and last_close > 0
@@ -513,7 +586,8 @@ def fetch_quote(
         )
 
         item = {
-            "symbol": symbol,
+            "symbol": original_symbol,
+            "provider_symbol": provider_symbol,
             "name": name,
             "price": round(last_close, 6),
             "previous_close": (
@@ -544,6 +618,8 @@ def fetch_quote(
                 or instrument.get("type")
                 or "US equity"
             )[:40],
+            "sources": instrument.get("sources", []),
+            "exchanges": instrument.get("exchanges", []),
         }
 
         return item, None
@@ -634,8 +710,8 @@ def build_market(
         "generated_at": now_utc(),
         "market": "US",
         "asset_scope": (
-            "US-listed common stocks and ADRs where identified; "
-            "classification may be imperfect."
+            "US-listed instruments supplied by Universe. "
+            "Instrument classification may be imperfect."
         ),
         "data_provider": "Yahoo Finance chart endpoint",
         "universe_symbols": total,
@@ -649,13 +725,8 @@ def build_market(
         ),
         "scan_started_at": started,
         "scan_finished_at": now_utc(),
-        "top_gainers": rank(
-            gainers, "change_percent", True
-        ),
-        # Correct: losers are ranked from negative-change stocks.
-        "top_losers": rank(
-            losers, "change_percent", False
-        ),
+        "top_gainers": rank(gainers, "change_percent", True),
+        "top_losers": rank(losers, "change_percent", False),
         "highest_volume": rank(rows, "volume", True),
         "highest_turnover": rank(
             rows, "turnover_estimate", True
@@ -671,6 +742,7 @@ def build_market(
             "Dividend data is a rough historical estimate, not a forecast.",
             "HTTP 404 means data was unavailable for the request.",
             "HTTP 429 means the provider is rate-limiting requests.",
+            "Ticker duplicates are removed before scanning.",
         ],
     }
 
@@ -726,14 +798,14 @@ def main() -> None:
     _abort_event.clear()
 
     print(
-        f"HVLK AI: {total} symbols; "
+        f"HVLK AI: {total} unique symbols; "
         f"workers={WORKERS}; "
         f"minimum request interval={MIN_REQUEST_INTERVAL}s.",
         flush=True,
     )
 
     rows_by_symbol: dict[str, dict[str, Any]] = {}
-    errors: list[dict[str, Any]] = []
+    errors_by_symbol: dict[str, dict[str, Any]] = {}
     completed = 0
 
     with ThreadPoolExecutor(max_workers=WORKERS) as pool:
@@ -745,6 +817,8 @@ def main() -> None:
         for future in as_completed(futures):
             instrument = futures[future]
             symbol = instrument["symbol"]
+            key = instrument["provider_symbol"]
+
             completed += 1
 
             try:
@@ -754,23 +828,26 @@ def main() -> None:
                 error = f"{type(exc).__name__}: {exc}"
 
             if row is not None:
-                rows_by_symbol[symbol] = row
+                rows_by_symbol[key] = row
+                # If an earlier attempt recorded this ticker as an error,
+                # a successful result takes precedence.
+                errors_by_symbol.pop(key, None)
             else:
-                errors.append(
-                    {
+                if key not in rows_by_symbol:
+                    errors_by_symbol[key] = {
                         "symbol": symbol,
+                        "provider_symbol": key,
                         "name": str(
                             instrument.get("name") or symbol
                         )[:200],
                         "error": error or "Unknown error",
                     }
-                )
 
             if completed % 25 == 0 or completed == total:
                 print(
                     f"{completed}/{total} | "
                     f"successful={len(rows_by_symbol)} | "
-                    f"errors={len(errors)}",
+                    f"errors={len(errors_by_symbol)}",
                     flush=True,
                 )
 
@@ -779,20 +856,33 @@ def main() -> None:
                     rows_by_symbol.values(),
                     key=lambda row: row["symbol"],
                 )
-                save_all(total, current_rows, errors, started)
+                current_errors = sorted(
+                    errors_by_symbol.values(),
+                    key=lambda row: row["symbol"],
+                )
+                save_all(
+                    total, current_rows, current_errors, started
+                )
 
     current_rows = sorted(
         rows_by_symbol.values(),
         key=lambda row: row["symbol"],
     )
+    current_errors = sorted(
+        errors_by_symbol.values(),
+        key=lambda row: row["symbol"],
+    )
 
-    # Always save final state, including a partial run.
-    save_all(total, current_rows, errors, started)
-    summary = build_market(total, current_rows, errors, started)
+    # Save final state, including partial results if interrupted by rate limits.
+    save_all(total, current_rows, current_errors, started)
+    summary = build_market(
+        total, current_rows, current_errors, started
+    )
 
     print("\n--- HVLK AI SUMMARY ---")
+    print(f"Universe symbols: {total}")
     print(f"Successful quotes: {len(current_rows)}")
-    print(f"Errors: {len(errors)}")
+    print(f"Errors: {len(current_errors)}")
     print(f"Coverage: {summary['coverage_percent']}%")
     print(f"Errors by type: {summary['errors_by_type']}")
 
