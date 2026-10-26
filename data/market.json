@@ -1,16 +1,16 @@
 {
   "project": "HVLK AI",
-  "generated_at": "2026-10-25T19:49:28Z",
+  "generated_at": "2026-10-26T07:27:10Z",
   "market": "US",
   "asset_scope": "US-listed common stocks and ADRs where identified; classification may be imperfect.",
   "data_provider": "Yahoo Finance chart endpoint",
-  "universe_symbols": 5903,
-  "scanned_symbols": 5903,
-  "successful_quotes": 5878,
-  "failed_quotes": 25,
-  "coverage_percent": 99.58,
-  "scan_started_at": "2026-10-25T19:34:42Z",
-  "scan_finished_at": "2026-10-25T19:49:28Z",
+  "universe_symbols": 5901,
+  "scanned_symbols": 5901,
+  "successful_quotes": 5874,
+  "failed_quotes": 27,
+  "coverage_percent": 99.54,
+  "scan_started_at": "2026-10-26T07:12:23Z",
+  "scan_finished_at": "2026-10-26T07:27:10Z",
   "top_gainers": [
     {
       "symbol": "AIOK",
@@ -25,7 +25,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:35:10Z",
+      "quote_timestamp": "2026-10-26T07:12:52Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -42,7 +42,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:37:38Z",
+      "quote_timestamp": "2026-10-26T07:15:20Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -59,7 +59,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:36:42Z",
+      "quote_timestamp": "2026-10-26T07:14:24Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -76,7 +76,7 @@
       "currency": "USD",
       "exchange": "ASE",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:37Z",
+      "quote_timestamp": "2026-10-26T07:21:19Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -93,7 +93,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:39:14Z",
+      "quote_timestamp": "2026-10-26T07:16:56Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -110,7 +110,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:57Z",
+      "quote_timestamp": "2026-10-26T07:19:39Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -127,7 +127,7 @@
       "currency": "USD",
       "exchange": "ASE",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:40:31Z",
+      "quote_timestamp": "2026-10-26T07:18:13Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -144,7 +144,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:04Z",
+      "quote_timestamp": "2026-10-26T07:18:46Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -161,24 +161,7 @@
       "currency": "USD",
       "exchange": "ASE",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:23Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "VSME",
-      "name": "VS Media Holdings Limited - Class A Ordinary Shares",
-      "price": 1.05,
-      "previous_close": 0.82,
-      "change_percent": 28.0488,
-      "volume": 310000,
-      "average_volume_20d": 710240.0,
-      "volume_ratio": 0.44,
-      "turnover_estimate": 325499.99,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:48:42Z",
+      "quote_timestamp": "2026-10-26T07:19:05Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -195,7 +178,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:48:23Z",
+      "quote_timestamp": "2026-10-26T07:26:05Z",
       "dividend_yield_estimate_percent": 20.69,
       "asset_type": "stock"
     },
@@ -212,7 +195,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:49:14Z",
+      "quote_timestamp": "2026-10-26T07:26:56Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -229,7 +212,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:36:31Z",
+      "quote_timestamp": "2026-10-26T07:14:13Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -246,7 +229,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:43Z",
+      "quote_timestamp": "2026-10-26T07:20:25Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -263,7 +246,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:39:10Z",
+      "quote_timestamp": "2026-10-26T07:16:51Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -280,7 +263,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:41Z",
+      "quote_timestamp": "2026-10-26T07:21:23Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -297,7 +280,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:35:11Z",
+      "quote_timestamp": "2026-10-26T07:12:53Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -314,7 +297,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:36:32Z",
+      "quote_timestamp": "2026-10-26T07:14:14Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -331,7 +314,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:47:12Z",
+      "quote_timestamp": "2026-10-26T07:24:54Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -348,7 +331,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:55Z",
+      "quote_timestamp": "2026-10-26T07:21:37Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -365,7 +348,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:46:20Z",
+      "quote_timestamp": "2026-10-26T07:24:02Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -382,7 +365,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:39Z",
+      "quote_timestamp": "2026-10-26T07:23:21Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -399,7 +382,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:58Z",
+      "quote_timestamp": "2026-10-26T07:23:40Z",
       "dividend_yield_estimate_percent": 5.145,
       "asset_type": "stock"
     },
@@ -416,7 +399,7 @@
       "currency": "USD",
       "exchange": "ASE",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:51Z",
+      "quote_timestamp": "2026-10-26T07:23:33Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -433,7 +416,24 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:37:44Z",
+      "quote_timestamp": "2026-10-26T07:15:25Z",
+      "dividend_yield_estimate_percent": null,
+      "asset_type": "stock"
+    },
+    {
+      "symbol": "YHC",
+      "name": "LQR House Inc. - Common Stock",
+      "price": 3.0,
+      "previous_close": 2.5,
+      "change_percent": 20.0,
+      "volume": 307100,
+      "average_volume_20d": 341365.0,
+      "volume_ratio": 0.9,
+      "turnover_estimate": 921300.0,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-23",
+      "quote_timestamp": "2026-10-26T07:26:59Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     }
@@ -452,7 +452,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:34:44Z",
+      "quote_timestamp": "2026-10-26T07:12:26Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -469,7 +469,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:46:37Z",
+      "quote_timestamp": "2026-10-26T07:24:19Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -486,7 +486,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:38:21Z",
+      "quote_timestamp": "2026-10-26T07:16:03Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -503,7 +503,7 @@
       "currency": "USD",
       "exchange": "ASE",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:36:55Z",
+      "quote_timestamp": "2026-10-26T07:14:37Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -520,7 +520,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:19Z",
+      "quote_timestamp": "2026-10-26T07:23:01Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -537,7 +537,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:46Z",
+      "quote_timestamp": "2026-10-26T07:21:28Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -554,7 +554,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:40Z",
+      "quote_timestamp": "2026-10-26T07:21:22Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -571,7 +571,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:06Z",
+      "quote_timestamp": "2026-10-26T07:20:48Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -588,7 +588,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:34Z",
+      "quote_timestamp": "2026-10-26T07:20:16Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -605,7 +605,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:39:37Z",
+      "quote_timestamp": "2026-10-26T07:17:19Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -622,24 +622,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:17Z",
-      "dividend_yield_estimate_percent": null,
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "NUWE",
-      "name": "Nuwellis, Inc. - Common Stock",
-      "price": 0.32,
-      "previous_close": 0.49,
-      "change_percent": -34.6939,
-      "volume": 1155500,
-      "average_volume_20d": 135245.0,
-      "volume_ratio": 8.54,
-      "turnover_estimate": 369759.99,
-      "currency": "USD",
-      "exchange": "NCM",
-      "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:44:13Z",
+      "quote_timestamp": "2026-10-26T07:19:59Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -656,7 +639,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:37:36Z",
+      "quote_timestamp": "2026-10-26T07:15:18Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -673,7 +656,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:07Z",
+      "quote_timestamp": "2026-10-26T07:18:49Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -690,7 +673,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:44:45Z",
+      "quote_timestamp": "2026-10-26T07:22:26Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -707,7 +690,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:49:10Z",
+      "quote_timestamp": "2026-10-26T07:26:52Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -724,7 +707,7 @@
       "currency": "USD",
       "exchange": "ASE",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:37:08Z",
+      "quote_timestamp": "2026-10-26T07:14:50Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -741,7 +724,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:47:26Z",
+      "quote_timestamp": "2026-10-26T07:25:08Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -758,7 +741,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:11Z",
+      "quote_timestamp": "2026-10-26T07:20:53Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -775,7 +758,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:47:31Z",
+      "quote_timestamp": "2026-10-26T07:25:12Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -792,7 +775,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:55Z",
+      "quote_timestamp": "2026-10-26T07:23:37Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -809,7 +792,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:37:05Z",
+      "quote_timestamp": "2026-10-26T07:14:47Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -826,7 +809,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:06Z",
+      "quote_timestamp": "2026-10-26T07:18:48Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -843,7 +826,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:37Z",
+      "quote_timestamp": "2026-10-26T07:19:19Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -860,8 +843,25 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:32Z",
+      "quote_timestamp": "2026-10-26T07:20:14Z",
       "dividend_yield_estimate_percent": 6.889,
+      "asset_type": "stock"
+    },
+    {
+      "symbol": "SPHL",
+      "name": "Springview Holdings Ltd - Ordinary shares",
+      "price": 2.42,
+      "previous_close": 3.12,
+      "change_percent": -22.4359,
+      "volume": 163500,
+      "average_volume_20d": 2636390.0,
+      "volume_ratio": 0.06,
+      "turnover_estimate": 395670.01,
+      "currency": "USD",
+      "exchange": "NCM",
+      "last_trade_date": "2026-10-23",
+      "quote_timestamp": "2026-10-26T07:24:44Z",
+      "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     }
   ],
@@ -879,7 +879,7 @@
       "currency": "USD",
       "exchange": "ASE",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:40:31Z",
+      "quote_timestamp": "2026-10-26T07:18:13Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -896,7 +896,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:46:37Z",
+      "quote_timestamp": "2026-10-26T07:24:19Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -913,7 +913,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:49:15Z",
+      "quote_timestamp": "2026-10-26T07:26:56Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -930,7 +930,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:43Z",
+      "quote_timestamp": "2026-10-26T07:20:25Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -947,7 +947,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:47:01Z",
+      "quote_timestamp": "2026-10-26T07:24:43Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -964,7 +964,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:47:25Z",
+      "quote_timestamp": "2026-10-26T07:25:07Z",
       "dividend_yield_estimate_percent": 5.313,
       "asset_type": "stock"
     },
@@ -981,7 +981,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:44:11Z",
+      "quote_timestamp": "2026-10-26T07:21:53Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -998,7 +998,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:44:02Z",
+      "quote_timestamp": "2026-10-26T07:21:44Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1015,7 +1015,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:44:14Z",
+      "quote_timestamp": "2026-10-26T07:21:55Z",
       "dividend_yield_estimate_percent": 0.246,
       "asset_type": "stock"
     },
@@ -1032,7 +1032,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:59Z",
+      "quote_timestamp": "2026-10-26T07:23:41Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1049,7 +1049,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:32Z",
+      "quote_timestamp": "2026-10-26T07:19:14Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1066,7 +1066,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:34:43Z",
+      "quote_timestamp": "2026-10-26T07:12:25Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1083,7 +1083,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:36:11Z",
+      "quote_timestamp": "2026-10-26T07:13:53Z",
       "dividend_yield_estimate_percent": 2.088,
       "asset_type": "stock"
     },
@@ -1100,7 +1100,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:47:14Z",
+      "quote_timestamp": "2026-10-26T07:24:56Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1117,7 +1117,7 @@
       "currency": "USD",
       "exchange": "ASE",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:37Z",
+      "quote_timestamp": "2026-10-26T07:21:19Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1134,7 +1134,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:49:17Z",
+      "quote_timestamp": "2026-10-26T07:26:59Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1151,7 +1151,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:46Z",
+      "quote_timestamp": "2026-10-26T07:23:27Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1168,7 +1168,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:48:46Z",
+      "quote_timestamp": "2026-10-26T07:26:28Z",
       "dividend_yield_estimate_percent": 6.301,
       "asset_type": "stock"
     },
@@ -1185,7 +1185,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:49:19Z",
+      "quote_timestamp": "2026-10-26T07:27:00Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1202,7 +1202,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:38:03Z",
+      "quote_timestamp": "2026-10-26T07:15:45Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1219,7 +1219,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:29Z",
+      "quote_timestamp": "2026-10-26T07:19:10Z",
       "dividend_yield_estimate_percent": 4.194,
       "asset_type": "stock"
     },
@@ -1236,7 +1236,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:58Z",
+      "quote_timestamp": "2026-10-26T07:23:40Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1253,7 +1253,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:39:26Z",
+      "quote_timestamp": "2026-10-26T07:17:08Z",
       "dividend_yield_estimate_percent": 5.172,
       "asset_type": "stock"
     },
@@ -1270,7 +1270,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:40:31Z",
+      "quote_timestamp": "2026-10-26T07:18:13Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1287,7 +1287,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:35:10Z",
+      "quote_timestamp": "2026-10-26T07:12:52Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     }
@@ -1306,7 +1306,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:33Z",
+      "quote_timestamp": "2026-10-26T07:21:15Z",
       "dividend_yield_estimate_percent": 0.064,
       "asset_type": "stock"
     },
@@ -1323,7 +1323,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:44:14Z",
+      "quote_timestamp": "2026-10-26T07:21:55Z",
       "dividend_yield_estimate_percent": 0.246,
       "asset_type": "stock"
     },
@@ -1340,7 +1340,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:47:01Z",
+      "quote_timestamp": "2026-10-26T07:24:43Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1357,7 +1357,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:34:44Z",
+      "quote_timestamp": "2026-10-26T07:12:26Z",
       "dividend_yield_estimate_percent": 0.305,
       "asset_type": "stock"
     },
@@ -1374,7 +1374,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:48:00Z",
+      "quote_timestamp": "2026-10-26T07:25:41Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1391,7 +1391,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:46:54Z",
+      "quote_timestamp": "2026-10-26T07:24:36Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1408,7 +1408,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:03Z",
+      "quote_timestamp": "2026-10-26T07:20:45Z",
       "dividend_yield_estimate_percent": 0.327,
       "asset_type": "stock"
     },
@@ -1425,7 +1425,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:35:24Z",
+      "quote_timestamp": "2026-10-26T07:13:06Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1442,7 +1442,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:27Z",
+      "quote_timestamp": "2026-10-26T07:21:09Z",
       "dividend_yield_estimate_percent": 0.694,
       "asset_type": "stock"
     },
@@ -1459,7 +1459,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:36:19Z",
+      "quote_timestamp": "2026-10-26T07:14:00Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1476,7 +1476,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:35:29Z",
+      "quote_timestamp": "2026-10-26T07:13:11Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1493,7 +1493,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:32Z",
+      "quote_timestamp": "2026-10-26T07:19:14Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1510,7 +1510,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:40:28Z",
+      "quote_timestamp": "2026-10-26T07:18:10Z",
       "dividend_yield_estimate_percent": 0.269,
       "asset_type": "stock"
     },
@@ -1527,7 +1527,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:35:59Z",
+      "quote_timestamp": "2026-10-26T07:13:41Z",
       "dividend_yield_estimate_percent": 0.808,
       "asset_type": "stock"
     },
@@ -1544,7 +1544,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:48:50Z",
+      "quote_timestamp": "2026-10-26T07:26:32Z",
       "dividend_yield_estimate_percent": 0.16,
       "asset_type": "stock"
     },
@@ -1561,7 +1561,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:24Z",
+      "quote_timestamp": "2026-10-26T07:21:06Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1578,7 +1578,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:48:00Z",
+      "quote_timestamp": "2026-10-26T07:25:42Z",
       "dividend_yield_estimate_percent": 0.921,
       "asset_type": "stock"
     },
@@ -1595,7 +1595,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:47:17Z",
+      "quote_timestamp": "2026-10-26T07:24:59Z",
       "dividend_yield_estimate_percent": 0.469,
       "asset_type": "stock"
     },
@@ -1612,7 +1612,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:13Z",
+      "quote_timestamp": "2026-10-26T07:22:55Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1629,7 +1629,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:38:03Z",
+      "quote_timestamp": "2026-10-26T07:15:45Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1646,7 +1646,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:40:28Z",
+      "quote_timestamp": "2026-10-26T07:18:10Z",
       "dividend_yield_estimate_percent": 0.271,
       "asset_type": "stock"
     },
@@ -1663,7 +1663,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:40:13Z",
+      "quote_timestamp": "2026-10-26T07:17:54Z",
       "dividend_yield_estimate_percent": 0.184,
       "asset_type": "stock"
     },
@@ -1680,7 +1680,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:25Z",
+      "quote_timestamp": "2026-10-26T07:21:07Z",
       "dividend_yield_estimate_percent": 0.105,
       "asset_type": "stock"
     },
@@ -1697,7 +1697,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:31Z",
+      "quote_timestamp": "2026-10-26T07:20:13Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1714,7 +1714,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:40Z",
+      "quote_timestamp": "2026-10-26T07:20:21Z",
       "dividend_yield_estimate_percent": 0.482,
       "asset_type": "stock"
     }
@@ -1733,7 +1733,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:35:10Z",
+      "quote_timestamp": "2026-10-26T07:12:52Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1750,7 +1750,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:36:42Z",
+      "quote_timestamp": "2026-10-26T07:14:24Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1767,7 +1767,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:39:37Z",
+      "quote_timestamp": "2026-10-26T07:17:19Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1784,7 +1784,7 @@
       "currency": "USD",
       "exchange": "ASE",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:37Z",
+      "quote_timestamp": "2026-10-26T07:21:19Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1801,7 +1801,7 @@
       "currency": "USD",
       "exchange": "NMS",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:34:44Z",
+      "quote_timestamp": "2026-10-26T07:12:26Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1818,7 +1818,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:34Z",
+      "quote_timestamp": "2026-10-26T07:20:16Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1835,7 +1835,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:37:36Z",
+      "quote_timestamp": "2026-10-26T07:15:18Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1852,7 +1852,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:02Z",
+      "quote_timestamp": "2026-10-26T07:19:44Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1869,7 +1869,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:19Z",
+      "quote_timestamp": "2026-10-26T07:23:01Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1886,7 +1886,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:53Z",
+      "quote_timestamp": "2026-10-26T07:23:35Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1903,7 +1903,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:40:39Z",
+      "quote_timestamp": "2026-10-26T07:18:21Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1920,7 +1920,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:49Z",
+      "quote_timestamp": "2026-10-26T07:20:31Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1937,7 +1937,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:49:15Z",
+      "quote_timestamp": "2026-10-26T07:26:56Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1954,7 +1954,7 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:46Z",
+      "quote_timestamp": "2026-10-26T07:19:28Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1971,7 +1971,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:43Z",
+      "quote_timestamp": "2026-10-26T07:20:25Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -1988,7 +1988,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:37:38Z",
+      "quote_timestamp": "2026-10-26T07:15:20Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -2005,7 +2005,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:06Z",
+      "quote_timestamp": "2026-10-26T07:18:48Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -2022,7 +2022,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:40:21Z",
+      "quote_timestamp": "2026-10-26T07:18:02Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -2039,7 +2039,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:42:17Z",
+      "quote_timestamp": "2026-10-26T07:19:59Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -2056,7 +2056,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:41:04Z",
+      "quote_timestamp": "2026-10-26T07:18:46Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -2073,7 +2073,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:45:59Z",
+      "quote_timestamp": "2026-10-26T07:23:41Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -2090,7 +2090,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:43:58Z",
+      "quote_timestamp": "2026-10-26T07:21:40Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -2107,7 +2107,7 @@
       "currency": "USD",
       "exchange": "NGM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:47:25Z",
+      "quote_timestamp": "2026-10-26T07:25:07Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -2124,7 +2124,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:49:17Z",
+      "quote_timestamp": "2026-10-26T07:26:59Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     },
@@ -2141,13 +2141,13 @@
       "currency": "USD",
       "exchange": "NYQ",
       "last_trade_date": "2026-10-23",
-      "quote_timestamp": "2026-10-25T19:37:40Z",
+      "quote_timestamp": "2026-10-26T07:15:22Z",
       "dividend_yield_estimate_percent": null,
       "asset_type": "stock"
     }
   ],
   "errors_by_type": {
-    "RuntimeError": 25
+    "RuntimeError": 27
   },
   "sample_errors": [
     {
@@ -2221,6 +2221,11 @@
       "error": "RuntimeError: HTTP 404"
     },
     {
+      "symbol": "GUNN",
+      "name": "Gunnison Copper Corp. American Depositary Shares (each representing thirty (30) Common Shares)",
+      "error": "RuntimeError: HTTP 404"
+    },
+    {
       "symbol": "HEI.A",
       "name": "Heico Corporation Common Stock",
       "error": "RuntimeError: HTTP 404"
@@ -2258,6 +2263,11 @@
     {
       "symbol": "MSGR.V",
       "name": "MSG Rangers Corp. Class A Common Stock When-Issued",
+      "error": "RuntimeError: HTTP 404"
+    },
+    {
+      "symbol": "PTIV",
+      "name": "Pineapple Financial Inc. Common Stock",
       "error": "RuntimeError: HTTP 404"
     },
     {

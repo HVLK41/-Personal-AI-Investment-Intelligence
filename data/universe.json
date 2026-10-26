@@ -1,16 +1,16 @@
 {
   "project": "HVLK AI",
-  "generated_at": "2026-10-25T19:34:42.198730+00:00",
+  "generated_at": "2026-10-26T07:12:23.800556+00:00",
   "market": "US",
   "provider": "Nasdaq Trader symbol directories",
-  "total_symbols": 5939,
+  "total_symbols": 5937,
   "source_counts": {
     "nasdaq": 3440,
-    "other": 2499
+    "other": 2497
   },
   "excluded_counts": {
-    "nasdaq": 2185,
-    "other": 5175
+    "nasdaq": 2184,
+    "other": 5176
   },
   "partial_errors": [],
   "results": [
@@ -283,13 +283,6 @@
     {
       "symbol": "ABX",
       "name": "Abacus Global Management, Inc. Class A Common Stock",
-      "exchange": "N",
-      "source": "other",
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "ACA",
-      "name": "Arcosa, Inc. Common Stock",
       "exchange": "N",
       "source": "other",
       "asset_type": "stock"
@@ -927,6 +920,13 @@
     {
       "symbol": "AESP",
       "name": "Aeon Acquisition I Corp. - Class A Ordinary Shares",
+      "exchange": "nasdaq",
+      "source": "nasdaq",
+      "asset_type": "stock"
+    },
+    {
+      "symbol": "AETR",
+      "name": "Aetherion Technologies Inc. - Common Shares",
       "exchange": "nasdaq",
       "source": "nasdaq",
       "asset_type": "stock"
@@ -12125,13 +12125,6 @@
       "asset_type": "stock"
     },
     {
-      "symbol": "ELME",
-      "name": "Elme Communities Common Stock",
-      "exchange": "N",
-      "source": "other",
-      "asset_type": "stock"
-    },
-    {
       "symbol": "ELMT",
       "name": "The Elmet Group Co. - Common Stock",
       "exchange": "nasdaq",
@@ -13548,6 +13541,13 @@
     {
       "symbol": "FCCO",
       "name": "First Community Corporation - Common Stock",
+      "exchange": "nasdaq",
+      "source": "nasdaq",
+      "asset_type": "stock"
+    },
+    {
+      "symbol": "FCDH",
+      "name": "Forcendra Holding Limited - Class A Ordinary Shares",
       "exchange": "nasdaq",
       "source": "nasdaq",
       "asset_type": "stock"
@@ -16797,6 +16797,13 @@
       "symbol": "GUG",
       "name": "Guggenheim Active Allocation Fund Common Shares of Beneficial Interest",
       "exchange": "N",
+      "source": "other",
+      "asset_type": "stock"
+    },
+    {
+      "symbol": "GUNN",
+      "name": "Gunnison Copper Corp. American Depositary Shares (each representing thirty (30) Common Shares)",
+      "exchange": "A",
       "source": "other",
       "asset_type": "stock"
     },
@@ -28470,13 +28477,6 @@
       "asset_type": "stock"
     },
     {
-      "symbol": "PAPL",
-      "name": "Pineapple Financial Inc. Common Stock",
-      "exchange": "A",
-      "source": "other",
-      "asset_type": "stock"
-    },
-    {
       "symbol": "PAR",
       "name": "PAR Technology Corporation Common Stock",
       "exchange": "N",
@@ -30418,6 +30418,13 @@
     {
       "symbol": "PTHS",
       "name": "Pelthos Therapeutics Inc. Common Stock",
+      "exchange": "A",
+      "source": "other",
+      "asset_type": "stock"
+    },
+    {
+      "symbol": "PTIV",
+      "name": "Pineapple Financial Inc. Common Stock",
       "exchange": "A",
       "source": "other",
       "asset_type": "stock"
@@ -39432,13 +39439,6 @@
       "asset_type": "stock"
     },
     {
-      "symbol": "VSME",
-      "name": "VS Media Holdings Limited - Class A Ordinary Shares",
-      "exchange": "nasdaq",
-      "source": "nasdaq",
-      "asset_type": "stock"
-    },
-    {
       "symbol": "VSNT",
       "name": "Versant Media Group, Inc. - Class A Common Stock",
       "exchange": "nasdaq",
@@ -39833,13 +39833,6 @@
     {
       "symbol": "WDS",
       "name": "Woodside Energy Group Limited American Depositary Shares, each representing one Ordinary Share",
-      "exchange": "N",
-      "source": "other",
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "WEAV",
-      "name": "Weave Communications, Inc. Common Stock",
       "exchange": "N",
       "source": "other",
       "asset_type": "stock"
@@ -40297,13 +40290,6 @@
       "name": "WPP plc American Depositary Shares",
       "exchange": "N",
       "source": "other",
-      "asset_type": "stock"
-    },
-    {
-      "symbol": "WPRT",
-      "name": "Westport Fuel Systems Inc - Common Shares",
-      "exchange": "nasdaq",
-      "source": "nasdaq",
       "asset_type": "stock"
     },
     {
