@@ -1,7 +1,7 @@
 {
   "project": "HVLK AI",
   "schema_version": 2,
-  "generated_at": "2026-10-26T20:04:17Z",
+  "generated_at": "2026-10-27T07:07:18Z",
   "market": "US",
   "universe_status": "partial",
   "provider": "Nasdaq Trader (SEC unavailable)",
@@ -9,19 +9,19 @@
   "raw_records": 5463,
   "duplicates_merged": 0,
   "source_counts": {
-    "nasdaq": 3235,
-    "otherlisted": 2228,
+    "nasdaq": 3234,
+    "otherlisted": 2229,
     "sec": 0
   },
   "source_status": {
     "nasdaq": {
       "status": "success",
-      "records_included": 3235,
+      "records_included": 3234,
       "url": "https://www.nasdaqtrader.com/dynamic/symdir/nasdaqlisted.txt"
     },
     "otherlisted": {
       "status": "success",
-      "records_included": 2228,
+      "records_included": 2229,
       "url": "https://www.nasdaqtrader.com/dynamic/symdir/otherlisted.txt"
     },
     "sec": {
@@ -33,19 +33,19 @@
   },
   "source_stats": {
     "nasdaq": {
-      "rows_seen": 5625,
-      "included": 3235,
+      "rows_seen": 5619,
+      "included": 3234,
       "excluded_test_issue": 8,
-      "excluded_etf": 1289,
+      "excluded_etf": 1284,
       "excluded_other": 1093,
       "invalid_symbol": 0
     },
     "otherlisted": {
-      "rows_seen": 7673,
-      "included": 2228,
+      "rows_seen": 7670,
+      "included": 2229,
       "excluded_test_issue": 29,
-      "excluded_etf": 4493,
-      "excluded_other": 546,
+      "excluded_etf": 4491,
+      "excluded_other": 544,
       "invalid_symbol": 377
     }
   },
@@ -48909,6 +48909,21 @@
       ]
     },
     {
+      "symbol": "MSGK",
+      "provider_symbol": "MSGK",
+      "name": "MSG Knickerbockers Corp. Class A Common Stock",
+      "exchange": "N",
+      "source": "otherlisted",
+      "asset_type": "equity_candidate",
+      "classification": "rule_filtered_candidate",
+      "sources": [
+        "otherlisted"
+      ],
+      "exchanges": [
+        "N"
+      ]
+    },
+    {
       "symbol": "MSGM",
       "provider_symbol": "MSGM",
       "name": "Motorsport Games Inc. - Class A Common Stock",
@@ -48924,9 +48939,9 @@
       ]
     },
     {
-      "symbol": "MSGS",
-      "provider_symbol": "MSGS",
-      "name": "Madison Square Garden Sports Corp. Class A Common Stock (New)",
+      "symbol": "MSGR",
+      "provider_symbol": "MSGR",
+      "name": "MSG Rangers Corp. Class A Common Stock",
       "exchange": "N",
       "source": "otherlisted",
       "asset_type": "equity_candidate",
@@ -50091,21 +50106,6 @@
       ],
       "exchanges": [
         "N"
-      ]
-    },
-    {
-      "symbol": "NATH",
-      "provider_symbol": "NATH",
-      "name": "Nathan's Famous, Inc. - Common Stock",
-      "exchange": "nasdaq",
-      "source": "nasdaq",
-      "asset_type": "equity_candidate",
-      "classification": "rule_filtered_candidate",
-      "sources": [
-        "nasdaq"
-      ],
-      "exchanges": [
-        "nasdaq"
       ]
     },
     {
@@ -56261,7 +56261,7 @@
     {
       "symbol": "PARA",
       "provider_symbol": "PARA",
-      "name": "Banzai International, Inc. - Class A Common Stock",
+      "name": "Parabolic Technologies, Inc. - Class A Common Stock",
       "exchange": "nasdaq",
       "source": "nasdaq",
       "asset_type": "equity_candidate",
