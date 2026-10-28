@@ -1,7 +1,7 @@
 {
   "project": "HVLK AI",
   "schema_version": 2,
-  "generated_at": "2026-10-27T07:07:18Z",
+  "generated_at": "2026-10-28T07:19:25Z",
   "market": "US",
   "universe_status": "partial",
   "provider": "Nasdaq Trader (SEC unavailable)",
@@ -33,11 +33,11 @@
   },
   "source_stats": {
     "nasdaq": {
-      "rows_seen": 5619,
+      "rows_seen": 5617,
       "included": 3234,
       "excluded_test_issue": 8,
-      "excluded_etf": 1284,
-      "excluded_other": 1093,
+      "excluded_etf": 1281,
+      "excluded_other": 1094,
       "invalid_symbol": 0
     },
     "otherlisted": {
@@ -27639,6 +27639,21 @@
       ]
     },
     {
+      "symbol": "FFTT",
+      "provider_symbol": "FFTT",
+      "name": "Masonglory Limited - Class A Ordinary Shares",
+      "exchange": "nasdaq",
+      "source": "nasdaq",
+      "asset_type": "equity_candidate",
+      "classification": "rule_filtered_candidate",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
       "symbol": "FG",
       "provider_symbol": "FG",
       "name": "F&G Annuities & Life, Inc. Common Stock",
@@ -48951,21 +48966,6 @@
       ],
       "exchanges": [
         "N"
-      ]
-    },
-    {
-      "symbol": "MSGY",
-      "provider_symbol": "MSGY",
-      "name": "Masonglory Limited - Class A Ordinary Shares",
-      "exchange": "nasdaq",
-      "source": "nasdaq",
-      "asset_type": "equity_candidate",
-      "classification": "rule_filtered_candidate",
-      "sources": [
-        "nasdaq"
-      ],
-      "exchanges": [
-        "nasdaq"
       ]
     },
     {
