@@ -1,7 +1,7 @@
 {
   "project": "HVLK AI",
   "schema_version": 2,
-  "generated_at": "2026-10-28T07:19:25Z",
+  "generated_at": "2026-10-29T07:20:20Z",
   "market": "US",
   "universe_status": "partial",
   "provider": "Nasdaq Trader (SEC unavailable)",
@@ -41,10 +41,10 @@
       "invalid_symbol": 0
     },
     "otherlisted": {
-      "rows_seen": 7670,
+      "rows_seen": 7672,
       "included": 2229,
       "excluded_test_issue": 29,
-      "excluded_etf": 4491,
+      "excluded_etf": 4493,
       "excluded_other": 544,
       "invalid_symbol": 377
     }
@@ -1371,21 +1371,6 @@
       ],
       "exchanges": [
         "N"
-      ]
-    },
-    {
-      "symbol": "ADIL",
-      "provider_symbol": "ADIL",
-      "name": "Adial Pharmaceuticals, Inc - Common Stock",
-      "exchange": "nasdaq",
-      "source": "nasdaq",
-      "asset_type": "equity_candidate",
-      "classification": "rule_filtered_candidate",
-      "sources": [
-        "nasdaq"
-      ],
-      "exchanges": [
-        "nasdaq"
       ]
     },
     {
@@ -8001,6 +7986,21 @@
       ],
       "exchanges": [
         "N"
+      ]
+    },
+    {
+      "symbol": "AZR",
+      "provider_symbol": "AZR",
+      "name": "Azora Therapeutics, Inc. - Common Stock",
+      "exchange": "nasdaq",
+      "source": "nasdaq",
+      "asset_type": "equity_candidate",
+      "classification": "rule_filtered_candidate",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
       ]
     },
     {
@@ -14892,7 +14892,7 @@
       "symbol": "CECO",
       "provider_symbol": "CECO",
       "name": "CECO Environmental Corp. Common Stock",
-      "exchange": "F",
+      "exchange": "TXSE",
       "source": "otherlisted",
       "asset_type": "equity_candidate",
       "classification": "rule_filtered_candidate",
@@ -14900,7 +14900,7 @@
         "otherlisted"
       ],
       "exchanges": [
-        "F"
+        "TXSE"
       ]
     },
     {
@@ -21102,7 +21102,7 @@
       "symbol": "DDS",
       "provider_symbol": "DDS",
       "name": "Dillard's, Inc. Common Stock",
-      "exchange": "F",
+      "exchange": "TXSE",
       "source": "otherlisted",
       "asset_type": "equity_candidate",
       "classification": "rule_filtered_candidate",
@@ -21110,14 +21110,14 @@
         "otherlisted"
       ],
       "exchanges": [
-        "F"
+        "TXSE"
       ]
     },
     {
       "symbol": "DDT",
       "provider_symbol": "DDT",
       "name": "Dillard's Capital Trust I",
-      "exchange": "F",
+      "exchange": "TXSE",
       "source": "otherlisted",
       "asset_type": "equity_candidate",
       "classification": "rule_filtered_candidate",
@@ -21125,7 +21125,7 @@
         "otherlisted"
       ],
       "exchanges": [
-        "F"
+        "TXSE"
       ]
     },
     {
@@ -36702,7 +36702,7 @@
       "symbol": "IBOC",
       "provider_symbol": "IBOC",
       "name": "International Bancshares Corporation Common Stock",
-      "exchange": "F",
+      "exchange": "TXSE",
       "source": "otherlisted",
       "asset_type": "equity_candidate",
       "classification": "rule_filtered_candidate",
@@ -36710,7 +36710,7 @@
         "otherlisted"
       ],
       "exchanges": [
-        "F"
+        "TXSE"
       ]
     },
     {
@@ -50156,7 +50156,7 @@
     {
       "symbol": "NAVI",
       "provider_symbol": "NAVI",
-      "name": "Navient Corporation - Common Stock",
+      "name": "Navient Holdings, Inc. - Common Stock",
       "exchange": "nasdaq",
       "source": "nasdaq",
       "asset_type": "equity_candidate",
@@ -53712,7 +53712,7 @@
       "symbol": "OBK",
       "provider_symbol": "OBK",
       "name": "Origin Bancorp, Inc. Common Stock",
-      "exchange": "F",
+      "exchange": "TXSE",
       "source": "otherlisted",
       "asset_type": "equity_candidate",
       "classification": "rule_filtered_candidate",
@@ -53720,7 +53720,7 @@
         "otherlisted"
       ],
       "exchanges": [
-        "F"
+        "TXSE"
       ]
     },
     {
@@ -67376,7 +67376,7 @@
     {
       "symbol": "SLMT",
       "provider_symbol": "SLMT",
-      "name": "Brera Holdings PLC - Class B Ordinary Shares",
+      "name": "Solmate Infrastructure Public Limited Company - Class B Ordinary Shares",
       "exchange": "nasdaq",
       "source": "nasdaq",
       "asset_type": "equity_candidate",
@@ -71247,7 +71247,7 @@
       "symbol": "TCBI",
       "provider_symbol": "TCBI",
       "name": "Texas Capital Bancshares, Inc. Common Stock",
-      "exchange": "F",
+      "exchange": "TXSE",
       "source": "otherlisted",
       "asset_type": "equity_candidate",
       "classification": "rule_filtered_candidate",
@@ -71255,7 +71255,7 @@
         "otherlisted"
       ],
       "exchanges": [
-        "F"
+        "TXSE"
       ]
     },
     {
