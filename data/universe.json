@@ -1,22 +1,22 @@
 {
   "project": "HVLK AI",
   "schema_version": 2,
-  "generated_at": "2026-10-29T07:20:20Z",
+  "generated_at": "2026-10-30T07:20:03Z",
   "market": "US",
   "universe_status": "partial",
   "provider": "Nasdaq Trader (SEC unavailable)",
-  "total_symbols": 5463,
-  "raw_records": 5463,
+  "total_symbols": 5460,
+  "raw_records": 5460,
   "duplicates_merged": 0,
   "source_counts": {
-    "nasdaq": 3234,
+    "nasdaq": 3231,
     "otherlisted": 2229,
     "sec": 0
   },
   "source_status": {
     "nasdaq": {
       "status": "success",
-      "records_included": 3234,
+      "records_included": 3231,
       "url": "https://www.nasdaqtrader.com/dynamic/symdir/nasdaqlisted.txt"
     },
     "otherlisted": {
@@ -33,19 +33,19 @@
   },
   "source_stats": {
     "nasdaq": {
-      "rows_seen": 5617,
-      "included": 3234,
+      "rows_seen": 5612,
+      "included": 3231,
       "excluded_test_issue": 8,
-      "excluded_etf": 1281,
-      "excluded_other": 1094,
+      "excluded_etf": 1283,
+      "excluded_other": 1090,
       "invalid_symbol": 0
     },
     "otherlisted": {
-      "rows_seen": 7672,
+      "rows_seen": 7670,
       "included": 2229,
       "excluded_test_issue": 29,
       "excluded_etf": 4493,
-      "excluded_other": 544,
+      "excluded_other": 542,
       "invalid_symbol": 377
     }
   },
@@ -23214,21 +23214,6 @@
       ]
     },
     {
-      "symbol": "DYNC",
-      "provider_symbol": "DYNC",
-      "name": "Dynamix Corporation - Class A Ordinary Share",
-      "exchange": "nasdaq",
-      "source": "nasdaq",
-      "asset_type": "equity_candidate",
-      "classification": "rule_filtered_candidate",
-      "sources": [
-        "nasdaq"
-      ],
-      "exchanges": [
-        "nasdaq"
-      ]
-    },
-    {
       "symbol": "DYOR",
       "provider_symbol": "DYOR",
       "name": "Insight Digital Partners II - Class A Ordinary Shares",
@@ -30399,6 +30384,21 @@
       ]
     },
     {
+      "symbol": "GBC",
+      "provider_symbol": "GBC",
+      "name": "Georgia Banking Company, Inc. - Common Stock",
+      "exchange": "nasdaq",
+      "source": "nasdaq",
+      "asset_type": "equity_candidate",
+      "classification": "rule_filtered_candidate",
+      "sources": [
+        "nasdaq"
+      ],
+      "exchanges": [
+        "nasdaq"
+      ]
+    },
+    {
       "symbol": "GBCI",
       "provider_symbol": "GBCI",
       "name": "Glacier Bancorp, Inc. Common Stock",
@@ -30567,21 +30567,6 @@
       "symbol": "GCT",
       "provider_symbol": "GCT",
       "name": "GigaCloud Technology Inc - Class A Ordinary Shares",
-      "exchange": "nasdaq",
-      "source": "nasdaq",
-      "asset_type": "equity_candidate",
-      "classification": "rule_filtered_candidate",
-      "sources": [
-        "nasdaq"
-      ],
-      "exchanges": [
-        "nasdaq"
-      ]
-    },
-    {
-      "symbol": "GCTK",
-      "provider_symbol": "GCTK",
-      "name": "GlucoTrack, Inc. - Common Stock",
       "exchange": "nasdaq",
       "source": "nasdaq",
       "asset_type": "equity_candidate",
@@ -44016,21 +44001,6 @@
       ],
       "exchanges": [
         "N"
-      ]
-    },
-    {
-      "symbol": "LNAI",
-      "provider_symbol": "LNAI",
-      "name": "Lunai Bioworks Inc. - Common Stock",
-      "exchange": "nasdaq",
-      "source": "nasdaq",
-      "asset_type": "equity_candidate",
-      "classification": "rule_filtered_candidate",
-      "sources": [
-        "nasdaq"
-      ],
-      "exchanges": [
-        "nasdaq"
       ]
     },
     {
@@ -81177,21 +81147,6 @@
       "symbol": "YHGJ",
       "provider_symbol": "YHGJ",
       "name": "Yunhong Green CTI Ltd. - Common Stock",
-      "exchange": "nasdaq",
-      "source": "nasdaq",
-      "asset_type": "equity_candidate",
-      "classification": "rule_filtered_candidate",
-      "sources": [
-        "nasdaq"
-      ],
-      "exchanges": [
-        "nasdaq"
-      ]
-    },
-    {
-      "symbol": "YHNA",
-      "provider_symbol": "YHNA",
-      "name": "YHN Acquisition I Limited - Ordinary Shares",
       "exchange": "nasdaq",
       "source": "nasdaq",
       "asset_type": "equity_candidate",
